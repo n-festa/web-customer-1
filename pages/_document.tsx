@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import Document, { Head, Main, NextScript, DocumentInitialProps, DocumentContext } from 'next/document'
+import Document, { Head, Main, NextScript, DocumentInitialProps, DocumentContext,Html } from 'next/document'
 import { GA_TRACKING_ID } from '../utils/gtag';
 
 interface DocumentProps extends DocumentInitialProps {
@@ -23,9 +23,28 @@ export default class CustomDocument extends Document<DocumentProps> {
     const { isProduction } = this.props
 
     return (
-      <html lang="en">
+        <Html lang="en">
         <Head>
-
+            <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=SVN-Gilroy:wght@400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=SVN-Circular:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+    />
           {/* We only want to add the scripts if in production */}
           {isProduction && (
             <Fragment>
@@ -51,10 +70,10 @@ export default class CustomDocument extends Document<DocumentProps> {
           )}
         </Head>
         <body>
-          <Main />
-          <NextScript />
+            <Main />
+            <NextScript />
         </body>
-      </html>
+        </Html>
     )
   }
 }
