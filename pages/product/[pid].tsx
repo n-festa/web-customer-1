@@ -12,7 +12,7 @@ import Reviews from '../../components/product-single/reviews';
 import { server } from '../../utils/server'; 
 
 // types
-import { ProductType } from '../../types';
+import { ProductType } from 'types';
 
 type ProductPageType = {
   product: ProductType;

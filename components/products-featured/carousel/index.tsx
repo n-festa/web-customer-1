@@ -1,6 +1,6 @@
 import ProductItem from './../../product-item';
 import { ProductTypeList } from 'types';
-import Link from 'next/link';
+
 // import Swiper core and required components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -25,33 +25,33 @@ type ProductsCarouselType = {
 }
 
 const ProductsCarousel = ({ products }: ProductsCarouselType) => {
-    if (!products) return <div>Loading</div>;
+  if (!products) return <div>Loading</div>;
 
-    return (
-        <div className="products-carousel">
-          <Swiper 
-          spaceBetween={spaceBetween} 
-          loop={true} 
-          centeredSlides={centeredSlides} 
-          watchOverflow={true} 
-          slidesPerView={slidesPerView} 
-          className="swiper-wrapper">
-            {products.map(item => (
-              <SwiperSlide key={item.id}>
-                <ProductItem 
-                  id={item.id} 
-                  name={item.name}
-                  price={item.price}
-                  color={item.color}
-                  discount={item.discount}
-                  currentPrice={item.currentPrice}
-                  key={item.id}
-                  images={item.images} 
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+  return (
+    <div className="products-carousel">
+      <Swiper 
+      spaceBetween={spaceBetween} 
+      loop={true} 
+      centeredSlides={centeredSlides} 
+      watchOverflow={true} 
+      slidesPerView={slidesPerView} 
+      className="swiper-wrapper">
+        {products.map(item => (
+          <SwiperSlide key={item.id}>
+            <ProductItem 
+              id={item.id} 
+              name={item.name}
+              price={item.price}
+              color={item.color}
+              discount={item.discount}
+              currentPrice={item.currentPrice}
+              key={item.id}
+              images={item.images} 
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   )
 }
 

@@ -8,8 +8,8 @@ import productsTypes from './../../utils/data/products-types';
 import productsColors from './../../utils/data/products-colors';
 import productsSizes from './../../utils/data/products-sizes';
 
-const createSliderWithTooltip = Slider.createSliderWithTooltip;
-//const Range = createSliderWithTooltip(Slider.Range);
+const { createSliderWithTooltip } = Slider;
+const Range = createSliderWithTooltip(Slider.Range);
 
 const ProductsFilter = () => {
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -43,7 +43,7 @@ const ProductsFilter = () => {
         <div className="products-filter__block">
           <button type="button">Price</button>
           <div className="products-filter__block__content">
-            <Slider range min={0} max={20} defaultValue={[3, 10]} tipFormatter={value => `${value}%`}/>
+            <Range min={0} max={20} defaultValue={[3, 10]} tipFormatter={value => `${value}%`} />
           </div>
         </div>
         
