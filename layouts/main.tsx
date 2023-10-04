@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Header from 'components/header';
-import { useRouter } from 'next/router';
+//import { useRouter } from 'next/router';
 
 type LayoutType = {
   title?: string;
@@ -8,8 +8,8 @@ type LayoutType = {
 }
 
 export default ({ children, title = 'Next.js Ecommerce' }: LayoutType) => {
-  const router = useRouter();
-  const pathname = router.pathname;
+ // const router = useRouter();
+  //const pathname = router.pathname;
 
   return (
     <div className="app-main">
@@ -19,7 +19,7 @@ export default ({ children, title = 'Next.js Ecommerce' }: LayoutType) => {
 
       <Header />
 
-      <main className={(pathname !== '/' ? 'main-page' : '')}>
+      <main className="main-page">
         { children }
       </main>
     </div>
