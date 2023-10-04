@@ -1,4 +1,4 @@
-import Layout from '../layouts/Main';
+import Layout from '../layouts/main';
 import Footer from '../components/footer';
 import Breadcrumb from '../components/breadcrumb';
 import ProductsFilter from '../components/products-filter';

@@ -2,7 +2,7 @@ import { GetServerSideProps } from 'next'
 
 import { useState } from 'react';
 import Footer from '../../components/footer';
-import Layout from '../../layouts/Main';
+import Layout from '../../layouts/main';
 import Breadcrumb from '../../components/breadcrumb';
 import ProductsFeatured from '../../components/products-featured';
 import Gallery from '../../components/product-single/gallery';

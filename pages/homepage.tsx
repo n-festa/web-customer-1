@@ -1,4 +1,4 @@
-import Layout from '../layouts/Main';
+import Layout from '../layouts/main';
 import PageIntro from '../components/page-intro';
 import ProductsFeatured from '../components/products-featured';
 import Footer from '../components/footer';

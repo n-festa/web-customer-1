@@ -1,4 +1,4 @@
-import Layout from '../layouts/Main';
+import Layout from '../layouts/main';
 import Link from 'next/link';
 //import PageIntro from '../components/page-intro';
 const IndexPage = () => {
