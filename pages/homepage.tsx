@@ -4,7 +4,7 @@ import ProductsFeatured from '../components/products-featured';
 import Footer from '../components/footer';
 import Subscribe from '../components/subscribe';
 
-const Homepage = () => {
+const HomePage = () => {
   return (
     <Layout>
       <PageIntro />
@@ -85,4 +85,4 @@ const Homepage = () => {
 }
 
 
-export default Homepage
+export default HomePage
