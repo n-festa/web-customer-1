@@ -311,6 +311,9 @@ h1,h2,h3,h4,h5 {
     @include breakpoint(tablet-lg) {
       margin-left: 0;
     }
+    span{
+      color: #000
+    }
     button {
       margin-left: 15px;
       @include breakpoint(tablet-lg) {
