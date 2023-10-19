@@ -6,10 +6,9 @@ import {wrapper} from '../store';
 import type { AppProps } from 'next/app';
 
 // global styles
-import 'swiper/swiper.scss';
-import 'rc-slider/assets/index.css';
-import 'react-rater/lib/react-rater.css';
-import '../assets/css/styles.scss';
+import '../assets/css/bootstrap.min.css';
+import '../assets/css/style.css';
+
 
 import * as gtag from './../utils/gtag';
 

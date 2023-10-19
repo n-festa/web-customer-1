@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 const CheckLogin =() =>{
     const router = useRouter()
     async function logout() {
-        console.log("de");
         removeState("userLogIn");
         router.reload()
     }
@@ -23,7 +22,7 @@ const CheckLogin =() =>{
                     </a>
                     
                
-                <button class="btn-cart" onClick={()=> logout()}>Logout</button>
+                <button className="btn-cart" onClick={()=> logout()}>Logout</button>
             </div>
         );
     }

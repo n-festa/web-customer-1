@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-import CheckoutStatus from '../../components/checkout-status';
 import Item from './item';
 import { RootState } from 'store';
 
@@ -20,7 +19,6 @@ const ShoppingCart = () => {
       <div className="container">
         <div className="cart__intro">
           <h3 className="cart__title">Shopping Cart</h3>
-          <CheckoutStatus step="cart" />
         </div>
 
         <div className="cart-list">

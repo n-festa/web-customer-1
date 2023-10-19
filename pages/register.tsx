@@ -86,7 +86,7 @@ const RegisterPage = () => {
                                     }
                                 </div>
 
-                                <button type="button" className="btn btn--rounded btn--yellow btn-submit" type="submit">Sign up</button>
+                                <button className="btn btn--rounded btn--yellow btn-submit" type="submit">Sign up</button>
 
                                 <p className="form__signup-link">
                                   <Link href="/login">

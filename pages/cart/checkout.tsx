@@ -1,7 +1,5 @@
 import Layout from '../../layouts/main';
 import { useSelector } from 'react-redux';
-import CheckoutStatus from '../../components/checkout-status';
-import CheckoutItems from '../../components/checkout/items';
 import { RootState } from 'store';
 
 const CheckoutPage = () => {
@@ -22,7 +20,6 @@ const CheckoutPage = () => {
         <div className="container">
           <div className="cart__intro">
             <h3 className="cart__title">Shipping and Payment</h3>
-            <CheckoutStatus step="checkout" />
           </div>
 
           <div className="checkout-content">
@@ -134,7 +131,6 @@ const CheckoutPage = () => {
             <div className="checkout__col-2">
               <div className="block">
                 <h3 className="block__title">Your cart</h3>
-                <CheckoutItems />
                 
                 <div className="checkout-total">
                   <p>Total cost</p>

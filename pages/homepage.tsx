@@ -1,6 +1,5 @@
 import Layout from '../layouts/main';
 import PageIntro from '../components/page-intro';
-import ProductsFeatured from '../components/products-featured';
 import Footer from '../components/footer';
 import Subscribe from '../components/subscribe';
 
@@ -77,7 +76,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      <ProductsFeatured />
       <Subscribe />
       <Footer />
     </Layout>

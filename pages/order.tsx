@@ -9,6 +9,7 @@ const Order = () =>{
 	        <section className="products-page">
 	            <div className="container">
 	               Order
+	               
 				   </div>
 	        </section>
 	        <Footer />
