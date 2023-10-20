@@ -7,8 +7,54 @@ type HeaderType = {
 const Header = () => {
 
     return(
-        <header >
-        </header>
+        <section className="full-width-header-navigation">
+                <header className="header d-flex align-items-center justify-content-center flex-column h-100">
+                    <div className="d-flex justify-content-between align-items-center container">
+                        <div className="d-flex align-items-center gap-4">
+                            <img className="fictional-company-logo"
+                                 alt="fictional-company-logo"
+                                 src="/images/logo1.svg"
+                            />
+
+                            <div className="navigation d-flex gap-4 align-items-center">
+                                <div className="navigation-button">
+                                    <b className="text">Đặt hàng</b>
+                                </div>
+                                <div className="navigation-button">
+                                    <b className="text">Dành cho Đối tác</b>
+                                </div>
+                                <div className="navigation-button">
+                                    <b className="text">Tải App</b>
+                                </div>
+                                <div className="navigation-button">
+                                    <b className="text">Liên hệ</b>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="navigation-actions-wrapper d-flex gap-3">
+                            <div className="navigation-actions d-flex align-items-center">
+                                <div className="login-button">
+                                    <div className="font-weight-600">Đăng nhập</div>
+                                </div>
+                            </div>
+                            <div className="nav-item-button d-flex">
+                                <img className="small-icon"
+                                     alt="small-icon"
+                                     src="/images/shoppingbag03.svg"
+                                />
+                            </div>
+                            <div className="language-button d-flex align-items-center gap-1">
+                                <div className="language-text">VIE</div>
+                                <img className="small-icon"
+                                     alt=""
+                                     src="/images/vn.svg"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </section>
     )
 };
 
