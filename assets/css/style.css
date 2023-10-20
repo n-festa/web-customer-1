@@ -282,7 +282,9 @@ a {
     background-color: var(--primary-500);
     padding: var(--padding-5xs) var(--padding-base) var(--padding-13xl);
 }
-
+.frame-parent .discount-wrapper{
+    height: 20px;
+}
 .chef-name .name {
     color: var(--color-mediumslateblue);
 }

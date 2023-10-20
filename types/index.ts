@@ -1,20 +1,7 @@
-export type VotesType = {
-  count: number;
-  value: number;
-}
 
-export type PunctuationType = {
-  countOpinions: number;
-  punctuation: number;
-  votes: VotesType[]
-}
-
-export type ReviewType = {
-  name: string;
-  avatar: string;
-  description: string;
-  punctuation: number;
-}
+export type IngredientType = {
+    name?: number | string;
+} 
 
 export type ProductType = {
   id: string;
@@ -27,20 +14,23 @@ export type ProductType = {
   images: string[];
   discount?: string;
   currentPrice: number;
-  punctuation: PunctuationType;
-  reviews: ReviewType[];
 }
 
 export type ProductTypeList = {
   id: string;
   name: string;
   price: string;
-  color: string;
-  images: string[];
   discount?: string;
+  merchart: string;
   currentPrice?: number;
+  images: string[];
+  cook_method:string;
+  time: number;
+  distance: number;
+  ratings: number;
+  kcal: string;
+  ingredient: Array<IngredientType>,
 }
-
 export type ProductStoreType = {
   id: string;
   name: string;
@@ -57,3 +47,4 @@ export type GtagEventType = {
   label: string;
   value: string
 }
+

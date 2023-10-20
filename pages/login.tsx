@@ -2,11 +2,11 @@ import Layout from '../layouts/main';
 //import { useState } from 'react';
 import Link from 'next/link';
 import { useForm } from "react-hook-form";
-import { server } from '../utils/server'; 
-import { postData } from '../utils/services'; 
-import { useRouter } from "next/router";
-import { saveState } from '../utils/localstorage';
-import { useState , useEffect} from 'react';
+//import { server } from '../utils/server'; 
+//import { postData } from '../utils/services'; 
+//import { useRouter } from "next/router";
+//import { saveState } from '../utils/localstorage';
+//import { useState , useEffect} from 'react';
 //import TimerContainer from '../components/time/TimerContainer';
 //import BMI from '../components/BMI/index';
 
@@ -17,7 +17,7 @@ type LoginMail = {
 
 const LoginPage = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const router = useRouter();
+   // const router = useRouter();
     console.log(errors);
 
     const onSubmit = async (data: LoginMail) => {
