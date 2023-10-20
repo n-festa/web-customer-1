@@ -6,6 +6,8 @@ import {wrapper} from '../store';
 import type { AppProps } from 'next/app';
 
 // global styles
+import 'swiper/swiper.scss';
+
 import '../assets/css/bootstrap.min.css';
 import '../assets/css/style.css';
 

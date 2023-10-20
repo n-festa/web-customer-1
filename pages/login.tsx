@@ -7,8 +7,8 @@ import { postData } from '../utils/services';
 import { useRouter } from "next/router";
 import { saveState } from '../utils/localstorage';
 import { useState , useEffect} from 'react';
-import TimerContainer from '../components/time/TimerContainer';
-import BMI from '../components/BMI/index';
+//import TimerContainer from '../components/time/TimerContainer';
+//import BMI from '../components/BMI/index';
 
 type LoginMail = {
     email: string;
@@ -18,84 +18,13 @@ type LoginMail = {
 const LoginPage = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const router = useRouter();
-  //  const errors = useState();
     console.log(errors);
 
     const onSubmit = async (data: LoginMail) => {
-        const res = await postData(`${server}/api/v1/login`, {
-            email: data.email,
-            password: data.password
-        });
-
-        console.log(res);
-        if(res.type !== "success"){
-            console.log("errer");
-        }else{
-            saveState("userLogIn", res.data.result);
-            router.push('/products');
-        }
+        console.log(data);
     };
-    //, setTime , newTime
-    const [time] = useState<number>(2);
-  //  const [days, setDays] = useState<number>(0);
-   // const [hours, setHours] = useState<number>(0);
-    const [minutes, setMinutes] = useState<number>(0);
-    const [seconds, setSeconds] = useState<number>(0);
-    //message,
-    //const [ setMessage] = useState<string>("");
+    
 
-    const timeToDays = time * 60 * 1000;
-
-    let countDownDate = new Date().getTime() + timeToDays;
-
-
-    useEffect(() => {
-        var updateTime = setInterval(() => {
-        var now = new Date().getTime();
-
-        var difference = countDownDate - now;
-
-      //  var newDays = Math.floor(difference / (1000 * 60 * 60 * 24));
-       // var newHours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var newMinutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        var newSeconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-       // setDays(newDays);
-       // setHours(newHours);
-        setMinutes(newMinutes);
-        setSeconds(newSeconds);
-
-
-        if (difference <= 0) {
-            clearInterval(updateTime);
-          //  setMessage("The Launch Has Started");
-          //  setDays(0);
-           // setHours(0);
-            setMinutes(0);
-            setSeconds(0);
-        }
-        })
-
-        return () => {
-        clearInterval(updateTime);
-        }
-
-    }, [time]);
-
-    /*
-    const handleClick = () =>{
-        setTime(newTime);
-        console.log(time);
-        setNewTime(0);
-    }
-   
-
-
-    const handleChange =(e:any) =>{
-        let inputTime = e.target.value;
-        setNewTime(inputTime);
-    }
-     */
 
     return (
         <Layout>
@@ -166,11 +95,7 @@ const LoginPage = () => {
 
                             <p className="form__signup-link">Not a member yet? <a href="/register">Sign up</a></p>
                         </form>
-                        <TimerContainer
-                            minutes={minutes}
-                            seconds={seconds}
-                        />
-                        <BMI height={162} weight={70} />
+                    
                         
                     </div>
                 </div>

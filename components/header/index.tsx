@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 /*
 type HeaderType = {
   isErrorPage?: Boolean;
@@ -11,10 +11,12 @@ const Header = () => {
                 <header className="header d-flex align-items-center justify-content-center flex-column h-100">
                     <div className="d-flex justify-content-between align-items-center container">
                         <div className="d-flex align-items-center gap-4">
-                            <img className="fictional-company-logo"
-                                 alt="fictional-company-logo"
-                                 src="/images/logo1.svg"
-                            />
+                            <Link href="/">
+                                <img className="fictional-company-logo"
+                                     alt="fictional-company-logo"
+                                     src="/images/logo1.svg"
+                                />
+                            </Link>
 
                             <div className="navigation d-flex gap-4 align-items-center">
                                 <div className="navigation-button">
@@ -35,7 +37,9 @@ const Header = () => {
                         <div className="navigation-actions-wrapper d-flex gap-3">
                             <div className="navigation-actions d-flex align-items-center">
                                 <div className="login-button">
-                                    <div className="font-weight-600">Đăng nhập</div>
+                                    <Link href="/login">
+                                        <a className="font-weight-600">Đăng nhập</a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="nav-item-button d-flex">

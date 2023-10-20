@@ -138,7 +138,7 @@ body {
     gap: var(--gap-5xs);
 }
 
-.login-button {
+.login-button , .login-button a{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -188,7 +188,10 @@ body {
     font-weight: 500;
     display: none;
 }
-
+a {
+  text-decoration: none;
+  color: black;
+}
 .small-icon {
     position: relative;
     width: 20px;
