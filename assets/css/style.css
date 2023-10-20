@@ -138,7 +138,7 @@ body {
     gap: var(--gap-5xs);
 }
 
-.login-button , .login-button a{
+.login-button {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -152,6 +152,9 @@ body {
     font-size: var(--text-lg-semibold-size);
     color: var(--icterine-500);
 }
+ .login-button a{
+        color: var(--icterine-500);
+ }
 
 
 .nav-item-button {
@@ -1027,3 +1030,158 @@ a {
     font-family: var(--text-md-regular);
     background-color: var(--color-ivory-100);
 }
+
+
+/*  login */
+.signup-content, .input-field-parent, .sign-up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--gap-base);
+}
+.sign-up {
+    position: relative;
+    background-color: var(--full-white);
+    width: 100%;
+    overflow: hidden;
+    padding: var(--padding-21xl) 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: var(--display-sm-bold-size);
+    color: var(--color-yellowgreen-100);
+    font-family: var(--text-md-regular);
+}
+.image-login-page {
+    position: relative;
+    width: 400px;
+    height: 284px;
+}
+.image-login-page-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-500);
+    width: 400px;
+    height: 284px;
+}
+.image-login-page img {
+    position: absolute;
+    top: 28px;
+    left: 44px;
+    width: 311px;
+    height: 228px;
+    object-fit: cover;
+}
+.signup-content{
+    width: 426px;
+}
+.signup-content .title {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.heading26 {
+    align-self: stretch;
+    position: relative;
+    line-height: 38px;
+}
+.input-field-parent {
+    align-self: stretch;
+    text-align: left;
+    font-size: var(--text-md-regular-size);
+    color: var(--gray-700);
+}
+.input-field4 {
+    width: 355px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-7xs);
+}
+.button49 {
+    border-radius: var(--br-5xl);
+    background-color: var(--primary-500);
+    box-shadow: var(--shadow-xs);
+    border: 1px solid var(--primary-500);
+    box-sizing: border-box;
+    width: 355px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-5xs) var(--padding-sm);
+    gap: var(--gap-5xs);
+    font-size: var(--text-sm-semibold-size);
+    color: var(--icterine-500);
+}
+
+.hint-text7 {
+    align-self: stretch;
+    position: relative;
+    font-size: var(--text-sm-semibold-size);
+    line-height: 20px;
+    color: var(--gray-600);
+}
+.label6, .label7 {
+    position: relative;
+    line-height: 24px;
+    font-weight: 600;
+}
+.input-field5, .input-with-label6 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-7xs);
+}
+.label7 {
+    line-height: 20px;
+    font-weight: 500;
+    display: none;
+}
+.input7 {
+    align-self: stretch;
+    border-radius: var(--br-5xs);
+    background-color: var(--full-white);
+    box-shadow: var(--shadow-xs);
+    border: 1px solid var(--gray-300);
+    overflow: hidden;
+    align-items: flex-start;
+    font-size: var(--text-md-regular-size);
+    color: var(--gray-500);
+}
+.input7, .text-input1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.text-input1 {
+    flex: 1;
+    align-items: center;
+    padding: var(--padding-5xs) var(--padding-xs) var(--padding-5xs) var(--padding-3xs);
+    gap: var(--gap-5xs);
+}
+.text68 {
+    flex: 1;
+    position: relative;
+    line-height: 24px;
+}
+.hint-text6 {
+    align-self: stretch;
+    position: relative;
+    line-height: 20px;
+    color: var(--gray-600);
+    display: none;
+}
+.text69 {
+    position: relative;
+    line-height: 20px;
+    font-weight: 600;
+}
+
