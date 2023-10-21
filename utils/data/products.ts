@@ -1,119 +1,136 @@
 export const products = [
   {
-    id: '1',
-    name: 'T-Shirt Summer Vibes 12',
-    price: 119.99,
+    id: "1",
+    name: "Cơm Ức Gà Gạo Lứt",
+    price: 95000,
     discount: 30,
-    merchart: 'T-shirt',
-    currentPrice: 89.99,
+    merchart: "The Chef Town",
+    currentPrice: 80000,
     images: [
-      '/images/6387ec276a4eb-62aa10dfb2adca268416cf2fd03d82f5transformed-3@2x.png',
+      "/images/6387ec276a4eb-62aa10dfb2adca268416cf2fd03d82f5transformed-3@2x.png",
     ],
-      kcal: 378,
-      carb: 16,
-      protein : 4,
-      fat: 2.7,
-    cook_method: "luộc",
-    ingredient :[
+    kcal: 366,
+    carb: 16,
+    protein: 4,
+    fat: 2.7,
+    cook_method: "Luộc",
+    ingredient: [
       {
-        name: 'Cá cờ',
-        quantity: 200,
-        unit:  "gram"
-      },
-      {
-        name: 'gừng',
-        quantity: 1,
-        unit:  "muỗng cà phê"
-      },
-      {
-        name: 'Mỳ rau củ',
+        name: "Ức gà",
         quantity: 150,
-        unit:  "gram"
+        unit: "gram",
       },
       {
-        name: 'Cá cờ',
-        quantity: 200,
-        unit:  "gram"
+        name: "Gạo lứt",
+        quantity: 150,
+        unit: "gram",
+      },
+      {
+        name: "Bông cải trắng",
+        quantity: 30,
+        unit: "gram",
+      },
+      {
+        name: "Ớt chuông",
+        quantity: 20,
+        unit: "gram",
+      },
+      {
+        name: "Bánh tart",
+        quantity: 150,
+        unit: "gram",
+      },
+      {
+        name: "Hành lá",
+        quantity: 1,
+        unit: "muỗng cà phê",
+      },
+      {
+        name: "Tiêu",
+        quantity: 1 / 3,
+        unit: "muỗng cà phê",
       },
     ],
-    distance: 3.,
-    time: 12,
-    ratings : 3.2,
+    distance: 3.2,
+    time: 20,
+    ratings: 4.5,
   },
   {
-    id: '2',
-    name: 'T-Shirt Summer Vibes',
-    currentPrice: 119.99,
-    merchart: 'The Chef',
+    id: "2",
+    name: "Salad Gà Cajun Balsamic",
+    price: 85000,
+    currentPrice: 80000,
+    merchart: "An Garden",
     images: [
-      '/images/6387ec276a4eb-62aa10dfb2adca268416cf2fd03d82f5transformed-3@2x.png',
+      "/images/6387ec276a4eb-62aa10dfb2adca268416cf2fd03d82f5transformed-3@2x.png",
     ],
 
-      kcal: 356,
-      carb: 16,
-      protein : 4,
-      fat: 2.7,
-   
-    cook_method: "chien",
-    ingredient :[
+    kcal: 550,
+    carb: 0,
+    protein: 0,
+    fat: 0,
+
+    cook_method: "Luộc",
+    ingredient: [
       {
-        name: 'Cá cờ',
-        quantity: 200,
-        unit:  "gram"
+        name: "Cajun",
+        quantity: 0,
+        unit: "gram",
       },
       {
-        name: 'gừng',
-        quantity: 1,
-        unit:  "muỗng cà phê"
+        name: "gà",
+        quantity: 0,
+        unit: "gram",
       },
       {
-        name: 'Mỳ rau củ',
-        quantity: 150,
-        unit:  "gram"
+        name: "salad",
+        quantity: 0,
+        unit: "gram",
+      },
+      {
+        name: "balsamic",
+        quantity: 0,
+        unit: "gram",
+      },
+      {
+        name: "sốt",
+        quantity: 0,
+        unit: "gram",
       },
     ],
-    distance: 3.9,
-    time: 230,
-    ratings : 4.9
+    distance: 2,
+    time: 15,
+    ratings: 4.5,
   },
   {
-    id: '3',
-    name: 'Cá cờ',
-    currentPrice: 123.99,
-    merchart: 'The Chef No 1',
+    id: "3",
+    name: "Bò Hầm Pate",
+    price: 95000,
+    currentPrice: 90000,
+    merchart: "The Chef Town",
     images: [
-      '/images/6387ec276a4eb-62aa10dfb2adca268416cf2fd03d82f5transformed-3@2x.png',
+      "/images/6387ec276a4eb-62aa10dfb2adca268416cf2fd03d82f5transformed-3@2x.png",
     ],
-      kcal: 390,
-      carb: 16,
-      protein : 4,
-      fat: 2.7,
-    cook_method: "chien",
-    ingredient :[
+    kcal: 600,
+    carb: 0,
+    protein: 0,
+    fat: 0,
+    cook_method: "Hầm",
+    ingredient: [
       {
-        name: 'Cá cờ',
-        quantity: 200,
-        unit:  "gram"
+        name: "Bò",
+        quantity: 0,
+        unit: "gram",
       },
       {
-        name: 'gừng',
-        quantity: 1,
-        unit:  "muỗng cà phê"
-      },
-      {
-        name: 'Mỳ rau củ',
-        quantity: 150,
-        unit:  "gram"
-      },
-      {
-        name: 'thit heo',
-        quantity: 200,
-        unit:  "gram"
+        name: "Pate",
+        quantity: 0,
+        unit: "gram",
       },
     ],
-    distance: 4.9,
-    time: 59,
-    ratings: 4,
+    distance: 3.2,
+    time: 20,
+    ratings: 4.5,
   },
 ];
 
