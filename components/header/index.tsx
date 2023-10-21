@@ -66,7 +66,7 @@ const Header = () => {
                         </div>
                     </div>
                 </header>
-            </section>
+        </section>
     )
 };
 
