@@ -20,16 +20,24 @@ const Header = () => {
 
                             <div className="navigation d-flex gap-4 align-items-center">
                                 <div className="navigation-button">
-                                    <b className="text">Đặt hàng</b>
+                                    <Link href="#order-section">
+                                        <b className="text">Đặt hàng</b>
+                                    </Link>
                                 </div>
                                 <div className="navigation-button">
-                                    <b className="text">Dành cho Đối tác</b>
+                                    <Link href="#contact-section">   
+                                        <b className="text">Dành cho Đối tác</b>
+                                    </Link>
                                 </div>
                                 <div className="navigation-button">
-                                    <b className="text">Tải App</b>
+                                    <Link href="#download-section">
+                                        <b className="text">Tải App</b>
+                                    </Link>
                                 </div>
                                 <div className="navigation-button">
-                                    <b className="text">Liên hệ</b>
+                                    <Link href="#footer-section">
+                                        <b className="text">Liên hệ</b>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

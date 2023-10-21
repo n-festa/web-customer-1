@@ -119,14 +119,14 @@ const Testimonial = () => {
                     </div>
                  
                 </div>
-                <div className="paginator d-flex justify-content-end">
+                <div className="paginator d-flex justify-content-end mt-5">
                     <div className="paginator-arrow">
                         <img className="small-icon"
                              alt=""
                              src="/images/chevronleft.svg"
                         />
                     </div>
-                    <div className="pagination-dot-group d-flex justify-content-center align-items-center">
+                    <div className="pagination-dot-group d-flex justify-content-center align-items-center ">
                         <div className="pagination-dot-indicator active"></div>
                         <div className="pagination-dot-indicator"></div>
                         <div className="pagination-dot-indicator"></div>

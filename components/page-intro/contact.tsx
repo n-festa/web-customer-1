@@ -3,7 +3,7 @@
 
 const Contact = () => {
     return(
-        <section className="contact-us-section d-flex justify-content-center">
+        <section className="contact-us-section d-flex justify-content-center" id="contact-section">
         <div className="contact-us-container container">
             <div className="contact-us-card p-5 gap-5">
                 <div className="d-flex flex-column gap-4">

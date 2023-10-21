@@ -1,7 +1,7 @@
 
 const Footer = () => {
     return (
-    <section className="footer-2all d-flex justify-content-center">
+    <section className="footer-2all d-flex justify-content-center" id="footer-section">
         <div className="footer container">
             <div className="py-5 gap-5 d-flex">
                 <div className="logo-and-supporting-text">
