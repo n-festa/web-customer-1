@@ -1,24 +1,49 @@
 import Link from "next/link";
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 /*
 type HeaderType = {
   isErrorPage?: Boolean;
 }
 */
 const Header = () => {
+    const router = useRouter();
+    const arrayPaths = ['/']; 
+    const [onTop, setOnTop] = useState(( !arrayPaths.includes(router.pathname) ) ? false : true);
+    
+    const headerClass = () => {
+        if(window.pageYOffset === 0) {
+          setOnTop(true);
+        } else {
+          setOnTop(false);
+        }
+    }
+
+    useEffect(() => {
+        if(!arrayPaths.includes(router.pathname) ) {
+          return;
+        }
+    
+        headerClass();
+        window.onscroll = function() {
+          headerClass();
+        };
+    }, []);
+
 
     return(
-        <section className="full-width-header-navigation">
-                <header className="header d-flex align-items-center justify-content-center flex-column h-100">
-                    <div className="d-flex justify-content-between align-items-center container">
-                        <div className="d-flex align-items-center gap-4">
-                            <Link href="/">
-                                <img className="fictional-company-logo"
-                                     alt="fictional-company-logo"
-                                     src="/images/logo1.svg"
+        <section className={`full-width-header-navigation  ${!onTop ? 'site-header--fixed' : ''}`}>
+            <header className={`header d-flex align-items-center justify-content-center flex-column h-100 `}>
+                <div className="d-flex justify-content-between align-items-center container">
+                    <div className="d-flex align-items-center gap-4">
+                        <Link href="/">
+                            <img className="fictional-company-logo"
+                                alt="fictional-company-logo"
+                                src="/images/logo1.svg"
                                 />
                             </Link>
 
-                            <div className="navigation d-flex gap-4 align-items-center">
+                        <div className="navigation d-flex gap-4 align-items-center">
                                 <div className="navigation-button">
                                     <Link href="#order-section">
                                         <b className="text">Đặt hàng</b>
@@ -39,17 +64,17 @@ const Header = () => {
                                         <b className="text">Liên hệ</b>
                                     </Link>
                                 </div>
+                        </div>
+                    </div>
+
+                    <div className="navigation-actions-wrapper d-flex gap-3">
+                        <div className="navigation-actions d-flex align-items-center">
+                             <div className="login-button">
+                                <Link href="/login">
+                                    <a className="font-weight-600">Đăng nhập</a>
+                                 </Link>
                             </div>
                         </div>
-
-                        <div className="navigation-actions-wrapper d-flex gap-3">
-                            <div className="navigation-actions d-flex align-items-center">
-                                <div className="login-button">
-                                    <Link href="/login">
-                                        <a className="font-weight-600">Đăng nhập</a>
-                                    </Link>
-                                </div>
-                            </div>
                             <div className="nav-item-button d-flex">
                                 <img className="small-icon"
                                      alt="small-icon"
@@ -63,9 +88,9 @@ const Header = () => {
                                      src="/images/vn.svg"
                                 />
                             </div>
-                        </div>
                     </div>
-                </header>
+                </div>
+            </header>
         </section>
     )
 };

@@ -10,7 +10,7 @@ import 'swiper/swiper.scss';
 
 import '../assets/css/bootstrap.min.css';
 import '../assets/css/style.css';
-
+import '../assets/css/OTP.css';
 
 import * as gtag from './../utils/gtag';
 

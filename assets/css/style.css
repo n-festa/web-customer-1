@@ -25,6 +25,7 @@ body {
     --gray-500: #667085;
     --gray-600: #475467;
     --gray-700: #344054;
+    --gray-950: #0c111d;
     --primary-500: #00473c;
     --color-darkslategray-100: #00463c;
     --dark-grey: #acadb9;
@@ -1030,7 +1031,13 @@ a {
     font-family: var(--text-md-regular);
     background-color: var(--color-ivory-100);
 }
-
+.site-header--fixed{
+    position: fixed;
+    width: 100%;
+    background-color: #FFFFF0;
+    z-index: 12;
+    border-bottom: 1px solid #000000 ;
+}
 
 /*  login */
 .signup-content, .input-field-parent, .sign-up {
