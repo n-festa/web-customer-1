@@ -1,26 +1,31 @@
 import Layout from '../layouts/main';
-//import { useState } from 'react';
-//import Link from 'next/link';
+import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
+
 //import { useForm } from "react-hook-form";
 //import { server } from '../utils/server'; 
 //import { postData } from '../utils/services'; 
-//import { useRouter } from "next/router";
 //import { saveState } from '../utils/localstorage';
-//import { useState , useEffect} from 'react';
 //import TimerContainer from '../components/time/TimerContainer';
 //import BMI from '../components/BMI/index';
-/*
+
 type LoginMail = {
-    email: string;
-    password: string;
-}*/
+    phone: string;
+}
 
 const LoginPage = () => {
-  /*
+    const { handleSubmit } = useForm();
+    //const [isLoading, setIsLoading] = useState(false);
+    const router = useRouter();
+
+
     const onSubmit = async (data: LoginMail) => {
-        console.log(data);
+     //   event.preventDefault()
+        console.log("data :" + data);
+
+        router.push('/otp');
     };
-    */
+    
 
 
     return (
@@ -35,32 +40,32 @@ const LoginPage = () => {
                         <b className="heading26">Đặt ngay bữa ăn ngon & lành của riêng bạn!</b>
                     </div>
                     <div className="input-field-parent">
-                        <form action="#">
-                        <div className="input-field4">
-                            <div className="input-with-label6">
-                                <div className="label6">Điền số điện thoại của bạn</div>
-                                <div className="input-field5">
-                                    <div className="input-with-label6">
-                                        <div className="label7">Phone number</div>
-                                        <div className="input77">
-                                            <div className="dropdown1">
-                                                <img className="vn-icon2" alt="" src="/images/vn.png" />
-                                                <img  className="chevron-down-icon3" alt="" src="/images/chevrondown1.svg"  />
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <div className="input-field4">
+                                <div className="input-with-label6">
+                                    <div className="label6">Điền số điện thoại của bạn</div>
+                                    <div className="input-field5">
+                                        <div className="input-with-label6">
+                                            <div className="label7">Phone number</div>
+                                            <div className="input77">
+                                                <div className="dropdown1">
+                                                    <img className="vn-icon2" alt="" src="/images/vn.png" />
+                                                    <img  className="chevron-down-icon3" alt="" src="/images/chevrondown1.svg"  />
+                                                </div>
+                                                <input placeholder="+84 (555) 000-0000"  className="text-input1 border-none" name="phone" />
                                             </div>
-                                            <input placeholder="+84 (555) 000-0000"  className="text-input1 border-none"/>
                                         </div>
+                                        <div className="hint-text6">This is a hint text to help user.</div>
                                     </div>
-                                    <div className="hint-text6">This is a hint text to help user.</div>
+                                </div>
+                                <div className="hint-text7">
+                                    Chúng tôi sẽ gửi tới số điện thoại bạn đăng ký mã số OTP để kích
+                                    hoạt tài khoản
                                 </div>
                             </div>
-                            <div className="hint-text7">
-                                Chúng tôi sẽ gửi tới số điện thoại bạn đăng ký mã số OTP để kích
-                                hoạt tài khoản
-                            </div>
-                        </div>
-                        <div className="button49">
-                            <div className="text69">Tiếp tục</div>
-                        </div>
+                            <button className="button49 mt-3 "  type="submit">
+                                <span className="text69"  >Tiếp tục</span>
+                            </button>
                         </form>
                     </div>
                 </div>

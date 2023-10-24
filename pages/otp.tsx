@@ -1,6 +1,18 @@
 import Layout from '../layouts/main';
+//import TimerContainer from '../components/time/TimeContainer';
 
 const OTP = () => {
+
+    async function resendOTP() {
+        console.log("resendOTP");
+    }
+
+    /*
+    async function stepToAnotherInput(){
+        console.log("stepToAnotherInput");
+    }
+*/
+
     return (
         <Layout>
              <div className="sign-up otp">
@@ -20,31 +32,31 @@ const OTP = () => {
                             <div className="input-with-label6">
                                 <div className="input7">
                                     <div className="mega-input-field-base">
-                                      <div className="text68">1</div>
+                                    <input className="text68 border-none text-center" placeholder="1" />
                                     </div>
                                     <div className="mega-input-field-base1">
-                                      <div className="text68">0</div>
+                                        <input className="text68 border-none text-center" placeholder="0" />
                                     </div>
                                     <div className="mega-input-field-base1">
-                                      <div className="text68">0</div>
+                                        <input className="text68 border-none text-center" placeholder="0" />
                                     </div>
                                     <div className="mega-input-field-base1">
-                                      <div className="text68">0</div>
+                                        <input className="text68 border-none text-center" placeholder="0" />
                                     </div>
                                     <div className="mega-input-field-base1">
-                                      <div className="text68">0</div>
+                                        <input className="text68 border-none text-center" placeholder="0" />
                                     </div>
                                     <div className="mega-input-field-base1">
-                                      <div className="text68">0</div>
+                                      <input className="text68 border-none text-center" placeholder="0" />
                                     </div>
                                 </div>
                             </div>
                             <div className="hint-text6">This is a hint text to help user.</div>
                         </div>
                         <div className="button-parent">
-                            <div className="button49">
-                                <div className="text75">Gửi lại mã OTP</div>
-                            </div>
+                            <button className="button49">
+                                <div className="text75" onClick={()=> resendOTP()}>Gửi lại mã OTP</div>
+                            </button>
                             <div className="heading28 mt-2">01:23</div>
                         </div>
                     </div>

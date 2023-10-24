@@ -1240,6 +1240,7 @@ a {
     align-self: stretch;
     position: relative;
     line-height: 38px;
+    color: var(--green-light-500);
 }
 .heading27 {
     align-self: stretch;
@@ -1281,8 +1282,13 @@ a {
     justify-content: flex-start;
     padding: var(--padding-11xs) var(--padding-5xs);
 }
-
-.mega-input-field-base {
+.mega-input-field-base1 input{
+    color: var(--gray-300);
+}
+.mega-input-field-base1 input:focus-visible{
+    border: none;
+}
+.mega-input-field-base input {
     color: var(--gray-950);
 }
 .text68 {
