@@ -9,8 +9,10 @@ import type { AppProps } from 'next/app';
 import 'swiper/swiper.scss';
 
 import '../assets/css/bootstrap.min.css';
+import '../assets/css/global.css';
 import '../assets/css/style.css';
-import '../assets/css/OTP.css';
+//import '../assets/css/OTP.css';
+//import '../assets/css/phone_ver.css';
 
 import * as gtag from './../utils/gtag';
 

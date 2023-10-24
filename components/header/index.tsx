@@ -6,12 +6,18 @@ type HeaderType = {
   isErrorPage?: Boolean;
 }
 */
-const Header = () => {
+
+type HeaderType = {
+    isErrorPage?: Boolean;
+}
+
+const Header = ({ isErrorPage }: HeaderType) => {
     const router = useRouter();
     const arrayPaths = ['/']; 
-    const [onTop, setOnTop] = useState(( !arrayPaths.includes(router.pathname) ) ? false : true);
+    const [onTop, setOnTop] = useState(( !arrayPaths.includes("/")|| isErrorPage ) ? false : true);
     
     const headerClass = () => {
+        console.log(window.pageYOffset);
         if(window.pageYOffset === 0) {
           setOnTop(true);
         } else {
@@ -20,8 +26,8 @@ const Header = () => {
     }
 
     useEffect(() => {
-        if(!arrayPaths.includes(router.pathname) ) {
-          return;
+        if(!arrayPaths.includes(router.pathname) || isErrorPage) {
+            return;
         }
     
         headerClass();
