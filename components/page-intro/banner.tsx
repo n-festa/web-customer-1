@@ -8,7 +8,7 @@ const Banner = () => {
                 <div className="d-flex flex-column align-items-start gap-5">
                     <div className="heading-and-supporting-text d-flex flex-column gap-3">
                             <div className="heading-and-subheading">
-                                <div className="heading font-weight-600">
+                                <div className="heading font-weight-600 ">
                                     <p className="mb-0">Đặt ngay bữa ăn</p>
                                     <p className="ngon-lanh mb-0">ngon & lành</p>
                                     <p className="mb-0">của riêng bạn</p>

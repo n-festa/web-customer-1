@@ -1285,8 +1285,11 @@ a {
     justify-content: flex-start;
     padding: var(--padding-11xs) var(--padding-5xs);
 }
-.mega-input-field-base1 input{
+.mega-input-field-base1 input::placeholder{
     color: var(--gray-300);
+}
+.mega-input-field-base1 input:focus, .mega-input-field-base input:focus{
+    outline: none;
 }
 .mega-input-field-base1 input:focus-visible{
     border: none;
@@ -1846,7 +1849,6 @@ a {
 .border-none{
     border: none;
 }
-
 
 
 

@@ -17,7 +17,6 @@ const Header = ({ isErrorPage }: HeaderType) => {
     const [onTop, setOnTop] = useState(( !arrayPaths.includes("/")|| isErrorPage ) ? false : true);
     
     const headerClass = () => {
-        console.log(window.pageYOffset);
         if(window.pageYOffset === 0) {
           setOnTop(true);
         } else {
@@ -43,31 +42,33 @@ const Header = ({ isErrorPage }: HeaderType) => {
                 <div className="d-flex justify-content-between align-items-center container">
                     <div className="d-flex align-items-center gap-4">
                         <Link href="/">
+                        <a>
                             <img className="fictional-company-logo"
                                 alt="fictional-company-logo"
                                 src="/images/logo1.svg"
                                 />
-                            </Link>
+                                </a>
+                        </Link>
 
                         <div className="navigation d-flex gap-4 align-items-center">
                                 <div className="navigation-button">
                                     <Link href="#order-section">
-                                        <b className="text">Đặt hàng</b>
+                                        <a className="text fw-bolder">Đặt hàng</a>
                                     </Link>
                                 </div>
                                 <div className="navigation-button">
                                     <Link href="#contact-section">   
-                                        <b className="text">Dành cho Đối tác</b>
+                                        <a className="text fw-bolder">Dành cho Đối tác</a>
                                     </Link>
                                 </div>
                                 <div className="navigation-button">
                                     <Link href="#download-section">
-                                        <b className="text">Tải App</b>
+                                        <a className="text fw-bolder">Tải App</a>
                                     </Link>
                                 </div>
                                 <div className="navigation-button">
                                     <Link href="#footer-section">
-                                        <b className="text">Liên hệ</b>
+                                        <a className="text fw-bolder">Liên hệ</a>
                                     </Link>
                                 </div>
                         </div>
@@ -82,17 +83,27 @@ const Header = ({ isErrorPage }: HeaderType) => {
                             </div>
                         </div>
                             <div className="nav-item-button d-flex">
-                                <img className="small-icon"
-                                     alt="small-icon"
-                                     src="/images/shoppingbag03.svg"
-                                />
+                                <Link href="#footer-section">
+                                    <a className="text fw-bolder">
+                                        <img className="small-icon"
+                                             alt="small-icon"
+                                             src="/images/shoppingbag03.svg"
+                                        />
+                                    </a>
+                                </Link>
+                                
                             </div>
                             <div className="language-button d-flex align-items-center gap-1">
                                 <div className="language-text">VIE</div>
-                                <img className="small-icon"
-                                     alt=""
-                                     src="/images/vn.svg"
-                                />
+                                <Link href="#footer-section">
+                                    <a className="text fw-bolder">
+                                        <img className="small-icon"
+                                             alt=""
+                                             src="/images/vn.svg"
+                                        />
+                                    </a>
+                                </Link>
+                                
                             </div>
                     </div>
                 </div>

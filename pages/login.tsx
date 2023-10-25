@@ -1,6 +1,6 @@
 import Layout from '../layouts/main';
 import { useForm } from "react-hook-form";
-import { useRouter } from "next/router";
+//import { useRouter } from "next/router";
 
 //import { useForm } from "react-hook-form";
 //import { server } from '../utils/server'; 
@@ -14,16 +14,15 @@ type LoginMail = {
 }
 
 const LoginPage = () => {
-    const { handleSubmit } = useForm();
-    //const [isLoading, setIsLoading] = useState(false);
-    const router = useRouter();
+    const { register, handleSubmit, errors } = useForm();
+    //const router = useRouter();
 
 
     const onSubmit = async (data: LoginMail) => {
-     //   event.preventDefault()
-        console.log("data :" + data);
 
-        router.push('/otp');
+
+        var phone_with_area_code = "84" + data.phone.slice(1)
+        console.log("data :" + phone_with_area_code );
     };
     
 
@@ -52,9 +51,21 @@ const LoginPage = () => {
                                                     <img className="vn-icon2" alt="" src="/images/vn.png" />
                                                     <img  className="chevron-down-icon3" alt="" src="/images/chevrondown1.svg"  />
                                                 </div>
-                                                <input placeholder="+84 (555) 000-0000"  className="text-input1 border-none" name="phone" />
+                                                <input placeholder="+84 (555) 000-0000" type="number" className="text-input1 border-none" name="phone"
+                                                    ref={register( { required: true, minLength: 10, maxLength: 11 })}
+                                                />
+                                                
                                             </div>
                                         </div>
+                                        {errors.phone && errors.phone.type === 'required' && 
+                                            <p className="d-block hint-text6 ">This field is required</p>
+                                        }
+                                        {errors.phone && errors.phone.type === 'minLength' && 
+                                            <p className="d-block hint-text6 ">This field is 10 number required</p>
+                                        }
+                                        {errors.phone && errors.phone.type === 'maxLength' && 
+                                            <p className="d-block hint-text6 ">This field max 11 number required</p>
+                                        }
                                         <div className="hint-text6">This is a hint text to help user.</div>
                                     </div>
                                 </div>
