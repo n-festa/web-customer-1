@@ -226,6 +226,9 @@ a {
   text-decoration: none;
   color: black;
 }
+a:hover{
+    color: var(--icterine-500);
+}
 .small-icon {
     position: relative;
     width: 20px;

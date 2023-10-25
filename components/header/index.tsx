@@ -76,11 +76,11 @@ const Header = ({ isErrorPage }: HeaderType) => {
 
                     <div className="navigation-actions-wrapper d-flex gap-3">
                         <div className="navigation-actions d-flex align-items-center">
-                             <div className="login-button">
-                                <Link href="/login">
-                                    <a className="font-weight-600">Đăng nhập</a>
-                                 </Link>
-                            </div>
+                            <Link href="/login">
+                                <a className="login-button">
+                                    <span className="font-weight-600">Đăng nhập</span>
+                                </a>
+                            </Link>
                         </div>
                             <div className="nav-item-button d-flex">
                                 <Link href="#footer-section">
