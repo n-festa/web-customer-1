@@ -66,6 +66,7 @@ body {
       --green-light-500: #8dc63f;
       --color-floralwhite: #fffaf0;
       --green-light-100: #ddeec5;
+      --color-yellowgreen-100: #8dc63f;
 
     /* Gaps */
     --gap-13xl: 32px;
@@ -274,7 +275,9 @@ a {
     max-height: 390px;
     object-fit: cover;
 }
-
+.color-yellowgreen-100{
+    color: var(--color-yellowgreen-100);
+}
 .banner-section {
     align-self: stretch;
     background-color: var(--primary-500);
