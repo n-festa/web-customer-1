@@ -15,7 +15,7 @@ export default ({ children, title = "2ALL" }: LayoutType) => {
     <div className="app-main">
       <Head>
         <title>Page not found &mdash; {title}</title>
-        <link rel="shortcut icon" href="/images/Logo_without_name.svg" />
+        <link rel="icon" href="/images/logo.ico" />
       </Head>
 
       <Header />

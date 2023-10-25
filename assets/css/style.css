@@ -6,7 +6,7 @@ body {
 :root {
     /* fonts */
     --text-md-regular: Quicksand;
-    --text-xl-regular: SVN-Gilroy;
+    --text-xl-regular: Quicksand;
     --font-svn-circular: SVN-Circular;
     --font-poppins: Poppins;
     --text-xl-semibold: Inter;
@@ -684,6 +684,7 @@ a {
     font-size: var(--text-md-regular-size);
     color: var(--gray-900);
     height: 110px;
+    padding: var(--padding-3xs) var(--padding-sm);
 }
 
 .recaptcha-wrapper input[type="checkbox"] {
