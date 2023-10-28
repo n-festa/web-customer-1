@@ -1,34 +1,35 @@
-import Layout from '../layouts/main';
 import { useForm } from "react-hook-form";
-//import { useRouter } from "next/router";
-
-//import { useForm } from "react-hook-form";
-//import { server } from '../utils/server'; 
-//import { postData } from '../utils/services'; 
+import { server } from '../../utils/server'; 
+import { useRouter } from "next/router";
+import { postData } from '../../utils/services'; 
 //import { saveState } from '../utils/localstorage';
-//import TimerContainer from '../components/time/TimerContainer';
-//import BMI from '../components/BMI/index';
 
-type LoginMail = {
+type LoginPhone ={
     phone: string;
 }
 
-const LoginPage = () => {
+const LoginComponent = () => {
     const { register, handleSubmit, errors } = useForm();
-    //const router = useRouter();
+    const router = useRouter();
 
 
-    const onSubmit = async (data: LoginMail) => {
-
-
-        var phone_with_area_code = "84" + data.phone.slice(1)
+    const onSubmit = async (data: LoginPhone) => {
+        var phone_with_area_code = "84" + data.phone ;
+        
+        const res = await postData(`${server}auth/requestOTP`, {
+            phoneNumber: phone_with_area_code,
+        });
+        
+        if(res.status === "success"){
+            router.push({
+                pathname: '/phone_verification',
+                    query: { phoneNumber: phone_with_area_code}
+            }, '/phone_verification');
+        }
         console.log("data :" + phone_with_area_code );
     };
     
-
-
     return (
-        <Layout>
             <div className="sign-up">
                 <div className="image-login-page">
                     <div className="image-login-page-child"></div>
@@ -52,7 +53,9 @@ const LoginPage = () => {
                                                     <img  className="chevron-down-icon3" alt="" src="/images/chevrondown1.svg"  />
                                                 </div>
                                                 <input placeholder="+84 (555) 000-0000" type="number" className="text-input1 border-none" name="phone"
-                                                    ref={register( { required: true, minLength: 10, maxLength: 11 })}
+                                                    ref={register( { required: true, minLength: 10, maxLength: 11 ,
+                                                        valueAsNumber: true,
+                                                    })}
                                                 />
                                                 
                                             </div>
@@ -81,9 +84,8 @@ const LoginPage = () => {
                     </div>
                 </div>
             </div>
-        </Layout>
+
     )
 }
-  
-export default LoginPage
-  
+
+export default LoginComponent

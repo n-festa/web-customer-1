@@ -2,14 +2,12 @@ import React from 'react';
 
 interface numProp{
     num:string|number,
-    unit:string,
-    flip : boolean,
 }
 
-const NumberBox = ({num, unit, flip} : numProp)  =>{
+const NumberBox = ({num} : numProp)  =>{
     return(
         <span>
-                {num}
+            {num}
         </span>
         
     )
