@@ -60,6 +60,7 @@ const TimerContainer = ({ minutes ,seconds }: timeProps) => {
         setActive(true);
     };
 
+
     return (
          <div className="button-parent">
             <form onSubmit={handleSubmit(ReSendOTP)}>

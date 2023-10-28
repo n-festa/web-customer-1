@@ -9,7 +9,6 @@ const NumberBox = ({num} : numProp)  =>{
         <span>
             {num}
         </span>
-        
     )
 
 }
