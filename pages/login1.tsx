@@ -5,7 +5,6 @@ import Layout from '../layouts/main';
 //import { postData } from '../utils/services'; 
 //import { saveState } from '../utils/localstorage';
 import Footer from '../components/footer';
-import LoginComponent from '../components/login'
 /*
 type LoginPhone = {
     phone: string;
@@ -98,7 +97,6 @@ const LoginPage = () => {
 const LoginPage1 = () =>{
     return (
         <Layout>
-            <LoginComponent />
             <Footer />
         </Layout>
     )

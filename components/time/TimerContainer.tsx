@@ -1,63 +1,56 @@
 import React from 'react'
 import  NumberBox  from './NumberBox'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 
-interface timeProps{
-    minutes:number ,
-    seconds:number  ,
-}
 
-const TimerContainer = ({ minutes ,seconds }: timeProps) => {
+const TimerContainer = () => {
 
-    const [active, setActive] = useState(false);
+    const [active] = useState(false);
 
-
- 
-
-    /*
-    const [minutes, setMinutes] = useState<number>(0);
+    const [time] = useState<number>(0.2);
+    const [minutes, setMinutes] = useState<number>(0.2);
     const [seconds, setSeconds] = useState<number>(0);
-    const timeToDays = time * 60  * 1000;
-    let countDownDate = new Date().getTime() + timeToDays;
+
+    const timeToDays = time * 60 * 1000;
+    const countDownDate = new Date().getTime() + timeToDays;
 
     useEffect(() => {
-        var updateTime = setInterval(() => {
-            var now = new Date().getTime();
-            var difference = countDownDate - now;
+            var updateTime = setInterval(() => {
+                var now = new Date().getTime();
+                var difference = countDownDate - now;
+                var newMinutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                var newSeconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-            var newMinutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            var newSeconds = Math.floor((difference % (1000 * 60)) / 1000);
+                setMinutes(newMinutes);
+                setSeconds(newSeconds);
 
-            setMinutes(newMinutes);
-            setSeconds(newSeconds);
+                if (difference <= 0) {
+                    clearInterval(updateTime);
+                    setMinutes(0);
+                    setSeconds(0);
+                }
+            })
 
-
-            if (difference <= 0) {
+            return () => {
                 clearInterval(updateTime);
-                setMinutes(0);
-                setSeconds(0);
             }
-        })
-        return () => {
-            clearInterval(updateTime);
-        }
-    }, [time]);
+    }, []);
 
-*/
- 
 
     if (minutes == 0 && seconds == 0){
-        console.log("het thoi gian");
-       // setActive(true);
+        //console.log("het thoi gian");
+        //setActive(true);
+    }else{
+        
     }
-    
+
+
     //gui lai ma
     const { handleSubmit } = useForm();
 
     const ReSendOTP = async () => {
         console.log("data :"  );
-        setActive(true);
     };
 
 

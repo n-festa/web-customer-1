@@ -8,8 +8,15 @@ interface BMIType{
 const BMI = ({height, weight} : BMIType) => {
     const BMIindex = weight/ (height * height) * 10000;
     return (
-        <div className=" mt-2  rounded-xl">
-            BMI : {BMIindex}
+        <div className="ch-s-bmi-parent">
+            <div className="ch-s-bmi font-size24">Chỉ số BMI</div>
+                <div className="data-parent">
+                    <div className="data position-relative">
+                    <div className="data-child"></div>
+                    <div className="div5">{BMIindex}</div>
+                </div>
+                <div className="cn-i">Cân đối</div>
+            </div>
         </div>
     )
 };
