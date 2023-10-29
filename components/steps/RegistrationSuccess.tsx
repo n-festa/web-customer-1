@@ -15,7 +15,7 @@ const RegistrationSuccess = () => {
                     </div>
                 </div>
                 <div className="frame-parent14">
-                    <BMI height="163" weight="70" />
+                    <BMI height={163} weight={70} />
                     <div className="ch-s-bmi-parent">
                         <div className="ch-s-bmi font-size24">Năng lượng</div>
                         <div className="data-parent">
