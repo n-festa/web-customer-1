@@ -2,13 +2,25 @@ import { useForm } from "react-hook-form";
 
 type StepType = {
     onChange : any,
+    setHeight: any,
+    setWeight: any,
 }
 
-const Additional = ({onChange}: StepType) => {
+interface LoginPhone {
+    name: string;
+    email: string;
+    height: number;
+    weight: number;
+}
+
+
+const Additional = ({onChange,setHeight,setWeight}: StepType) => {
     const { register,handleSubmit, errors } = useForm();
 
-    const onSubmit = async () => {
-        console.log("data :"  );
+    const onSubmit = async (data: LoginPhone) => {
+        console.log("data :"   );
+        setHeight(data.height);
+        setWeight(data.weight);
         onChange(4);
     };
 
@@ -75,17 +87,13 @@ const Additional = ({onChange}: StepType) => {
                                             <div className="text80 font-size16">
                                                 <input placeholder="Ví dụ: 27/07/1995" type="date"
                                                 className="text-input1 border-none no-outline no-padding w-100" name="birthdate"
-                                                ref={register( { 
-                                                    required: true ,
-                                                })}
+                                                
                                             />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                {errors.birthdate && errors.email.birthdate === 'required' && 
-                                    <p className="message message--error">This field is required</p>
-                                }
+                                
                             </div>
                             <div className="gioi-tinh">
                                 <div className="text73">Giới tính</div>
@@ -130,26 +138,25 @@ const Additional = ({onChange}: StepType) => {
                                     <div className="email1">
                                         <div className="input-with-label6">
                                             <div className="text73">Chiều cao ( cm )</div>
-                                            <div className="input7">
-                                                <div className="content28">
-                                                    <div className="text80">
-                                                        <span>Ví dụ: 163</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <input placeholder="Ví dụ: 163" type="text"
+                                                className="text-input1 border-none no-outline no-padding w-100 input7" name="height"
+                                                ref={register( { 
+                                                    required: true ,
+                                                })}
+                                            />
+                                            
                                         </div>
                                         <div className="hint-text6">Cm</div>
                                     </div>
                                     <div className="email1">
                                         <div className="input-with-label6">
                                             <div className="text73">Cân nặng ( kg )</div>
-                                            <div className="input7">
-                                                <div className="content28">
-                                                    <div className="text80">
-                                                    <span>Ví dụ: 58</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <input placeholder="Ví dụ: 60" type="text"
+                                                className="text-input1 border-none no-outline no-padding w-100 input7" name="weight"
+                                                ref={register( { 
+                                                    required: true ,
+                                                })}
+                                            />
                                         </div>
                                         <div className="hint-text6">Kg</div>
                                     </div>

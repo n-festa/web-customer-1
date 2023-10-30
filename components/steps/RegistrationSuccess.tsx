@@ -1,8 +1,13 @@
 import Link from "next/link"
 import BMI from "../BMI"
 
+type StepType = {
+    height: any,
+    weight: any,
+}
 
-const RegistrationSuccess = () => {
+const RegistrationSuccess = ({height,weight}: StepType) => {
+    console.log(height);
     return (
         <div className="otp sign-up">
             <div className="content26">
@@ -15,7 +20,7 @@ const RegistrationSuccess = () => {
                     </div>
                 </div>
                 <div className="frame-parent14">
-                    <BMI height={163} weight={70} />
+                    <BMI height={height} weight={weight} />
                     <div className="ch-s-bmi-parent">
                         <div className="ch-s-bmi font-size24">Năng lượng</div>
                         <div className="data-parent">
