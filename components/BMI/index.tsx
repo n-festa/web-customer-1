@@ -6,7 +6,7 @@ interface BMIType{
 }
 
 const BMI = ({height, weight} : BMIType) => {
-    const BMIindex = weight/ (height * height) * 10000;
+    const BMIindex = (weight/ (height * height) * 10000).toFixed(2);
     return (
         <div className="ch-s-bmi-parent">
             <div className="ch-s-bmi font-size24">Chỉ số BMI</div>
