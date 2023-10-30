@@ -7,22 +7,22 @@ interface BMIType{
 
 const BMI = ({height, weight} : BMIType) => {
     const BMIindex = (weight/ (height * height) * 10000).toFixed(2);
-    const result_bmi ="";
-    if( BMIindex < 16){
+    let result_bmi ="";
+    if( Number(BMIindex) < 16){
         result_bmi = "Gầy độ 3";
-    }else if( 16 < BMIindex && BMIindex <17){
+    }else if( 16 < Number(BMIindex)  && Number(BMIindex)  <17){
         result_bmi = "Gầy độ 2";
-    }else if( 17< BMIindex && BMIindex <18.5){
+    }else if( 17< Number(BMIindex)  && Number(BMIindex)  <18.5){
         result_bmi = "Gầy độ 1";
-    }else if( 18.5 < BMIindex && BMIindex <25){
+    }else if( 18.5 < Number(BMIindex)  && Number(BMIindex)  <25){
         result_bmi = "Binh thuong";
-    }else if( 25 < BMIindex && BMIindex <30){
+    }else if( 25 < Number(BMIindex)  && Number(BMIindex)  <30){
         result_bmi = "Thừa cân";
-    }else if( 30 < BMIindex && BMIindex <35){
+    }else if( 30 < Number(BMIindex)  && Number(BMIindex)  <35){
         result_bmi = "Béo phì độ 1";
-    }else if( 35 < BMIindex && BMIindex <40){
+    }else if( 35 < Number(BMIindex)  && Number(BMIindex)  <40){
         result_bmi = "Béo phì độ 2";
-    }else if( 40 < BMIindex){
+    }else if( 40 < Number(BMIindex) ){
         result_bmi = "Béo phì độ 3";
     }
 
