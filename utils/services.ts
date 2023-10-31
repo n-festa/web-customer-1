@@ -12,5 +12,21 @@ export async function postData(url = '', data = {}) {
         referrerPolicy: 'no-referrer', 
         body: JSON.stringify(data) 
     });
-  return response.json();
+    return response.json();
+};
+
+export async function postDataInclude(url = '', data = {}) {
+    const response = await fetch(url, {
+        method: 'POST', 
+        credentials: 'include',
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Credentials": true
+        },
+        redirect: 'follow', 
+        referrerPolicy: 'no-referrer', 
+        body: JSON.stringify(data) 
+    });
+    return response.json();
 }

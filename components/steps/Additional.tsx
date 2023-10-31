@@ -1,27 +1,49 @@
 import { useForm } from "react-hook-form";
+import { postData } from '../../utils/services'; 
+import { server } from '../../utils/server'; 
 
 type StepType = {
     onChange : any,
     setHeight: any,
     setWeight: any,
+    setKcal: any,
 }
 
-interface LoginPhone {
+interface LoginType {
     name: string;
     email: string;
-    height: number;
-    weight: number;
+    ngaySinh:any;
+    movement: number;
+    sex: number;
+    chieuCao: number;
+    canNang: number;
+    allergy: string,
+    diseases:string;
+    gioiTinh:number;
+    loaiLaoDong:number;
 }
 
 
-const Additional = ({onChange,setHeight,setWeight}: StepType) => {
+const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
     const { register,handleSubmit, errors } = useForm();
 
-    const onSubmit = async (data: LoginPhone) => {
-        console.log("data :"   );
-        setHeight(data.height);
-        setWeight(data.weight);
-        onChange(4);
+    const onSubmit = async (data: LoginType) => {
+        let selectedDate = document.getElementById('birthDate') as HTMLInputElement;
+        data.ngaySinh = selectedDate.value;
+        data.gioiTinh = 1;
+        data.loaiLaoDong = 2;
+
+        setHeight(data.chieuCao);
+        setWeight(data.canNang);
+
+        const res = await postData(`${server}auth/setEnergy`, {
+            data: data,
+        });
+        
+        setKcal(res.result.result.nangLuongKhuyenNghi.giaTri_Min);
+        setTimeout(() => {
+            onChange(4);
+        }, 2000);
     };
 
     return (
@@ -49,7 +71,6 @@ const Additional = ({onChange,setHeight,setWeight}: StepType) => {
                                             />
                                         </div>
                                     </div>
-                                    
                                 </div>
                                 {errors.name && errors.name.type === 'required' && 
                                     <p className="d-block hint-text6 ">This field is required</p>
@@ -86,9 +107,9 @@ const Additional = ({onChange,setHeight,setWeight}: StepType) => {
                                         <div className="content28">
                                             <div className="text80 font-size16">
                                                 <input placeholder="Ví dụ: 27/07/1995" type="date"
-                                                className="text-input1 border-none no-outline no-padding w-100" name="birthdate"
-                                                
-                                            />
+                                                className="text-input1 border-none no-outline no-padding w-100" name="ngaySinh"
+                                                id="birthDate"
+                                                />
                                             </div>
                                         </div>
                                     </div>
@@ -100,67 +121,52 @@ const Additional = ({onChange,setHeight,setWeight}: StepType) => {
                                 <div className="radio-check-parent">
                                     <div className="radio-check">
                                         <div className="input10">
-                                            <div className="checkbox-base1"></div>
+                                            <input type="radio" name="gioiTinh" className="checkbox-base1" value="1" />
                                         </div>
+                                        
                                         <div className="text-and-supporting-text3">
                                             <div className="text78">Nam</div>
-                                            <div className="supporting-text54">
-                                                Save my login details for next time.
-                                            </div>
                                         </div>
                                     </div>
                                     <div className="radio-check">
                                         <div className="input10">
-                                            <div className="checkbox-base1"></div>
+                                            <input type="radio" name="gioiTinh" className="checkbox-base1" value="0" />
                                         </div>
                                         <div className="text-and-supporting-text3">
                                             <div className="text78">Nữ</div>
-                                            <div className="supporting-text54">
-                                                Save my login details for next time.
-                                            </div>
                                         </div>
                                     </div>
-                                    <div className="radio-check">
-                                        <div className="input10">
-                                            <div className="checkbox-base1"></div>
-                                        </div>
-                                        <div className="text-and-supporting-text3">
-                                            <div className="text78">Khác</div>
-                                            <div className="supporting-text54">
-                                                Save my login details for next time.
-                                            </div>
-                                        </div>
-                                      </div>
-                                    </div>
+                                    
                                 </div>
+                            </div>
 
-                                <div className="email-parent">
-                                    <div className="email1">
-                                        <div className="input-with-label6">
-                                            <div className="text73">Chiều cao ( cm )</div>
-                                            <input placeholder="Ví dụ: 163" type="text"
-                                                className="text-input1 border-none no-outline no-padding w-100 input7" name="height"
-                                                ref={register( { 
-                                                    required: true ,
-                                                })}
-                                            />
+                            <div className="email-parent">
+                                <div className="email1">
+                                    <div className="input-with-label6">
+                                        <div className="text73">Chiều cao ( cm )</div>
+                                        <input placeholder="Ví dụ: 163" type="text"
+                                            className="text-input1 border-none no-outline no-padding w-100 input7" name="chieuCao"
+                                            ref={register( { 
+                                                required: true ,
+                                            })}
+                                        />
                                             
-                                        </div>
-                                        <div className="hint-text6">Cm</div>
                                     </div>
-                                    <div className="email1">
-                                        <div className="input-with-label6">
-                                            <div className="text73">Cân nặng ( kg )</div>
-                                            <input placeholder="Ví dụ: 60" type="text"
-                                                className="text-input1 border-none no-outline no-padding w-100 input7" name="weight"
-                                                ref={register( { 
-                                                    required: true ,
-                                                })}
-                                            />
-                                        </div>
-                                        <div className="hint-text6">Kg</div>
-                                    </div>
+                                    <div className="hint-text6">Cm</div>
                                 </div>
+                                <div className="email1">
+                                    <div className="input-with-label6">
+                                        <div className="text73">Cân nặng ( kg )</div>
+                                        <input placeholder="Ví dụ: 60" type="text"
+                                            className="text-input1 border-none no-outline no-padding w-100 input7" name="canNang"
+                                            ref={register( { 
+                                                required: true ,
+                                            })}
+                                        />
+                                    </div>
+                                    <div className="hint-text6">Kg</div>
+                                </div>
+                            </div>
                         </div>
 
                         <div className="user-info">
@@ -170,10 +176,10 @@ const Additional = ({onChange,setHeight,setWeight}: StepType) => {
                                      <div className="button56">
                                         <div className="text83">Nhẹ nhàng</div>
                                     </div>
-                                    <div className="button57">
+                                    <div className="button56 active">
                                         <div className="text83">Trung Bình</div>
                                     </div>
-                                    <div className="button59">
+                                    <div className="button56">
                                         <div className="text83">Nặng</div>
                                     </div>
                                 </div>
@@ -184,21 +190,21 @@ const Additional = ({onChange,setHeight,setWeight}: StepType) => {
                                     <div className="button56">
                                         <div className="text83">Hỗn hợp</div>
                                     </div>
-                                    <div className="button61">
+                                    <div className="button56">
                                         <div className="text83">Thuần chay</div>
                                     </div>
-                                    <div className="button61">
+                                    <div className="button56">
                                         <div className="text83">Chỉ ăn thịt</div>
                                     </div>
                                 </div>
                                 <div className="button-group1">
-                                    <div className="button61">
+                                    <div className="button56">
                                         <div className="text83">Cá</div>
                                     </div>
-                                    <div className="button61">
+                                    <div className="button56 active">
                                         <div className="text83">Chay</div>
                                     </div>
-                                    <div className="button61">
+                                    <div className="button56">
                                         <div className="text83">Không ăn kiêng</div>
                                     </div>
                                 </div>
@@ -206,11 +212,11 @@ const Additional = ({onChange,setHeight,setWeight}: StepType) => {
                             <div className="ten">
                                 <div className="input-with-label6">
                                     <div className="text73">Dị ứng với đồ ăn (nếu có)</div>
-                                    <div className="input15">
-                                        <div className="content28">
-                                            <div className="text80">Ví dụ: sữa động vật, trứng...</div>
-                                        </div>
-                                    </div>
+                                    <input placeholder="Ví dụ: sữa động vật, trứng..." type="text"
+                                        className="text-input1 border-none no-outline no-padding w-100 input7"
+                                        name="allergy"
+                                    />
+                                    
                                 </div>
                                 <div className="supporting-text53">
                                     Chia sẻ thêm về đồ ăn mà bạn bị dị ứng. Ví dụ: sữa động vật,
@@ -221,11 +227,11 @@ const Additional = ({onChange,setHeight,setWeight}: StepType) => {
                                 <div className="ten">
                                 <div className="input-with-label6">
                                     <div className="text73">Bệnh mãn tính (nếu có)</div>
-                                    <div className="input15">
-                                        <div className="content28">
-                                            <div className="text80">Ví dụ: Cao huyết áp...</div>
-                                        </div>
-                                    </div>
+                                    <input placeholder="Ví dụ: Cao huyết áp..." type="text"
+                                        className="text-input1 border-none no-outline no-padding w-100 input7" 
+                                        name="diseases"
+                                    />
+                                   
                                 </div>
                                 <div className="supporting-text53">
                                     Tim, Cao huyết áp, Huyết áp thấp, Gout, Tiểu đường, hen suyễn,
@@ -236,8 +242,8 @@ const Additional = ({onChange,setHeight,setWeight}: StepType) => {
                                 <div className="text73">Chế độ ăn mong đợi</div>
                                 <div className="radio-check-group">
                                     <div className="radio-check3">
-                                         <div className="input10">
-                                            <div className="checkbox-base1"></div>
+                                        <div className="input10">
+                                            <input type="radio" name="che_do_an" className="checkbox-base1" value="0" />
                                         </div>
                                         <div className="text-and-supporting-text3">
                                             <div className="text78">Thuần chay</div>
@@ -248,7 +254,7 @@ const Additional = ({onChange,setHeight,setWeight}: StepType) => {
                                     </div>
                                     <div className="radio-check3">
                                         <div className="input10">
-                                            <div className="checkbox-base1"></div>
+                                            <input type="radio" name="che_do_an" className="checkbox-base1" value="1" />
                                         </div>
                                         <div className="text-and-supporting-text3">
                                             <div className="text78">Eat clean</div>
@@ -259,7 +265,7 @@ const Additional = ({onChange,setHeight,setWeight}: StepType) => {
                                     </div>
                                     <div className="radio-check3">
                                         <div className="input10">
-                                            <div className="checkbox-base1"></div>
+                                            <input type="radio" name="che_do_an" className="checkbox-base1" value="2" />
                                         </div>
                                         <div className="text-and-supporting-text3">
                                             <div className="text78">Tăng cơ</div>
@@ -270,7 +276,7 @@ const Additional = ({onChange,setHeight,setWeight}: StepType) => {
                                     </div>
                                     <div className="radio-check3">
                                          <div className="input10">
-                                            <div className="checkbox-base1"></div>
+                                            <input type="radio" name="che_do_an" className="checkbox-base1" value="3" />
                                         </div>
                                         <div className="text-and-supporting-text3">
                                             <div className="text78">Bổ sung chất xơ</div>
@@ -281,7 +287,7 @@ const Additional = ({onChange,setHeight,setWeight}: StepType) => {
                                     </div>
                                     <div className="radio-check3">
                                         <div className="input10">
-                                            <div className="checkbox-base1"></div>
+                                            <input type="radio" name="che_do_an" className="checkbox-base1" value="4" />
                                         </div>
                                         <div className="text-and-supporting-text3">
                                             <div className="text78">Chế độ ăn hỗn hợp</div>
@@ -298,19 +304,17 @@ const Additional = ({onChange,setHeight,setWeight}: StepType) => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="input15">
-                                         <div className="content28">
-                                            <div className="text80">
-                                            Vui lòng điền tên chế độ ăn mong muốn
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <input placeholder="Vui lòng điền tên chế độ ăn mong muốn" type="text"
+                                        className="text-input1 border-none no-outline no-padding w-100 input7"
+                                        name="allergy"
+                                       
+                                    />
                                 </div>
                             </div>
                         </div>
                     </div>
                     <button className="button68 text-center"  type="submit">
-                        <span className="text69"  >Hoàn tất</span>
+                        <span className="text69">Hoàn tất</span>
                     </button>
                 </form>
             </div>

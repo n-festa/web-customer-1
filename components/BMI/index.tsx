@@ -26,12 +26,6 @@ const BMI = ({height, weight} : BMIType) => {
         result_bmi = "Béo phì độ 3";
     }
 
-
-
-
-
-    console.log(result_bmi);
-
     return (
         <div className="ch-s-bmi-parent">
             <div className="ch-s-bmi font-size24">Chỉ số BMI</div>

@@ -12,17 +12,16 @@ function ActiveStepFormComponent() {
     const [phone,setPhone] = useState<string>("");
     const [height,setHeight] = useState<number>(0);
     const [weight,setWeight] = useState<number>(0);
+    const [kcal,setKcal] = useState<number>(0);
     switch (step) {
         case 1:
             return <LoginComponent onChange={setStep} setPhone={setPhone}/>;
         case 2:
             return <PhoneVerificationComponent phone={phone} onChange={setStep}/>;
         case 3:
-            return <Additional onChange={setStep} setHeight={setHeight} setWeight={setWeight} />;;
+            return <Additional onChange={setStep} setHeight={setHeight} setWeight={setWeight} setKcal={setKcal}/>;;
         case 4:
-            return <RegistrationSuccess height={height} weight={weight}/>; 
-
-       
+            return <RegistrationSuccess height={height} weight={weight} kcal={kcal}/>; 
         default:
           return null;
     }

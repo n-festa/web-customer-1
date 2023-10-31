@@ -4,10 +4,10 @@ import BMI from "../BMI"
 type StepType = {
     height: any,
     weight: any,
+    kcal:any,
 }
 
-const RegistrationSuccess = ({height,weight}: StepType) => {
-    console.log(height);
+const RegistrationSuccess = ({height,weight,kcal}: StepType) => {
     return (
         <div className="otp sign-up">
             <div className="content26">
@@ -26,7 +26,7 @@ const RegistrationSuccess = ({height,weight}: StepType) => {
                         <div className="data-parent">
                             <div className="data position-relative">
                                 <div className="data-child"></div>
-                                <div className="div6">2350</div>
+                                <div className="div6">{kcal}</div>
                             </div>
                             <div className="cn-i">Kcal/ ngày</div>
                         </div>

@@ -4,10 +4,10 @@ import Ingredient from './ingredient';
 
 
 const MenuItem = ({   name,  price,
-                 images, merchart, currentPrice,
-                 cook_method,  time ,
-                    ingredient,
-                 distance, ratings, kcal}: ProductTypeList) => {
+                images, merchart, currentPrice,
+                cook_method,  time ,
+                ingredient,
+                distance, ratings, kcal}: ProductTypeList) => {
     return(
         <div className="food-card d-flex flex-column ">
             <div className="frame-parent d-flex flex-column">

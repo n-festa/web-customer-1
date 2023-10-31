@@ -12,9 +12,7 @@ const CheckLogin =() =>{
     const user = loadState("userLogIn");
    
     if(user){
-        console.log(user);
         return(
-             
             <div className="navbar-navt">
                     <a className="nav-link dropdown-toggle mr-2" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i className="icon-avatar"></i>

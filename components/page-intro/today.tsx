@@ -7,7 +7,6 @@ import { ProductTypeList } from 'types';
 const Today = () => {
     const { data } = useSwr('/api/products', fetcher);
 
-    console.log(data);
     if (!data) return <div>Loading</div>;
 
     return(

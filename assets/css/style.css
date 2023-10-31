@@ -1686,7 +1686,7 @@ a:hover{
     justify-content: center;
     z-index: 8;
 }
-.button56, .button57 {
+.button56 {
     border-radius: var(--br-5xl);
     box-shadow: var(--shadow-xs);
     box-sizing: border-box;
@@ -1709,7 +1709,7 @@ a:hover{
     justify-content: center;
 }
 
-.button57 {
+.button56.active {
     background-color: var(--primary-500);
     border: 1px solid var(--primary-500);
     z-index: 7;

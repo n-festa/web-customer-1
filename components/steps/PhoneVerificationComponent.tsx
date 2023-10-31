@@ -1,6 +1,8 @@
 //import { useForm } from "react-hook-form";
 import TimerContainer   from '../time/TimerContainer';
 import { useState,useEffect,createRef } from "react";
+import { postData } from '../../utils/services'; 
+import { server } from '../../utils/server'; 
 
 type StepType = {
     onChange : any,
@@ -8,7 +10,6 @@ type StepType = {
 }
 
 const PhoneVerificationComponent = ({phone,onChange}: StepType) => {
-    
     // show 6 input
     const numberOfInputs =  6;
     const [inputRefsArray] = useState(() =>
@@ -59,18 +60,18 @@ const PhoneVerificationComponent = ({phone,onChange}: StepType) => {
     const authenticateOTP= async(phoneNumber:string,inputOTP: string)  =>{
         console.log("phoneNumber: " + phoneNumber);
         console.log("inputOTP:" + inputOTP);
-        /*
         const res = await postData(`${server}auth/authenticateOTP`, {
             phoneNumber: phoneNumber,
             inputOTP:inputOTP
         });
 
-        if(res.status === "success"){
-            router.push( '/additional-sign-up-info');
+        console.log(res);
+        if(res.status == "success"){
+            setTimeout(() => {
+                onChange(3);
+            }, 2000);
         }
-        */
-
-        onChange(3);
+       // onChange(3);
     }
 
 
@@ -93,7 +94,7 @@ const PhoneVerificationComponent = ({phone,onChange}: StepType) => {
                             <div className="input7" id={`${currentIndex}`}>
                                 {inputRefsArray.map((ref: any, currentIndex) => {
                                     return (
-                                        <div className="mega-input-field-base1">
+                                        <div className="mega-input-field-base1" key={currentIndex} >
                                             <input className="text68 border-none text-center" 
                                             name="phone-value"
                                             key={currentIndex} 

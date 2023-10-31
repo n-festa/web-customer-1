@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
-
+import {postData } from '../../utils/services'; 
+import { server } from '../../utils/server'; 
 interface LoginPhone {
   phone: string;
 }
@@ -16,8 +17,21 @@ const LoginComponent = ({onChange,setPhone}: StepType) => {
     const onSubmit = async (data: LoginPhone) => {
         var phone_with_area_code = "84" + data.phone ;
         console.log("data :" + phone_with_area_code );
+
         setPhone(phone_with_area_code);
-        onChange(2);
+
+        const res = await postData(`${server}auth/requestOTP`, {
+            phoneNumber: phone_with_area_code,
+        });
+   
+
+      
+        if(res.status == "success"){
+            setTimeout(() => {
+                onChange(2);
+            }, 2000000);
+        }
+      //  onChange(2);
     };
 
     return (
