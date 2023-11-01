@@ -1,9 +1,9 @@
 import Layout from '../../layouts/main';
 import Footer from '../../components/footer';
-import LoginComponent   from '../../components/steps/LoginComponent';
-import PhoneVerificationComponent   from '../../components/steps/PhoneVerificationComponent';
-import Additional   from '../../components/steps/Additional';
-import RegistrationSuccess   from '../../components/steps/RegistrationSuccess';
+import LoginComponent   from '../../components/LoginSteps/LoginComponent';
+import PhoneVerificationComponent   from '../../components/LoginSteps/PhoneVerificationComponent';
+import Additional   from '../../components/LoginSteps/Additional';
+import RegistrationSuccess   from '../../components/LoginSteps/RegistrationSuccess';
 import { useState } from "react";
 
 
