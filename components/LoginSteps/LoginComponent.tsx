@@ -16,20 +16,18 @@ const LoginComponent = ({onChange,setPhone}: StepType) => {
    
     const onSubmit = async (data: LoginPhone) => {
         var phone_with_area_code = "84" + data.phone ;
-        console.log("data :" + phone_with_area_code );
+  //     console.log("data :" + phone_with_area_code );
 
         setPhone(phone_with_area_code);
 
         const res = await postData(`${server}auth/requestOTP`, {
             phoneNumber: phone_with_area_code,
         });
-   
-
-      
+        console.log(res);
         if(res.status == "success"){
             setTimeout(() => {
                 onChange(2);
-            }, 2000000);
+            }, 1000000);
         }
       //  onChange(2);
     };

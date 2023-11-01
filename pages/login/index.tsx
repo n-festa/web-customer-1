@@ -8,7 +8,7 @@ import { useState } from "react";
 
 
 function ActiveStepFormComponent() {
-    const [step,setStep] = useState<number>(3);
+    const [step,setStep] = useState<number>(1);
     const [phone,setPhone] = useState<string>("");
     const [height,setHeight] = useState<number>(0);
     const [weight,setWeight] = useState<number>(0);

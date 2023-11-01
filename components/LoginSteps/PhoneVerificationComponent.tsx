@@ -58,8 +58,6 @@ const PhoneVerificationComponent = ({phone,onChange}: StepType) => {
 
 
     const authenticateOTP= async(phoneNumber:string,inputOTP: string)  =>{
-        console.log("phoneNumber: " + phoneNumber);
-        console.log("inputOTP:" + inputOTP);
         const res = await postData(`${server}auth/authenticateOTP`, {
             phoneNumber: phoneNumber,
             inputOTP:inputOTP
@@ -71,6 +69,9 @@ const PhoneVerificationComponent = ({phone,onChange}: StepType) => {
                 onChange(3);
             }, 2000);
         }
+        setTimeout(() => {
+            onChange(3);
+        }, 2000);
        // onChange(3);
     }
 
@@ -122,7 +123,7 @@ const PhoneVerificationComponent = ({phone,onChange}: StepType) => {
                         </div>
                     </div>
 
-                    <TimerContainer />
+                    <TimerContainer phone={phone} />
                 </div>
             </div>
         </div>
