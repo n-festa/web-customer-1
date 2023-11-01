@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { postData } from '../../utils/services'; 
 import { server } from '../../utils/server'; 
+import { useState } from "react";
 
 type StepType = {
     onChange : any,
@@ -25,8 +26,18 @@ interface LoginType {
 
 
 const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
-    const { register,handleSubmit, errors } = useForm();
+    const [styling, setstyling] = useState({ status: false,from: "",   style: "" });
+    function handleClick(childNo :any) {
+        setstyling({ status: true, from: childNo, style: "applyBgColor" });
+    }
 
+    const [cheDoAn, setCheDoAn] = useState({ status: false,from: "",   style: "" });
+    function handleClickCheDoAn(childNo:any) {
+        setCheDoAn({ status: true, from: childNo, style: "applyBgColor" });
+    }
+
+
+    const { register,handleSubmit, errors } = useForm();
     const onSubmit = async (data: LoginType) => {
         let selectedDate = document.getElementById('birthDate') as HTMLInputElement;
         data.ngaySinh = selectedDate.value;
@@ -172,40 +183,88 @@ const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
                         <div className="user-info">
                             <div className="gioi-tinh1">
                                 <div className="text73">Mức độ vận động hàng ngày</div>
-                                <div className="button-group">
-                                     <div className="button56">
-                                        <div className="text83">Nhẹ nhàng</div>
+                                
+                                <div className="donate-now button-group">
+                                    <div className={
+                                            styling?.status && styling?.from == "child-1"
+                                              ? "button56 active"
+                                              : "button56"
+                                        } >
+                                        <input className="d-none" type="radio" id="a25" name="amount" />
+                                        <label htmlFor="a25"  className="text83" onClick={() => handleClick(`child-1`)}>Nhẹ nhàng</label>
                                     </div>
-                                    <div className="button56 active">
-                                        <div className="text83">Trung Bình</div>
+
+                                    <div className={
+                                            styling?.status && styling?.from == "child-2"
+                                              ? "button56 active"
+                                              : "button56"
+                                        } >
+                                        <input  className="d-none" type="radio" id="a50" name="amount" />
+                                        <label htmlFor="a50" className="text83" onClick={() => handleClick(`child-2`)}>Trung Bình</label>
                                     </div>
-                                    <div className="button56">
-                                        <div className="text83">Nặng</div>
+                                    <div className={
+                                            styling?.status && styling?.from == "child-3"
+                                              ? "button56 active"
+                                              : "button56"
+                                        } >
+                                        <input  className="d-none" type="radio" id="a75" name="amount" />
+                                        <label htmlFor="a75" className="text83" onClick={() => handleClick(`child-3`)}>Nặng</label>
                                     </div>
                                 </div>
                             </div>
                             <div className="gioi-tinh2">
                                 <div className="label13">Chế độ ăn hiện tại</div>
                                 <div className="button-group1">
-                                    <div className="button56">
-                                        <div className="text83">Hỗn hợp</div>
+                                    <div className={
+                                            cheDoAn?.status && cheDoAn?.from == "child-4"
+                                              ? "button56 active"
+                                              : "button56"
+                                        } >
+                                        <input  className="d-none" type="radio" id="a75" name="amount" />
+                                        <label htmlFor="a75" className="text83" onClick={() => handleClickCheDoAn(`child-4`)}>Hỗn hợp</label>
                                     </div>
-                                    <div className="button56">
-                                        <div className="text83">Thuần chay</div>
+                                    <div className={
+                                            cheDoAn?.status && cheDoAn?.from == "child-5"
+                                              ? "button56 active"
+                                              : "button56"
+                                        } >
+                                        <input  className="d-none" type="radio" id="a75" name="amount" />
+                                        <label htmlFor="a75" className="text83" onClick={() => handleClickCheDoAn(`child-5`)}>Thuần chay</label>
                                     </div>
-                                    <div className="button56">
-                                        <div className="text83">Chỉ ăn thịt</div>
+                                    <div className={
+                                            cheDoAn?.status && cheDoAn?.from == "child-6"
+                                              ? "button56 active"
+                                              : "button56"
+                                        } >
+                                        <input  className="d-none" type="radio" id="a75" name="amount" />
+                                        <label htmlFor="a75" className="text83" onClick={() => handleClickCheDoAn(`child-6`)}>Chỉ ăn thịt </label>
                                     </div>
+                                    
                                 </div>
                                 <div className="button-group1">
-                                    <div className="button56">
-                                        <div className="text83">Cá</div>
+                                    <div className={
+                                            cheDoAn?.status && cheDoAn?.from == "child-7"
+                                              ? "button56 active"
+                                              : "button56"
+                                        } >
+                                        <input  className="d-none" type="radio" id="a75" name="amount" />
+                                        <label htmlFor="a75" className="text83" onClick={() => handleClickCheDoAn(`child-7`)}>Cá </label>
                                     </div>
-                                    <div className="button56 active">
-                                        <div className="text83">Chay</div>
+                                    <div className={
+                                            cheDoAn?.status && cheDoAn?.from == "child-8"
+                                              ? "button56 active"
+                                              : "button56"
+                                        } >
+                                        <input  className="d-none" type="radio" id="a75" name="amount" />
+                                        <label htmlFor="a75" className="text83" onClick={() => handleClickCheDoAn(`child-8`)}>Chay </label>
                                     </div>
-                                    <div className="button56">
-                                        <div className="text83">Không ăn kiêng</div>
+                                    <div className={
+                                            cheDoAn?.status && cheDoAn?.from == "child-9"
+                                              ? "button56 active"
+                                              : "button56"
+                                        } >
+                                        <input  className="d-none" type="radio" id="a75" name="amount" />
+                                        <label htmlFor="a75" className="text83" onClick={() => handleClickCheDoAn(`child-9`)}>Không ăn kiêng</label>
                                     </div>
                                 </div>
                             </div>
