@@ -1,6 +1,9 @@
 import { useForm } from "react-hook-form";
 import {postData } from '../../utils/services'; 
 import { server } from '../../utils/server'; 
+import axiosAuthen from "../../axios/axiosAuthen";
+import axios from "axios";
+
 interface LoginPhone {
   phone: string;
 }
@@ -16,10 +19,33 @@ const LoginComponent = ({onChange,setPhone}: StepType) => {
    
     const onSubmit = async (data: LoginPhone) => {
         var phone_with_area_code = "84" + data.phone ;
-  //     console.log("data :" + phone_with_area_code );
-
         setPhone(phone_with_area_code);
 
+        await fetch('http://localhost:3000/api/v1/auth/requestOTP', {
+            method: 'post',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({
+              phoneNumber: phone_with_area_code,
+            })
+        })
+        .then(res => res.json())
+        .then(json => {
+            console.log(json.status);
+            if(json.status == "success"){
+                setTimeout(() => {
+                    onChange(2);
+                }, 1000);
+            }
+        })
+        .catch(error => {
+            console.log(error);
+        });
+        
+/*
         const res = await postData(`${server}auth/requestOTP`, {
             phoneNumber: phone_with_area_code,
         });
@@ -29,7 +55,7 @@ const LoginComponent = ({onChange,setPhone}: StepType) => {
                 onChange(2);
             }, 1000000);
         }
-      //  onChange(2);
+  */    
     };
 
     return (

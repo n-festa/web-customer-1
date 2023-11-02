@@ -69,10 +69,6 @@ const PhoneVerificationComponent = ({phone,onChange}: StepType) => {
                 onChange(3);
             }, 2000);
         }
-        setTimeout(() => {
-            onChange(3);
-        }, 2000);
-       // onChange(3);
     }
 
 

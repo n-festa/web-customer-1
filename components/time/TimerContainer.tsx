@@ -35,8 +35,23 @@ const TimerContainer = ({phone}:TimerType) => {
     const { handleSubmit } = useForm();
 
     const ReSendOTP = async () => {
-        await postData(`${server}auth/requestOTP`, {
-            phoneNumber: phone,
+        await fetch('http://localhost:3000/api/v1/auth/requestOTP', {
+            method: 'post',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({
+              phoneNumber: phone,
+            })
+        })
+        .then(res => res.json())
+        .then(json => {
+            console.log(json.status);
+        })
+        .catch(error => {
+            console.log(error);
         });
 
 

@@ -23,7 +23,9 @@ const Header = ({ isErrorPage }: HeaderType) => {
           setOnTop(false);
         }
     }
-
+    if(!arrayPaths.includes("login") ) {
+        console.log("hihe")
+    }
     useEffect(() => {
         if(!arrayPaths.includes(router.pathname) || isErrorPage) {
             return;
