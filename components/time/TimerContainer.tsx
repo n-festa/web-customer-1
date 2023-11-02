@@ -1,9 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import {postData } from '../../utils/services'; 
-import { server } from '../../utils/server'; 
-
 
 interface TimerType {
   phone: string;
@@ -19,7 +16,6 @@ const TimerContainer = ({phone}:TimerType) => {
         if (secondsAmount <= 0 && !isEnded) {
             setIsEnded(true);
             setActive(true);
-            //alert("Finalizado.");
             return;
         }
         setTimeout(() => {

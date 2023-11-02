@@ -1,7 +1,6 @@
 //import { useForm } from "react-hook-form";
 import TimerContainer   from '../time/TimerContainer';
 import { useState,useEffect,createRef } from "react";
-import { postData } from '../../utils/services'; 
 import { server } from '../../utils/server'; 
 
 type StepType = {
@@ -58,17 +57,30 @@ const PhoneVerificationComponent = ({phone,onChange}: StepType) => {
 
 
     const authenticateOTP= async(phoneNumber:string,inputOTP: string)  =>{
-        const res = await postData(`${server}auth/authenticateOTP`, {
-            phoneNumber: phoneNumber,
-            inputOTP:inputOTP
+        await fetch(`${server}auth/authenticateOTP`, {
+            method: 'post',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({
+                phoneNumber: phoneNumber,
+                inputOTP:inputOTP
+            })
+        })
+        .then(res => res.json())
+        .then(json => {
+            console.log(json);
+            if(json.status == "success"){
+                setTimeout(() => {
+                    onChange(3);
+                }, 1000);
+            }
+        })
+        .catch(error => {
+            console.log(error);
         });
-
-        console.log(res);
-        if(res.status == "success"){
-            setTimeout(() => {
-                onChange(3);
-            }, 2000);
-        }
     }
 
 
