@@ -6,7 +6,7 @@ import { Pagination } from 'swiper/modules';
 const Test = () => {
     const pagination = {
         clickable: true,
-        renderBullet: function (index, className) {
+        renderBullet: function (index:any, className:any) {
           return '<span class="' + className + '">' + (index + 1) + '</span>';
         },
       };
