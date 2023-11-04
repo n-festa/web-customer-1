@@ -53,6 +53,55 @@ const WhyChoose = () => {
                                     </div>
 
                                     <div className="food-card-parent d-flex flex-column">
+                                        <div className="food-card">
+                                            <div className="rectangle-parent d-flex flex-column align-items-center">
+                                                <div className="discount-wrapper w-100 py-2 px-3">
+                                                    <b className="discount">GIẢM GIÁ</b>
+                                                </div>
+
+                                                <img className="food-image2"
+                                                     alt=""
+                                                     src="/images/mask-group4@2x.png"
+                                                />
+                                            </div>
+                                            <div className="card-info-wrapper-2 d-flex flex-column">
+                                                <div className="heading-and-icon-parent d-flex flex-column gap-1">
+                                                    <b className="heading">Summer Avo Salad</b>
+
+                                                    <div className="chef-name">
+                                                        <span className="font-weight-500">by </span>
+                                                        <span className="name font-weight-600">The Bistro Thảo Điền</span>
+                                                    </div>
+                                                </div>
+                                                <div className="card-info-detail d-flex">
+                                                    <div className="d-flex gap-1 justify-content-center align-items-center">
+                                                        <img alt=""
+                                                             src="/images/star-icon4.svg"
+                                                        />
+                                                        <div className="">4.5</div>
+                                                    </div>
+                                                    <div className="d-flex gap-1 justify-content-center align-items-center">
+                                                        <img className=""
+                                                             alt=""
+                                                             src="/images/markerpin022.svg"
+                                                        />
+
+                                                        <div className="">3,2 km</div>
+                                                    </div>
+                                                    <div className="d-flex gap-1 justify-content-center align-items-center">
+                                                        <img className=""
+                                                             alt=""
+                                                             src="/images/markerpin023.svg"
+                                                        />
+
+                                                        <div className="">356 Kcal</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="food-card-parent d-flex flex-column">
                                         <div className="food-card m-3">
                                             <div className="rectangle-parent d-flex flex-column align-items-center">
                                                 <div className="discount-wrapper w-100 py-2 px-3">
@@ -64,7 +113,6 @@ const WhyChoose = () => {
                                                      src="/images/mask-group4@2x.png"
                                                 />
                                             </div>
-
                                             <div className="card-info-wrapper-2 d-flex flex-column">
                                                 <div className="heading-and-icon-parent d-flex flex-column gap-1">
                                                     <b className="heading">Summer Avo Salad</b>

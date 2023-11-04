@@ -380,7 +380,7 @@ a:hover{
     border-radius: var(--br-5xl);
     background-color: var(--full-white);
     box-shadow: var(--shadow-md);
-    /*width: 384px;*/
+    margin: 0.5rem 1rem!important;
 }
 
 .food-cards {
@@ -1694,6 +1694,13 @@ a:hover{
     padding: var(--padding-5xs) var(--padding-sm);
     gap: var(--gap-5xs);
 }
+.button56.no-pad{
+    padding: var(--padding-5xs) 0;
+}
+.button56.w133{
+    width: 133px;
+    padding: var(--padding-5xs) 0;
+}
 .text83 {
     position: relative;
     line-height: 20px;
@@ -1896,9 +1903,37 @@ a:hover{
     background-color: var(--gray-200);
 }
 
+.PhoneInputInput{ 
+    border:none!important;
+      display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex: 1 1;
+    align-items: center;
+    padding: var(--padding-5xs) var(--padding-xs) var(--padding-5xs) var(--padding-3xs);
+    gap: var(--gap-5xs);
+}
 
-
-
+.PhoneInputCountry{
+    align-self: stretch;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: var(--padding-5xs) 0 var(--padding-5xs) var(--padding-xs);
+    gap: var(--gap-9xs);
+}
+.PhoneInputCountryIcon{
+    width: 16px!important;
+    height: 16px!important;
+    background-color: none!important;
+    box-shadow: none !important;
+}
+.PhoneInputCountry img{
+    width: 16px;
+    height: 16px;
+}
 
 
 

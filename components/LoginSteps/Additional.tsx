@@ -217,24 +217,24 @@ const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
                                 <div className="button-group1">
                                     <div className={
                                             cheDoAn?.status && cheDoAn?.from == "child-4"
-                                              ? "button56 active"
-                                              : "button56"
+                                              ? "button56 no-padd active"
+                                              : "button56 no-pad"
                                         } >
                                         <input  className="d-none" type="radio" id="a01" name="CDA" />
                                         <label htmlFor="a01" className="text83" onClick={() => handleClickCheDoAn(`child-4`)}>Hỗn hợp</label>
                                     </div>
                                     <div className={
                                             cheDoAn?.status && cheDoAn?.from == "child-5"
-                                              ? "button56 active"
-                                              : "button56"
+                                              ? "button56 no-pad active"
+                                              : "button56 no-pad"
                                         } >
                                         <input  className="d-none" type="radio" id="a02" name="CDA" />
                                         <label htmlFor="a02" className="text83" onClick={() => handleClickCheDoAn(`child-5`)}>Thuần chay</label>
                                     </div>
                                     <div className={
                                             cheDoAn?.status && cheDoAn?.from == "child-6"
-                                              ? "button56 active"
-                                              : "button56"
+                                              ? "button56 no-pad active"
+                                              : "button56 no-pad"
                                         } >
                                         <input  className="d-none" type="radio" id="a03" name="CDA" />
                                         <label htmlFor="a03" className="text83" onClick={() => handleClickCheDoAn(`child-6`)}>Chỉ ăn thịt </label>
@@ -244,24 +244,24 @@ const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
                                 <div className="button-group1">
                                     <div className={
                                             cheDoAn?.status && cheDoAn?.from == "child-7"
-                                              ? "button56 active"
-                                              : "button56"
+                                              ? "button56 no-pad active"
+                                              : "button56 no-pad"
                                         } >
                                         <input  className="d-none" type="radio" id="a04" name="CDA" />
                                         <label htmlFor="a04" className="text83" onClick={() => handleClickCheDoAn(`child-7`)}>Cá </label>
                                     </div>
                                     <div className={
                                             cheDoAn?.status && cheDoAn?.from == "child-8"
-                                              ? "button56 active"
-                                              : "button56"
+                                              ? "button56 no-pad active"
+                                              : "button56 no-pad"
                                         } >
                                         <input  className="d-none" type="radio" id="a05" name="CDA" />
                                         <label htmlFor="a05" className="text83" onClick={() => handleClickCheDoAn(`child-8`)}>Chay </label>
                                     </div>
                                     <div className={
                                             cheDoAn?.status && cheDoAn?.from == "child-9"
-                                              ? "button56 active"
-                                              : "button56"
+                                              ? "button56 w133 active"
+                                              : "button56 w133"
                                         } >
                                         <input  className="d-none" type="radio" id="a06" name="CDA" />
                                         <label htmlFor="a06" className="text83" onClick={() => handleClickCheDoAn(`child-9`)}>Không ăn kiêng</label>

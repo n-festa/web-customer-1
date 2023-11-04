@@ -31,7 +31,6 @@ const Header = ({ isErrorPage }: HeaderType) => {
         };
     }, []);
 
-
     return(
         <section className={`full-width-header-navigation  ${!onTop ? 'site-header--fixed' : ''}`}>
             <header className={`header d-flex align-items-center justify-content-center flex-column h-100 `}>
@@ -48,7 +47,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
 
                         <div className="navigation d-flex gap-4 align-items-center">
                                 <div className="navigation-button">
-                                    <Link href="#order-section">
+                                    <Link href={`#order-section`}>
                                         <a className="text fw-bolder">Đặt hàng</a>
                                     </Link>
                                 </div>

@@ -1,5 +1,8 @@
 import { useForm } from "react-hook-form";
 import { server } from '../../utils/server'; 
+import { useState } from "react";
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input'
 
 interface LoginPhone {
   phone: string;
@@ -13,10 +16,10 @@ type StepType = {
 const LoginComponent = ({onChange,setPhone}: StepType) => {
    
     const { register,handleSubmit, errors } = useForm();
-   
+    const [value, setValue] = useState()
+
     const onSubmit = async (data: LoginPhone) => {
-        var phone_with_area_code = "84" + data.phone ;
-        setPhone(phone_with_area_code);
+        var phone = value.replace("+",'');
 
         await fetch(`${server}auth/requestOTP`, {
             method: 'post',
@@ -26,7 +29,7 @@ const LoginComponent = ({onChange,setPhone}: StepType) => {
             },
             credentials: 'include',
             body: JSON.stringify({
-              phoneNumber: phone_with_area_code,
+              phoneNumber: phone,
             })
         })
         .then(res => res.json())
@@ -41,7 +44,6 @@ const LoginComponent = ({onChange,setPhone}: StepType) => {
         .catch(error => {
             console.log(error);
         });
-   
     };
 
     return (
@@ -62,19 +64,36 @@ const LoginComponent = ({onChange,setPhone}: StepType) => {
                                 <div className="input-field5">
                                     <div className="input-with-label6">
                                         <div className="label7">Phone number</div>
-                                        <div className="input77">
+                                       
+                                           
+                                            {/*
+                                             <div className="input77">
                                             <div className="dropdown1">
                                                 <img className="vn-icon2" alt="" src="/images/vn.png" />
                                                 <img  className="chevron-down-icon3" alt="" src="/images/chevrondown1.svg"  />
                                             </div>
-                                               
-                                            <input placeholder="+84 (555) 000-0000" type="number" className="text-input1 border-none" name="phone"
+                                                <input placeholder="+84 (555) 000-0000" type="number" className="text-input1 border-none" name="phone"
                                                 ref={register( { required: true, minLength: 10, maxLength: 11 ,
                                                         valueAsNumber: true,
                                                 })}
+
                                             />
-                                        </div>
+                                              </div>
+                                            */}
+                                            
+
+                                            <PhoneInput
+                                                className="input77"
+                                                international
+                                                defaultCountry="VN"
+                                                value={value}
+                                                onChange={setValue}
+                                              />
+                                      
                                     </div>
+
+
+
                                     {errors.phone && errors.phone.type === 'required' && 
                                         <p className="d-block hint-text6 ">This field is required</p>
                                     }
