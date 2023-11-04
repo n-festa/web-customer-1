@@ -48,7 +48,7 @@ const LoginComponent = ({onChange,setPhone}: StepType) => {
         <div className="sign-up">
             <div className="image-login-page">
                 <div className="image-login-page-child"></div>
-                <img src="/images/6387ec276a4eb-62aa10dfb2adca268416cf2fd03d82f5transformed-3@2x.png" alt="product" />
+                <img src="/images/login_image.png" alt="product" />
             </div>
             <div className="content26">
                 <div className="title">

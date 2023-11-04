@@ -1,11 +1,6 @@
 import Link from "next/link";
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-/*
-type HeaderType = {
-  isErrorPage?: Boolean;
-}
-*/
 
 type HeaderType = {
     isErrorPage?: Boolean;
@@ -14,7 +9,8 @@ type HeaderType = {
 const Header = ({ isErrorPage }: HeaderType) => {
     const router = useRouter();
     const arrayPaths = ['/']; 
-    const [onTop, setOnTop] = useState(( !arrayPaths.includes("/")|| isErrorPage ) ? false : true);
+    const [onTop, setOnTop] = useState(( !arrayPaths.includes("/router.pathname")|| isErrorPage ) ? false : true);
+    const [pageLogin] = useState(( router.pathname == "/login" ) ? true : false);
     
     const headerClass = () => {
         if(window.pageYOffset === 0) {
@@ -23,9 +19,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
           setOnTop(false);
         }
     }
-    if(!arrayPaths.includes("login") ) {
-        console.log("hihe")
-    }
+
     useEffect(() => {
         if(!arrayPaths.includes(router.pathname) || isErrorPage) {
             return;
@@ -77,36 +71,39 @@ const Header = ({ isErrorPage }: HeaderType) => {
                     </div>
 
                     <div className="navigation-actions-wrapper d-flex gap-3">
-                        <div className="navigation-actions d-flex align-items-center">
-                            <Link href="/login">
-                                <a className="login-button">
-                                    <span className="font-weight-600">Đăng nhập</span>
+                       
+                        {!pageLogin &&
+                            <div className="navigation-actions d-flex align-items-center">
+                                <Link href="/login">
+                                    <a className="login-button">
+                                        <span className="font-weight-600">Đăng nhập</span>
+                                    </a>
+                                </Link>
+                            </div>
+                        }   
+                        {!pageLogin &&
+                            <div className="nav-item-button d-flex">
+                            <Link href="#footer-section">
+                                <a className="text fw-bolder">
+                                    <img className="small-icon"
+                                        alt="small-icon"
+                                        src="/images/shoppingbag03.svg"
+                                    />
+                                </a>
+                            </Link>
+                            </div>
+                        }
+                        <div className="language-button d-flex align-items-center gap-1">
+                            <div className="language-text">VIE</div>
+                            <Link href="#footer-section">
+                                <a className="text fw-bolder">
+                                    <img className="small-icon"
+                                        alt=""
+                                        src="/images/vn.svg"
+                                    />
                                 </a>
                             </Link>
                         </div>
-                            <div className="nav-item-button d-flex">
-                                <Link href="#footer-section">
-                                    <a className="text fw-bolder">
-                                        <img className="small-icon"
-                                             alt="small-icon"
-                                             src="/images/shoppingbag03.svg"
-                                        />
-                                    </a>
-                                </Link>
-                                
-                            </div>
-                            <div className="language-button d-flex align-items-center gap-1">
-                                <div className="language-text">VIE</div>
-                                <Link href="#footer-section">
-                                    <a className="text fw-bolder">
-                                        <img className="small-icon"
-                                             alt=""
-                                             src="/images/vn.svg"
-                                        />
-                                    </a>
-                                </Link>
-                                
-                            </div>
                     </div>
                 </div>
             </header>

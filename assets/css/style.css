@@ -199,6 +199,7 @@ body {
     overflow: hidden;
     flex-shrink: 0;
     font-size: var(--text-lg-semibold-size);
+    border-bottom: 1px solid #F2F4F7;
 }
 
 .full-width-header-navigation .header {
@@ -1095,6 +1096,7 @@ a:hover{
     font-size: var(--display-sm-bold-size);
     color: var(--color-yellowgreen-100);
     font-family: var(--text-md-regular);
+    margin: 75px 0;
 }
 .image-login-page {
     position: relative;
