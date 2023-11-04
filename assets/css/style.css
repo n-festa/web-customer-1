@@ -288,13 +288,8 @@ a:hover{
     overflow: hidden;
     font-size: 60px;
     color: var(--color-yellowgreen-100);
-    padding: 75px 0;
+    padding: 72px 0;
 
-    /*Responsive heading*/
-    @media (max-width: 1400px) {
-        font-size: 50px;
-
-    }
 }
 
 .daily-food-section .title {
@@ -1871,7 +1866,35 @@ a:hover{
 
 
 
+.swiper {
+  width: 100%;
+}
+.swiper-slide {
+  height: 300px;
+  line-height: 300px;
+  text-align: center;
+}
 
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #007aff !important;
+}
+
+.swiper-pagination{
+        align-self: stretch;
+    padding: 0 var(--padding-21xl);
+    gap: var(--gap-13xl);
+}
+.swiper-pagination-bullet{
+        position: relative;
+    border-radius: var(--br-9xs);
+    width: 8px;
+    height: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    mix-blend-mode: multiply;
+    background-color: var(--gray-200);
+}
 
 
 

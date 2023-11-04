@@ -6,18 +6,6 @@ const Testimonial = () => {
                 <b className="heading">Mọi người yêu thích 2All</b>
                 <div className="rating-review-cards d-flex gap-3">
                     <div className="rating-review-card d-flex flex-column gap-3">
-                        {/*
-                        <div className="customer d-flex justify-content-between w-100">
-                            <div className="d-flex gap-3">
-                                <img className="customer-avatar" alt="" src="/images/pic@2x.png"/>
-                                <div className="loyal-customer-wrapper d-flex flex-column ">
-                                    <div className="loyal-customer-name">Alexander R.</div>
-                                    <div className="loyal-customer">Khách hàng thân thiết</div>
-                                </div>
-                            </div>
-                            <img className="quote" alt="" src="/images/path-173.svg"/>
-                        </div>
-                         */}
                         <div className="review">
                             “1. Tôi đã sử dụng 2all để đặt món ăn và rất hài lòng với trải
                             nghiệm của mình. Dịch vụ giao hàng nhanh chóng và đáng tin cậy,
@@ -117,7 +105,6 @@ const Testimonial = () => {
                             />
                         </div>
                     </div>
-                 
                 </div>
                 <div className="paginator d-flex justify-content-end mt-5">
                     <div className="paginator-arrow">

@@ -38,7 +38,7 @@
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "sass": "^1.26.10",
-    "swiper": "^6.5.1",
+    "swiper": "^10.0.0",
     "swr": "^0.3.2",
     "use-onclickoutside": "^0.3.1"
   },

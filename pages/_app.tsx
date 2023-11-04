@@ -2,11 +2,11 @@ import React, { Fragment } from 'react';
 import Router from 'next/router';
 import {wrapper} from '../store';
 
+
 // types
 import type { AppProps } from 'next/app';
 
 // global styles
-import 'swiper/swiper.scss';
 
 import '../assets/css/bootstrap.min.css';
 import '../assets/css/global.css';
