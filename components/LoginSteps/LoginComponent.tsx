@@ -22,9 +22,11 @@ const LoginComponent = ({onChange,setPhone}: StepType) => {
         setPhone(phone);
         await fetch(`${server}auth/requestOTP`, {
             method: 'post',
+            mode: 'cors',
+            cache: 'no-cache',
             headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
             },
             credentials: 'include',
             body: JSON.stringify({
@@ -33,7 +35,7 @@ const LoginComponent = ({onChange,setPhone}: StepType) => {
         })
         .then(res => res.json())
         .then(json => {
-            console.log(json.status);
+            console.log(json);
             if(json.status == "success"){
                 setTimeout(() => {
                     onChange(2);
