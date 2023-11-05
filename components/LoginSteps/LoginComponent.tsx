@@ -4,10 +4,6 @@ import { useState } from "react";
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input'
 
-interface LoginPhone {
-  phone: string;
-}
-
 type StepType = {
     onChange : any,
     setPhone: any
@@ -15,12 +11,15 @@ type StepType = {
 
 const LoginComponent = ({onChange,setPhone}: StepType) => {
    
-    const { register,handleSubmit, errors } = useForm();
-    const [value, setValue] = useState()
+    const { handleSubmit } = useForm();
+   // const [value,setValue] = useState()
+    const [value, setValue] = useState<string | undefined>();
 
-    const onSubmit = async (data: LoginPhone) => {
-        var phone = value.replace("+",'');
-
+    const onSubmit = async () => {
+       // var phone = value.replace("+",'');
+        var phone = value;
+        console.log(phone);
+        setPhone(phone);
         await fetch(`${server}auth/requestOTP`, {
             method: 'post',
             headers: {
@@ -38,7 +37,7 @@ const LoginComponent = ({onChange,setPhone}: StepType) => {
             if(json.status == "success"){
                 setTimeout(() => {
                     onChange(2);
-                }, 1000);
+                }, 3000);
             }
         })
         .catch(error => {
@@ -88,21 +87,13 @@ const LoginComponent = ({onChange,setPhone}: StepType) => {
                                                 defaultCountry="VN"
                                                 value={value}
                                                 onChange={setValue}
+                                                /*
+                                                onChange={(value: string) => {
+                                                    console.log(value);
+                                                }}*/
                                               />
-                                      
                                     </div>
-
-
-
-                                    {errors.phone && errors.phone.type === 'required' && 
-                                        <p className="d-block hint-text6 ">This field is required</p>
-                                    }
-                                    {errors.phone && errors.phone.type === 'minLength' && 
-                                        <p className="d-block hint-text6 ">This field is 10 number required</p>
-                                    }
-                                    {errors.phone && errors.phone.type === 'maxLength' && 
-                                        <p className="d-block hint-text6 ">This field max 11 number required</p>
-                                    }
+                              
                                     <div className="hint-text6">This is a hint text to help user.</div>
                                 </div>
 
