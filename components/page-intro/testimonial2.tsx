@@ -7,7 +7,7 @@ import React from 'react';
 const Test = () => {
     const pagination = {
         clickable: true,
-        renderBullet: function (index:any, className:any) {
+        renderBullet: function ( className:any) {
             return '<span class="' + className + '"></span>';
         },
       };
