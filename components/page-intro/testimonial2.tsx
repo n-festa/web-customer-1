@@ -2,12 +2,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
+import React from 'react';
 
 const Test = () => {
     const pagination = {
         clickable: true,
         renderBullet: function (index:any, className:any) {
-          return '<span class="' + className + '">' + (index + 1) + '</span>';
+            return '<span class="' + className + '"></span>';
         },
       };
     return(
@@ -234,6 +235,7 @@ const Test = () => {
                             </div>
                         </div>
                     </SwiperSlide>
+
                 </Swiper>
             </div>
         </section>

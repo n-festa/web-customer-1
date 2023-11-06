@@ -629,7 +629,9 @@ a:hover{
     padding: var(--padding-21xl) var(--padding-13xl);
     height: fit-content;
 }
-
+.rating-review-card:hover{
+    cursor: pointer;
+}
 .rating-and-review-container {
     position: relative;
     overflow: hidden;
@@ -645,8 +647,6 @@ a:hover{
 .contact-us-section {
     background-color: #afccad;
 }
-
-
 .contact-us-card .heading {
     letter-spacing: -0.02em;
 }
@@ -882,7 +882,7 @@ a:hover{
 }
 
 .mobile-app-wrapper {
-    width: 1440px;
+   /* width: 1440px;*/
     overflow: hidden;
     padding: var(--padding-77xl) 0;
     box-sizing: border-box;
@@ -1884,23 +1884,7 @@ a:hover{
 
 .swiper-pagination-bullet-active {
   color: #fff;
-  background: #007aff !important;
-}
-
-.swiper-pagination{
-        align-self: stretch;
-    padding: 0 var(--padding-21xl);
-    gap: var(--gap-13xl);
-}
-.swiper-pagination-bullet{
-        position: relative;
-    border-radius: var(--br-9xs);
-    width: 8px;
-    height: 8px;
-    overflow: hidden;
-    flex-shrink: 0;
-    mix-blend-mode: multiply;
-    background-color: var(--gray-200);
+  background: #b7eb52 !important;
 }
 
 .PhoneInputInput{ 

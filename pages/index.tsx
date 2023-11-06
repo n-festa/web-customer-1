@@ -14,15 +14,12 @@ const IndexPage = () => {
     return (
         <Layout>
             <Banner />
-
             <Today />
             <OrderStep />
             <WhyChoose />
             <Testimonial2 />
             <Contact />
             <Download />
-
-
             <Footer />
         </Layout>
     )
