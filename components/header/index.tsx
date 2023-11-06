@@ -36,8 +36,8 @@ const Header = ({ isErrorPage }: HeaderType) => {
             <header className={`header d-flex align-items-center justify-content-center flex-column h-100 `}>
                 <div className="d-flex justify-content-between align-items-center container">
                     <div className="d-flex align-items-center gap-4">
-                        <Link href="/">
-                        <a>
+                        <Link href="http://localhost:3001/">
+                            <a>
                             <img className="fictional-company-logo"
                                 alt="fictional-company-logo"
                                 src="/images/logo1.svg"
@@ -47,22 +47,22 @@ const Header = ({ isErrorPage }: HeaderType) => {
 
                         <div className="navigation d-flex gap-4 align-items-center">
                                 <div className="navigation-button">
-                                    <Link href={`#order-section`}>
+                                    <Link href="http://localhost:3001/#order-section">
                                         <a className="text fw-bolder">Đặt hàng</a>
                                     </Link>
                                 </div>
                                 <div className="navigation-button">
-                                    <Link href="#contact-section">   
+                                    <Link href="http://localhost:3001/#contact-section">   
                                         <a className="text fw-bolder">Dành cho Đối tác</a>
                                     </Link>
                                 </div>
                                 <div className="navigation-button">
-                                    <Link href="#download-section">
+                                    <Link href="http://localhost:3001/#download-section">
                                         <a className="text fw-bolder">Tải App</a>
                                     </Link>
                                 </div>
                                 <div className="navigation-button">
-                                    <Link href="#footer-section">
+                                    <Link href="http://localhost:3001/#footer-section">
                                         <a className="text fw-bolder">Liên hệ</a>
                                     </Link>
                                 </div>
