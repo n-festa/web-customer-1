@@ -3,6 +3,7 @@ import { server } from '../../utils/server';
 import { useState } from "react";
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input'
+import { isPossiblePhoneNumber } from 'react-phone-number-input'
 
 type StepType = {
     onChange : any,
@@ -14,37 +15,51 @@ const LoginComponent = ({onChange,setPhone}: StepType) => {
     const { handleSubmit } = useForm();
    // const [value,setValue] = useState()
     const [value, setValue] = useState<string | undefined>();
-
+    const [error, setError] = useState<string>();
     const onSubmit = async () => {
        // var phone = value.replace("+",'');
         var phone = value;
         console.log(phone);
         setPhone(phone);
-        await fetch(`${server}auth/requestOTP`, {
-            method: 'post',
-            mode: 'cors',
-            cache: 'no-cache',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            credentials: 'include',
-            body: JSON.stringify({
-              phoneNumber: phone,
-            })
-        })
-        .then(res => res.json())
-        .then(json => {
-            console.log(json);
-            if(json.status == "success"){
-                setTimeout(() => {
-                    onChange(2);
-                }, 3000);
+        if(phone ){
+            if(phone.length == 12){
+                
+                phone = phone.substring(1)
+                await fetch(`${server}auth/requestOTP`, {
+                    method: 'post',
+                    mode: 'cors',
+                    cache: 'no-cache',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({
+                      phoneNumber: phone,
+                    })
+                })
+                .then(res => res.json())
+                .then(json => {
+                    console.log(json);
+                    if(json.status == "success"){
+                        setTimeout(() => {
+                            onChange(2);
+                        }, 3000);
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+            }else{
+                setError("hãy nhập đủ số điện thoại của bạn");
             }
-        })
-        .catch(error => {
-            console.log(error);
-        });
+            
+            /*
+            
+            */
+        }else{
+            setError("hãy nhập số điện thoại của bạn");
+        }
     };
 
     return (
@@ -65,37 +80,22 @@ const LoginComponent = ({onChange,setPhone}: StepType) => {
                                 <div className="input-field5">
                                     <div className="input-with-label6">
                                         <div className="label7">Phone number</div>
-                                       
-                                           
-                                            {/*
-                                             <div className="input77">
-                                            <div className="dropdown1">
-                                                <img className="vn-icon2" alt="" src="/images/vn.png" />
-                                                <img  className="chevron-down-icon3" alt="" src="/images/chevrondown1.svg"  />
-                                            </div>
-                                                <input placeholder="+84 (555) 000-0000" type="number" className="text-input1 border-none" name="phone"
-                                                ref={register( { required: true, minLength: 10, maxLength: 11 ,
-                                                        valueAsNumber: true,
-                                                })}
-
-                                            />
-                                              </div>
-                                            */}
-                                            
-
                                             <PhoneInput
                                                 className="input77"
                                                 international
                                                 defaultCountry="VN"
                                                 value={value}
                                                 onChange={setValue}
+                                                rules={{ required: true, validate: isPossiblePhoneNumber }}
                                                 /*
                                                 onChange={(value: string) => {
                                                     console.log(value);
                                                 }}*/
                                               />
                                     </div>
-                              
+                                    {error && 
+                                        <div style={{ color: 'red' }}>{error}</div>
+                                    }
                                     <div className="hint-text6">This is a hint text to help user.</div>
                                 </div>
 
