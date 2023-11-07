@@ -1,14 +1,15 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+//import 'swiper/css/navigation';
+import { Navigation,Pagination } from 'swiper/modules';
 import React from 'react';
 
 const Test = () => {
     const pagination = {
+        el: '.pagination',
         clickable: true,
-        renderBullet: function ( className:any) {
-            return '<span class="' + className + '"></span>';
+        renderBullet: function ( index:any,className:any) {
+            return '<div class="pagination-dot-indicator ' + className + '">' + (index + 1) + '</div>'
         },
       };
     return(
@@ -17,7 +18,11 @@ const Test = () => {
             <div className="rating-and-review-container container d-flex flex-column align-items-center">
                 <b className="heading">Mọi người yêu thích 2All</b>
                 <Swiper watchSlidesProgress={true} slidesPerView={3} className="mySwiper" 
-                    pagination={pagination} modules={[Pagination]}
+                    pagination={pagination} navigation={{
+                        prevEl: '.paginator-arrow',
+                        nextEl: '.paginator-arrow-next',
+                    }}
+                    modules={[Navigation,Pagination]}
                     spaceBetween={20}
                 >
                     <SwiperSlide>
@@ -237,6 +242,23 @@ const Test = () => {
                     </SwiperSlide>
 
                 </Swiper>
+                <div className="paginator d-flex justify-content-end mt-5">
+                    <div className="paginator-arrow">
+                        <img className="small-icon"
+                             alt=""
+                             src="/images/chevronleft.svg"
+                        />
+                    </div>
+    
+                    <div className="pagination"/>
+                    <div className="paginator-arrow">
+                        <img className="small-icon"
+                             alt=""
+                             src="/images/chevronright.svg"
+                        />
+                    </div>
+                </div>
+                
             </div>
         </section>
     )

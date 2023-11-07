@@ -584,7 +584,7 @@ a:hover{
     gap: var(--gap-9xs);
 }
 
-.paginator-arrow {
+.paginator-arrow, .paginator-arrow-next {
     border-radius: var(--br-lg);
     background-color: var(--color-palegoldenrod);
     backdrop-filter: var(--background-blur-sm);
@@ -594,11 +594,11 @@ a:hover{
     padding: var(--padding-5xs);
 }
 
-.pagination-dot-indicator {
+.pagination-dot-indicator{
     position: relative;
     border-radius: var(--br-9xs);
-    width: 8px;
-    height: 8px;
+    width: 8px!important;
+    height: 8px!important;
     overflow: hidden;
     flex-shrink: 0;
     mix-blend-mode: multiply;
@@ -609,7 +609,7 @@ a:hover{
     background-color: #b7eb52;
 }
 
-.pagination-dot-group {
+.pagination-dot-group, .pagination{
     gap: var(--gap-xs);
 }
 
@@ -617,6 +617,8 @@ a:hover{
     align-self: stretch;
     padding: 0 var(--padding-21xl);
     gap: var(--gap-13xl);
+        align-items: center!important;
+    justify-content: flex-end!important;
 }
 
 
@@ -631,6 +633,9 @@ a:hover{
 }
 .rating-review-card:hover{
     cursor: pointer;
+}
+.rating-review-card:active{
+    cursor: grabbing;
 }
 .rating-and-review-container {
     position: relative;
@@ -1091,7 +1096,7 @@ a:hover{
     font-size: var(--display-sm-bold-size);
     color: var(--color-yellowgreen-100);
     font-family: var(--text-md-regular);
-    margin: 75px 0;
+    margin-top: 75px;
 }
 .image-login-page {
     position: relative;
@@ -1936,4 +1941,20 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-
+.swiper-pagination{
+    align-self: stretch;
+    padding: 0 var(--padding-21xl);
+    gap: var(--gap-13xl);
+    display: flex!important;
+    justify-content: flex-end!important;
+}
+.swiper-pagination span{
+        position: relative;
+    border-radius: var(--br-9xs);
+    width: 8px;
+    height: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    mix-blend-mode: multiply;
+    background-color: var(--gray-200);
+}
