@@ -104,6 +104,7 @@ const LoginComponent = ({ onChange, setPhone }: StepType) => {
                   <div className="hint-text6">
                     This is a hint text to help user.
                   </div>
+
                 </div>
               </div>
               <div className="hint-text7">
@@ -122,3 +123,7 @@ const LoginComponent = ({ onChange, setPhone }: StepType) => {
 };
 
 export default LoginComponent;
+
+
+
+
