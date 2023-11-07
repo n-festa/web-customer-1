@@ -182,9 +182,9 @@ body {
     padding: var(--padding-3xs) var(--padding-lg);
     gap: var(--gap-5xs);
     font-size: var(--text-lg-semibold-size);
-    color: var(--icterine-500);
+    color: #fff;
 }
- .login-button a{
+ .login-button:hover{
         color: var(--icterine-500);
  }
 
@@ -631,7 +631,7 @@ a:hover{
     padding: var(--padding-21xl) var(--padding-13xl);
     height: fit-content;
 }
-.rating-review-card:hover{
+.rating-review-card:hover,.paginator-arrow:hover,.paginator-arrow-next:hover{
     cursor: pointer;
 }
 .rating-review-card:active{
@@ -1165,7 +1165,12 @@ a:hover{
     font-size: var(--text-sm-semibold-size);
     color: var(--icterine-500);
 }
-
+.button49:disabled{
+    cursor: not-allowed;
+}
+.button49:disabled .text75{
+    color: #fff;
+}
 .hint-text7 {
     align-self: stretch;
     position: relative;

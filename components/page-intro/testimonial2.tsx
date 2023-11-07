@@ -251,7 +251,7 @@ const Test = () => {
                     </div>
     
                     <div className="pagination"/>
-                    <div className="paginator-arrow">
+                    <div className="paginator-arrow-next">
                         <img className="small-icon"
                              alt=""
                              src="/images/chevronright.svg"
