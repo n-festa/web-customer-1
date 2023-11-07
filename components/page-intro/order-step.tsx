@@ -3,7 +3,7 @@
 
 const OrderStep = () => {
     return(
-         <section className="order-steps-section d-flex justify-content-center" id="order-section">
+        <section className="order-steps-section d-flex justify-content-center" id="order-section">
         <div className="order-steps-container container d-flex flex-column align-items-center">
             <b className="how-to-order">Cách đặt hàng</b>
             <div className="order-steps-wrapper">
@@ -84,7 +84,7 @@ const OrderStep = () => {
                 <div className="line-div"></div>
             </div>
         </div>
-    </section>
+        </section>
     )
 };
 

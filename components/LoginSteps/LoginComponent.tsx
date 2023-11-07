@@ -4,6 +4,7 @@ import { useState } from "react";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { isPossiblePhoneNumber } from "react-phone-number-input";
+import { toast } from "react-toastify";
 
 type StepType = {
   onChange: any;
@@ -21,41 +22,40 @@ const LoginComponent = ({ onChange, setPhone }: StepType) => {
     console.log(phone);
     setPhone(phone);
     if (phone) {
-      if (phone.length == 12) {
-        phone = phone.substring(1);
-        await fetch(`${server}auth/requestOTP`, {
-          method: "post",
-          mode: "cors",
-          cache: "no-cache",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-          body: JSON.stringify({
-            phoneNumber: phone,
-          }),
-        })
-          .then((res) => res.json())
-          .then((json) => {
-            console.log(json);
-            if (json.status == "success") {
-              setTimeout(() => {
-                onChange(2);
-              }, 3000);
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      } else {
-        setError("Số điện thoại của bạn dường như chưa chính xác.");
-      }
-
-      /*
-            
-            */
+        if (phone.length == 12) {
+            phone = phone.substring(1);
+            await fetch(`${server}auth/requestOTP`, {
+              method: "post",
+              mode: "cors",
+              cache: "no-cache",
+              headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+              },
+              credentials: "include",
+              body: JSON.stringify({
+                phoneNumber: phone,
+              }),
+            })
+            .then((res) => res.json())
+            .then((json) => {
+                console.log(json);
+                if (json.status == "success") {
+                  toast.success(" Success!", { autoClose: 1500 });
+                  setTimeout(() => {
+                    onChange(2);
+                  }, 3000);
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        } else {
+            toast.error(" Fail!", { autoClose: 1500 });
+            setError("Số điện thoại của bạn dường như chưa chính xác.");
+        }
     } else {
+        toast.error(" Fail!", { autoClose: 1500 });
       setError("Vui lòng nhập số điện thoại của bạn");
     }
   };

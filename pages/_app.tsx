@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import Router from 'next/router';
 import {wrapper} from '../store';
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // types
 import type { AppProps } from 'next/app';
@@ -25,6 +26,16 @@ if(isProduction) {
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <Fragment>
+    <ToastContainer
+        position="top-right"
+        autoClose={8000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        draggable={false}
+        pauseOnVisibilityChange
+        closeOnClick
+        pauseOnHover
+      />
     <Component {...pageProps} />
   </Fragment>
 );

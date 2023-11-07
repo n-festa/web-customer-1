@@ -32,6 +32,9 @@ const Today = () => {
                     ))}
                 </div>
             </div>
+
+            <div id="order-section1">
+            </div>
         </section>
     )
 };

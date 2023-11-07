@@ -20,6 +20,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
         }
     }
 
+
     useEffect(() => {
         if(!arrayPaths.includes(router.pathname) || isErrorPage) {
             return;
@@ -47,7 +48,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
 
                         <div className="navigation d-flex gap-4 align-items-center">
                                 <div className="navigation-button">
-                                    <Link href="http://localhost:3001/#order-section">
+                                    <Link href="http://localhost:3001/#order-section1">
                                         <a className="text fw-bolder">Đặt hàng</a>
                                     </Link>
                                 </div>
@@ -57,7 +58,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
                                     </Link>
                                 </div>
                                 <div className="navigation-button">
-                                    <Link href="http://localhost:3001/#download-section">
+                                    <Link href="http://localhost:3001/#download-section1">
                                         <a className="text fw-bolder">Tải App</a>
                                     </Link>
                                 </div>
