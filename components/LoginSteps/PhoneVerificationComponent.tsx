@@ -1,7 +1,8 @@
 //import { useForm } from "react-hook-form";
 import TimerContainer from "../time/TimerContainer";
-import { useState, useEffect, createRef } from "react";
+import { useState, useEffect, createRef, useMemo } from "react";
 import { server } from "../../utils/server";
+import OTPInput from "../OTPInput";
 
 type StepType = {
   onChange: any;
@@ -16,45 +17,11 @@ const PhoneVerificationComponent = ({ phone, onChange }: StepType) => {
     Array.from({ length: numberOfInputs }, () => createRef())
   );
   const [currentIndex, setCurrentIndex] = useState(0);
-  let [inputOTP] = useState("");
   let phoneNumber = phone as string;
 
   const [letters, setLetters] = useState(() =>
     Array.from({ length: numberOfInputs }, () => "")
   );
-
-  const handleKeyPress = () => {
-    setCurrentIndex((prevIndex) => {
-      const nextIndex = prevIndex < numberOfInputs - 1 ? prevIndex + 1 : 0;
-      const nextInput: any = inputRefsArray?.[nextIndex]?.current;
-
-      if (nextIndex !== 0) {
-        nextInput.focus();
-        nextInput.select();
-      } else {
-        const phone_value: any = document.getElementsByName("phone-value");
-        phone_value.forEach((e: HTMLInputElement) => {
-          inputOTP = inputOTP.concat(e.value);
-        });
-        console.log(inputOTP);
-        nextInput.blur();
-        authenticateOTP(phoneNumber, inputOTP);
-      }
-
-      return nextIndex;
-    });
-  };
-
-  useEffect(() => {
-    if (inputRefsArray?.[0]?.current) {
-      //  inputRefsArray?.[0]?.current?.focus?.();
-    }
-
-    window.addEventListener("keyup", handleKeyPress, false);
-    return () => {
-      window.removeEventListener("keyup", handleKeyPress);
-    };
-  }, []);
 
   const authenticateOTP = async (phoneNumber: string, inputOTP: string) => {
     await fetch(`${server}auth/authenticateOTP`, {
@@ -65,7 +32,7 @@ const PhoneVerificationComponent = ({ phone, onChange }: StepType) => {
       },
       credentials: "include",
       body: JSON.stringify({
-        phoneNumber: phoneNumber,
+        phoneNumber: phoneNumber.substring(1),
         inputOTP: inputOTP,
       }),
     })
@@ -82,10 +49,63 @@ const PhoneVerificationComponent = ({ phone, onChange }: StepType) => {
         console.log(error);
       });
   };
+  const handleLetterChange = (letters: Array<string>) => {
+    console.log("start handleLetterChange");
 
-  console.log("inputRefsArray", inputRefsArray);
-  console.log("letters", letters);
+    //Check if inputRefsArray is inital state -> return
+    if (inputRefsArray[0].current == null) {
+      return;
+    }
+    //Check if there is any value at current index
+    if (letters[currentIndex] == "") {
+      return;
+    }
+    //Calculate NextIndex & get nextInput
+    const nextIndex = currentIndex + 1;
+    // const nextInput: any =
+    //   inputRefsArray?.[nextIndex % numberOfInputs]?.current;
+    //Update currentIndex
+    setCurrentIndex(nextIndex % numberOfInputs);
+    //Move cursor to nextInput
+    // nextInput.focus();
+    // nextInput.select();
+    //Authenticate OTP if user finishes
+    if (nextIndex === numberOfInputs) {
+      //array letters to string without separator
+      const inputOTP = letters.join("");
+      authenticateOTP(phoneNumber, inputOTP);
+      //clear letters
+      setLetters(() => Array.from({ length: numberOfInputs }, () => ""));
+    }
+    console.log("end handleLetterChange");
+  };
 
+  const handleOTPInputChange = (megaIndex: number, value: string) => {
+    setLetters((letters) =>
+      letters.map((letter, letterIndex) =>
+        letterIndex === megaIndex ? value : letter
+      )
+    );
+  };
+  const handleOTPInputSelect = (megaIndex: number) => {
+    setCurrentIndex(megaIndex);
+  };
+  const focusOnCurrentInput = () => {
+    console.log("focusOnCurrentInput");
+    //focus on current input when user click on the the page
+    console.log("currentIndex", currentIndex);
+    const currentInput: any = inputRefsArray?.[currentIndex]?.current;
+    currentInput.focus();
+    currentInput.select();
+  };
+
+  useMemo(() => handleLetterChange(letters), [letters]);
+  useEffect(() => {
+    window.addEventListener("click", focusOnCurrentInput, false);
+    return () => {
+      window.removeEventListener("click", focusOnCurrentInput);
+    };
+  }, [currentIndex]);
   return (
     <div className="sign-up otp">
       <div className="content26">
@@ -107,40 +127,16 @@ const PhoneVerificationComponent = ({ phone, onChange }: StepType) => {
           <div className="verification-code-input-field">
             <div className="input-with-label6">
               <div className="input7" id={`${currentIndex}`}>
-                {inputRefsArray.map((ref: any, currentIndex) => {
+                {inputRefsArray.map((ref: any, index) => {
                   return (
-                    <div className="mega-input-field-base1" key={currentIndex}>
-                      <input
-                        className="text68 border-none text-center"
-                        name="phone-value"
-                        key={currentIndex}
-                        ref={ref}
-                        type="number"
-                        id={`box${currentIndex}-1`}
-                        // placeholder="0"
-                        onChange={(e) => {
-                          const { value } = e.target;
-                          console.log(
-                            "onChange input",
-                            currentIndex,
-                            "; value : ",
-                            value
-                          );
-                          setLetters((letters) =>
-                            letters.map((letter, letterIndex) =>
-                              letterIndex === currentIndex ? value : letter
-                            )
-                          );
-                        }}
-                        onSelect={() => {
-                          console.log("onclick/select input", currentIndex);
-                          setCurrentIndex(currentIndex);
-                        }}
-                        value={letters[currentIndex]}
-                        minLength={1}
-                        maxLength={1}
-                      />
-                    </div>
+                    <OTPInput
+                      megaIndex={index}
+                      inputRef={ref}
+                      onChange={handleOTPInputChange}
+                      onSelect={handleOTPInputSelect}
+                      value={letters[index]}
+                      disabled={currentIndex != index}
+                    />
                   );
                 })}
               </div>
