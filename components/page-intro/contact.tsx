@@ -42,7 +42,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="actions">
-                  <div className="send-message-button">
+                  <div className="send-message-button" id="send-message-button">
                     <b>Gửi tin nhắn</b>
                   </div>
                 </div>
@@ -81,7 +81,7 @@ const Contact = () => {
                   src="/images/6387ec276a4eb-62aa10dfb2adca268416cf2fd03d82f5transformed-31@2x.png"
                 />
 
-                <div className="d-flex flex-column position-relative">
+                <div className="d-flex flex-column">
                   <b className="card-text">Summer Avo Salad</b>
                   <div className="delivery">Đang giao hàng</div>
                   <div className="delivery-time">3:09 PM</div>
