@@ -2,8 +2,7 @@ import { useForm } from "react-hook-form";
 import { server } from "../../utils/server";
 import { useState } from "react";
 import "react-phone-number-input/style.css";
-import PhoneInput from "react-phone-number-input";
-import { isPossiblePhoneNumber } from "react-phone-number-input";
+import PhoneInput  from "react-phone-number-input";
 import { toast } from "react-toastify";
 
 type StepType = {
@@ -12,7 +11,7 @@ type StepType = {
 };
 
 const LoginComponent = ({ onChange, setPhone }: StepType) => {
-  const { handleSubmit } = useForm();
+  const { handleSubmit} = useForm();
   // const [value,setValue] = useState()
   const [value, setValue] = useState<string | undefined>();
   const [error, setError] = useState<string>();
@@ -88,7 +87,6 @@ const LoginComponent = ({ onChange, setPhone }: StepType) => {
                       onChange={setValue}
                       rules={{
                         required: true,
-                        validate: isPossiblePhoneNumber,
                       }}
                       /*
                                                 onChange={(value: string) => {

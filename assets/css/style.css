@@ -1534,10 +1534,10 @@ a:hover{
 }
 
 .phone_verification .input7 {
-    border-radius: var(--br-5xs);
+    
     background-color: var(--full-white);
     box-shadow: var(--shadow-xs);
-    border: 1px solid var(--gray-300);
+    
     overflow: hidden;
     flex-direction: row;
     align-items: center;
@@ -1548,7 +1548,9 @@ a:hover{
     text-align: left;
 }
 .phone_verification .input7 input{
+    border: 1px solid var(--gray-300);
     padding: var(--padding-3xs) var(--padding-sm);
+    border-radius: var(--br-5xs);
 }
 .content28 {
     flex: 1;
@@ -1953,3 +1955,6 @@ input[type=number] {
 }
 .button56:hover, .button56:hover label{cursor: pointer;}
 label.text-red{ color: red }
+#chedoan_khac{
+    display: none;
+}

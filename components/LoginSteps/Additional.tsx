@@ -161,29 +161,32 @@ const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
                                 <div className="email1">
                                     <div className="input-with-label6">
                                         <div className="text73">Chiều cao ( cm )</div>
-                                        <input placeholder="Ví dụ: 163" type="text"
-                                            className="text-input1 border-none no-outline no-padding w-100 input7" name="chieuCao"
-                                            ref={register( { 
-                                                required: true ,
-                                            })}
-                                        />
-                                            
+                                        <div className="input7">
+                                            <input placeholder="Ví dụ: 163" type="text"
+                                                className="text-input1 border-none no-outline no-padding w-100 input7" name="chieuCao"
+                                                ref={register( { 
+                                                    required: true ,
+                                                })}
+                                            />
+                                        </div>
                                     </div>
                                     <div className="hint-text6">Cm</div>
                                 </div>
                                 <div className="email1">
                                     <div className="input-with-label6">
                                         <div className="text73">Cân nặng ( kg )</div>
-                                        <input placeholder="Ví dụ: 60" type="text"
-                                            className="text-input1 border-none no-outline no-padding w-100 input7" name="canNang"
-                                            ref={register( { 
-                                                required: true ,
-                                                pattern: {
-                                                    value: /^[0-9]/,
-                                                    message: "invalid "
-                                                }
-                                            })}
-                                        />
+                                        <div className="input7">
+                                            <input placeholder="Ví dụ: 60" type="text"
+                                                className="text-input1 border-none no-outline no-padding w-100 input7" name="canNang"
+                                                ref={register( { 
+                                                    required: true ,
+                                                    pattern: {
+                                                        value: /^[0-9]/,
+                                                        message: "invalid "
+                                                    }
+                                                })}
+                                            />
+                                        </div>
                                     </div>
                                     <div className="hint-text6">Kg</div>
                                 </div>
@@ -296,11 +299,12 @@ const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
                                 <div className="ten">
                                 <div className="input-with-label6">
                                     <div className="text73">Bệnh mãn tính (nếu có)</div>
-                                    <input placeholder="Ví dụ: Cao huyết áp..." type="text"
+                                    <div className="input7">
+                                        <input placeholder="Ví dụ: Cao huyết áp..." type="text"
                                         className="text-input1 border-none no-outline no-padding w-100 input7" 
                                         name="diseases"
-                                    />
-                                   
+                                        />
+                                    </div>
                                 </div>
                                 <div className="supporting-text53">
                                     Tim, Cao huyết áp, Huyết áp thấp, Gout, Tiểu đường, hen suyễn,
@@ -372,10 +376,12 @@ const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
                                             
                                         </div>
                                     </div>
-                                    <input placeholder="Vui lòng điền tên chế độ ăn mong muốn" type="text"
-                                        className="text-input1 border-none no-outline no-padding w-100 input7"
-                                        name="allergy"
-                                    />
+                                    <div className="input7" id="chedoan_khac">
+                                        <input placeholder="Vui lòng điền tên chế độ ăn mong muốn" type="text"
+                                            className="text-input1 border-none no-outline no-padding w-100 input7"
+                                            name="allergy"
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </div>
