@@ -836,6 +836,7 @@ a:hover{
     box-sizing: border-box;
     font-size: 36px;
     color: var(--gray-900);
+    overflow: hidden;
 }
 
 .download-app-wrapper .heading {
@@ -1963,3 +1964,4 @@ input[type=number] {
     mix-blend-mode: multiply;
     background-color: var(--gray-200);
 }
+.button56:hover, .button56:hover label{cursor: pointer;}
