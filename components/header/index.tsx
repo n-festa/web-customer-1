@@ -58,7 +58,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
                                     </Link>
                                 </div>
                                 <div className="navigation-button">
-                                    <Link href="http://localhost:3001/#download-section1">
+                                    <Link href="http://localhost:3001/#send-message-button">
                                         <a className="text fw-bolder">Tải App</a>
                                     </Link>
                                 </div>

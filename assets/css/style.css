@@ -1199,14 +1199,6 @@ a:hover{
 }
 .input7 {
     align-self: stretch;
-    border-radius: var(--br-5xs);
-    background-color: var(--full-white);
-    box-shadow: var(--shadow-xs);
-    /* border: 1px solid var(--gray-300); */
-    overflow: hidden;
-    align-items: flex-start;
-    font-size: var(--text-md-regular-size);
-    color: var(--gray-500);
 }
 .input7, .text-input1 {
     display: flex;
@@ -1273,14 +1265,7 @@ a:hover{
     font-size: var(--text-sm-semibold-size);
     color: var(--gray-7001);
 }
-.input7 {
-    flex-direction: row;
-    align-items: center;
-    gap: var(--gap-5xs);
-    text-align: center;
-    font-size: var(--display-lg-medium-size);
-    color: var(--gray-300);
-}
+
 .mega-input-field-base, .mega-input-field-base1 {
     border-radius: var(--br-5xs);
     background-color: var(--full-white);
@@ -1556,13 +1541,15 @@ a:hover{
     overflow: hidden;
     flex-direction: row;
     align-items: center;
-    padding: var(--padding-3xs) var(--padding-sm);
+    
     gap: var(--gap-5xs);
     color: var(--gray-500);
     font-size: var(--text-md-regular-size);
     text-align: left;
 }
-
+.phone_verification .input7 input{
+    padding: var(--padding-3xs) var(--padding-sm);
+}
 .content28 {
     flex: 1;
     flex-direction: row;
@@ -1965,3 +1952,4 @@ input[type=number] {
     background-color: var(--gray-200);
 }
 .button56:hover, .button56:hover label{cursor: pointer;}
+label.text-red{ color: red }

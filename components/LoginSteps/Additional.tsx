@@ -72,15 +72,16 @@ const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
                         <div className="user-info">
                             <div className="ten">
                                 <div className="input-with-label6">
-                                    <div className="text73">Tên</div>
+                                    <div className="text73">
+                                        Tên
+                                        <label className="text-red ms-2"> (*)</label>
+                                    </div>
                                     <div className="input7 ">
-                                        <div className="content28 ">
-                                            <input placeholder="Ví dụ: nguyen.vana" type="text"
+                                        <input placeholder="Ví dụ: nguyen.vana" type="text"
                                                 className="text-input1 border-none no-outline no-padding w-100" name="name"
                                                 ref={register( { required: true ,
                                                 })}
                                             />
-                                        </div>
                                     </div>
                                 </div>
                                 {errors.name && errors.name.type === 'required' && 
@@ -90,7 +91,10 @@ const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
                            
                             <div className="ten">
                                 <div className="input-with-label6">
-                                    <div className="text73">Email</div>
+                                    <div className="text73">
+                                        Email
+                                        <label className="text-red ms-2"> (*)</label>
+                                    </div>
                                     <div className="input7">
                                         <div className="content28">
                                             <input placeholder="Ví dụ: nguyen.vana@email.com" type="text"
@@ -113,7 +117,9 @@ const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
 
                             <div className="ten">
                                 <div className="input-with-label6">
-                                    <div className="text73">Ngày sinh</div>
+                                    <div className="text73">
+                                        Ngày sinh
+                                    </div>
                                     <div className="input7">
                                         <div className="content28">
                                             <div className="text80 font-size16">
@@ -172,6 +178,10 @@ const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
                                             className="text-input1 border-none no-outline no-padding w-100 input7" name="canNang"
                                             ref={register( { 
                                                 required: true ,
+                                                pattern: {
+                                                    value: /^[0-9]/,
+                                                    message: "invalid "
+                                                }
                                             })}
                                         />
                                     </div>
@@ -350,23 +360,21 @@ const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
                                         </div>
                                         <div className="text-and-supporting-text3">
                                             <div className="text78">Chế độ ăn hỗn hợp</div>
-                                            <div className="supporting-text54">
-                                            Save my login details for next time.
-                                            </div>
+                                           
                                         </div>
                                     </div>
                                     <div className="radio-check3">
+                                        <div className="input10">
+                                            <input type="radio" name="che_do_an" className="checkbox-base1" value="4" />
+                                        </div>
                                         <div className="text-and-supporting-text3">
-                                            <div className="text78">Khác</div>
-                                            <div className="supporting-text54">
-                                                Save my login details for next time.
-                                            </div>
+                                            <div className="text78">Khác </div>
+                                            
                                         </div>
                                     </div>
                                     <input placeholder="Vui lòng điền tên chế độ ăn mong muốn" type="text"
                                         className="text-input1 border-none no-outline no-padding w-100 input7"
                                         name="allergy"
-                                       
                                     />
                                 </div>
                             </div>
