@@ -74,14 +74,14 @@ const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
                                 <div className="input-with-label6">
                                     <div className="text73">
                                         Tên
-                                        <label className="text-red ms-2"> (*)</label>
+                                        <label className="text-red ms-1"> *</label>
                                     </div>
                                     <div className="input7 ">
                                         <input placeholder="Ví dụ: nguyen.vana" type="text"
-                                                className="text-input1 border-none no-outline no-padding w-100" name="name"
-                                                ref={register( { required: true ,
+                                            className="text-input1 border-none no-outline no-padding w-100" name="name"
+                                            ref={register( { required: true ,
                                                 })}
-                                            />
+                                        />
                                     </div>
                                 </div>
                                 {errors.name && errors.name.type === 'required' && 
@@ -93,7 +93,7 @@ const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
                                 <div className="input-with-label6">
                                     <div className="text73">
                                         Email
-                                        <label className="text-red ms-2"> (*)</label>
+                                        <label className="text-red ms-1"> *</label>
                                     </div>
                                     <div className="input7">
                                         <div className="content28">
@@ -119,6 +119,7 @@ const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
                                 <div className="input-with-label6">
                                     <div className="text73">
                                         Ngày sinh
+                                        <label className="text-red ms-1"> *</label>
                                     </div>
                                     <div className="input7">
                                         <div className="content28">
@@ -134,7 +135,10 @@ const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
                                 
                             </div>
                             <div className="gioi-tinh">
-                                <div className="text73">Giới tính</div>
+                                <div className="text73">
+                                    Giới tính
+                                    <label className="text-red ms-1"> *</label>
+                                </div>
                                 <div className="radio-check-parent">
                                     <div className="radio-check">
                                         <div className="input10">
@@ -160,12 +164,19 @@ const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
                             <div className="email-parent">
                                 <div className="email1">
                                     <div className="input-with-label6">
-                                        <div className="text73">Chiều cao ( cm )</div>
+                                        <div className="text73">
+                                            Chiều cao ( cm )
+                                            <label className="text-red ms-1"> *</label>
+                                        </div>
                                         <div className="input7">
                                             <input placeholder="Ví dụ: 163" type="text"
                                                 className="text-input1 border-none no-outline no-padding w-100 input7" name="chieuCao"
                                                 ref={register( { 
                                                     required: true ,
+                                                    valueAsNumber: true,
+                                                    pattern:{
+                                                       value: /^(0|[1-9]\d*)(\.\d+)?$/
+                                                    },
                                                 })}
                                             />
                                         </div>
@@ -174,7 +185,10 @@ const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
                                 </div>
                                 <div className="email1">
                                     <div className="input-with-label6">
-                                        <div className="text73">Cân nặng ( kg )</div>
+                                        <div className="text73">
+                                            Cân nặng ( kg )
+                                            <label className="text-red ms-1"> *</label>
+                                        </div>
                                         <div className="input7">
                                             <input placeholder="Ví dụ: 60" type="text"
                                                 className="text-input1 border-none no-outline no-padding w-100 input7" name="canNang"

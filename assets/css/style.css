@@ -1551,6 +1551,10 @@ a:hover{
     border: 1px solid var(--gray-300);
     padding: var(--padding-3xs) var(--padding-sm);
     border-radius: var(--br-5xs);
+    color: 
+}
+.phone_verification .input7 input:focus{
+    color: var(--base-black);
 }
 .content28 {
     flex: 1;
@@ -1870,7 +1874,7 @@ a:hover{
 
 
 .text681{
-        flex: 1;
+    flex: 1;
     position: relative;
     line-height: 24px;
 }
