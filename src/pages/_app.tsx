@@ -18,6 +18,7 @@ import '@assets/css/bootstrap.min.css';
 import '@assets/css/global.css';
 import '@assets/css/fonts.css';
 import '@assets/css/login.css';
+import '@assets/css/old_style.css';
 import '@assets/css/style.css';
 
 type ExtendedAppProps = AppProps & {

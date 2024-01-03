@@ -2,6 +2,7 @@
 import TimerContainer from "../time/TimerContainer";
 import { useState, useEffect, createRef, useMemo } from "react";
 import { server } from "@utils/server";
+import { toast } from "react-toastify";
 import OTPInput from "@components/OTPinput";
 
 type StepType = {
@@ -10,8 +11,7 @@ type StepType = {
 };
 
 const PhoneVerificationComponent = ({ phone, onChange }: StepType) => {
-    console.log("render PhoneVerificationComponent");
-  // show 6 input
+    // show 6 input
     const numberOfInputs = 6;
     const [inputRefsArray] = useState(() =>
         Array.from({ length: numberOfInputs }, () => createRef())
@@ -24,79 +24,81 @@ const PhoneVerificationComponent = ({ phone, onChange }: StepType) => {
     );
 
     const authenticateOTP = async (phoneNumber: string, inputOTP: string) => {
-    await fetch(`${server}auth/authenticateOTP`, {
-      method: "post",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-      body: JSON.stringify({
-        phoneNumber: phoneNumber.substring(1),
-        inputOTP: inputOTP,
-      }),
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        console.log(json);
-        if (json.status == "success") {
-          setTimeout(() => {
-            onChange(3);
-          }, 1000);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+          
+        await fetch(`${server}web-customer/auth/authenticate-otp`, {
+            method: "post",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            credentials: "include",
+            body: JSON.stringify({
+                phoneNumber: phoneNumber.substring(1),
+                inputOTP: inputOTP,
+            }),
+        })
+        .then((res) => res.json())
+        .then((json) => {
+            console.log(json);
+            if (json.statusCode == 200) {
+                toast.success(" Success!", { autoClose: 1000 });
+                setTimeout(() => {
+                    onChange(3);
+                }, 3000);
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        });
     };
-    const handleLetterChange = (letters: Array<string>) => {
-    console.log("start handleLetterChange");
 
-    //Check if inputRefsArray is inital state -> return
-    if (inputRefsArray[0].current == null) {
-      return;
-    }
-    //Check if there is any value at current index
-    if (letters[currentIndex] == "") {
-      return;
-    }
-    //Calculate NextIndex & get nextInput
-    const nextIndex = currentIndex + 1;
-    // const nextInput: any =
-    //   inputRefsArray?.[nextIndex % numberOfInputs]?.current;
-    //Update currentIndex
-    setCurrentIndex(nextIndex % numberOfInputs);
-    //Move cursor to nextInput
-    // nextInput.focus();
-    // nextInput.select();
-    //Authenticate OTP if user finishes
-    if (nextIndex === numberOfInputs) {
-      //array letters to string without separator
-      const inputOTP = letters.join("");
-      authenticateOTP(phoneNumber, inputOTP);
-      //clear letters
-      setLetters(() => Array.from({ length: numberOfInputs }, () => ""));
-    }
-    console.log("end handleLetterChange");
+    const handleLetterChange = (letters: Array<string>) => {
+
+        //Check if inputRefsArray is inital state -> return
+        if (inputRefsArray[0].current == null) {
+            return;
+        }
+        //Check if there is any value at current index
+        if (letters[currentIndex] == "") {
+            return;
+        }
+        //Calculate NextIndex & get nextInput
+        const nextIndex = currentIndex + 1;
+        // const nextInput: any =
+        //   inputRefsArray?.[nextIndex % numberOfInputs]?.current;
+        //Update currentIndex
+        setCurrentIndex(nextIndex % numberOfInputs);
+        //Move cursor to nextInput
+        // nextInput.focus();
+        // nextInput.select();
+        //Authenticate OTP if user finishes
+        if (nextIndex === numberOfInputs) {
+              //array letters to string without separator
+            const inputOTP = letters.join("");
+            console.log(inputOTP);  
+            authenticateOTP(phoneNumber, inputOTP);
+              //clear letters
+            setLetters(() => Array.from({ length: numberOfInputs }, () => ""));
+        }
     };
 
     const handleOTPInputChange = (megaIndex: number, value: string) => {
-    setLetters((letters) =>
-      letters.map((letter, letterIndex) =>
-        letterIndex === megaIndex ? value : letter
-      )
-    );
+        setLetters((letters) =>
+            letters.map((letter, letterIndex) =>
+                letterIndex === megaIndex ? value : letter
+            )
+        );
     };
     const handleOTPInputSelect = (megaIndex: number) => {
         setCurrentIndex(megaIndex);
     };
     const focusOnCurrentInput = () => {
-    console.log("focusOnCurrentInput");
-    //focus on current input when user click on the the page
-    console.log("currentIndex", currentIndex);
-    const currentInput: any = inputRefsArray?.[currentIndex]?.current;
-    currentInput.focus();
-    currentInput.select();
+        //console.log("focusOnCurrentInput");
+        //focus on current input when user click on the the page
+        //console.log("currentIndex", currentIndex);
+        const currentInput: any = inputRefsArray?.[currentIndex]?.current;
+        currentInput.focus();
+        currentInput.select();
     };
 
     useMemo(() => handleLetterChange(letters), [letters]);
@@ -121,26 +123,26 @@ const PhoneVerificationComponent = ({ phone, onChange }: StepType) => {
                     </div>
                 </div>
                 <div className="verification-code-input-field-parent content26 text-gray-7001 text-sm-semibold-size">
-                  <div className="verification-code-input-field">
-                    <div className="input-with-label">
-                      <div className="input7" id={`${currentIndex}`}>
-                        {inputRefsArray.map((ref: any, index) => {
-                          return (
-                            <OTPInput
-                              megaIndex={index}
-                              inputRef={ref}
-                              onChange={handleOTPInputChange}
-                              onSelect={handleOTPInputSelect}
-                              value={letters[index]}
-                              disabled={currentIndex != index}
-                            />
-                          );
-                        })}
-                      </div>
+                    <div className="verification-code-input-field">
+                        <div className="input-with-label">
+                            <div className="input7" id={`${currentIndex}`}>
+                            {inputRefsArray.map((ref: any, index) => {
+                              return (
+                                <OTPInput
+                                    megaIndex={index}
+                                    inputRef={ref}
+                                    onChange={handleOTPInputChange}
+                                    onSelect={handleOTPInputSelect}
+                                    value={letters[index]}
+                                    disabled={currentIndex != index}
+                                />
+                              );
+                            })}
+                            </div>
+                        </div>
                     </div>
-                  </div>
 
-                  <TimerContainer phone={phone} />
+                    <TimerContainer phone={phone} />
                 </div>
             </div>
         </div>

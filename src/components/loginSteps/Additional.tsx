@@ -38,6 +38,8 @@ const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
 
 
     const { register,handleSubmit } = useForm();
+    
+   // const onSubmit = async (data: LoginType) => {
     const onSubmit = async (data: LoginType) => {
         let selectedDate = document.getElementById('birthDate') as HTMLInputElement;
         data.ngaySinh = selectedDate.value;
@@ -47,14 +49,18 @@ const Additional = ({onChange,setHeight,setWeight,setKcal}: StepType) => {
         setHeight(data.chieuCao);
         setWeight(data.canNang);
 
+        /*
         const res = await postData(`${server}auth/setEnergy`, {
             data: data,
         });
         
         setKcal(res.result.result.nangLuongKhuyenNghi.giaTri_Min);
+        */
+        console.log(data);
+        /*
         setTimeout(() => {
             onChange(4);
-        }, 2000);
+        }, 2000);*/
     };
 
     return (

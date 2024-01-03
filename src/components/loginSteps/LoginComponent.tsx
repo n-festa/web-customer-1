@@ -24,7 +24,6 @@ const LoginComponent = ({ onChange, setPhone }: StepType) => {
         if (phone) {
             if (phone.length == 12) {
                 phone = phone.substring(1);
-                //http://localhost:3010/web-customer/auth/request-otp
 
                 await fetch(`${server}web-customer/auth/request-otp`, {
                     method: "post",
@@ -33,6 +32,7 @@ const LoginComponent = ({ onChange, setPhone }: StepType) => {
                     headers: {
                         Accept: "application/json",
                         "Content-Type": "application/json",
+
                     },
                     credentials: "include",
                     body: JSON.stringify({
@@ -41,12 +41,18 @@ const LoginComponent = ({ onChange, setPhone }: StepType) => {
                 })
                 .then((res) => res.json())
                 .then((json) => {
-                    console.log(json);
+                    console.log(json.message.otpCode);
+
+                    if (json.statusCode == 200) {
+                        toast.success(" Success!", { autoClose: 1000 });
+                        setTimeout(() => {
+                            onChange(2);
+                        }, 3000);
+                    }
                 })
                 .catch((error) => {
                     console.log(error);
                 });
-                toast.success(" Success!", { autoClose: 1500 });
               
             } else {
                 toast.error(" Số điện thoại của bạn dường như chưa chính xác.", { autoClose: 1500 });

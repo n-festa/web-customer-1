@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { server } from "@utils/server";
 
 interface TimerType {
   phone: string;
@@ -14,45 +15,45 @@ const TimerContainer = ({ phone }: TimerType) => {
     );
 
     const active = Boolean(secondsAmount <= 0) || false;
-
-      useEffect(() => {
+    useEffect(() => {
         if (secondsAmount > 0) {
-          var interval = setInterval(() => tick(), 1000);
+            var interval = setInterval(() => tick(), 1000);
         }
         return () => {
-          clearInterval(interval);
+            clearInterval(interval);
         };
-      }, [secondsAmount]);
-      function tick() {
+    }, [secondsAmount]);
+    
+    function tick() {
         setSecondsAmount((state) => state - 1);
-      }
+    }
 
-  const minutes = Math.floor(secondsAmount / 60);
-  const seconds = secondsAmount % 60;
+    const minutes = Math.floor(secondsAmount / 60);
+    const seconds = secondsAmount % 60;
 
-  //gui lai ma
+    //gui lai ma
     const { handleSubmit } = useForm();
 
     const ReSendOTP = async () => {
     setSecondsAmount(COUNTDOWN_INICIAL_TIME_IN_SECONDS);
-    await fetch("http://localhost:3000/api/v1/auth/requestOTP", {
-      method: "post",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-      body: JSON.stringify({
-        phoneNumber: phone,
-      }),
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        console.log(json.status);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    await fetch(`${server}web-customer/auth/request-otp`, {
+        method: "post",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({
+            phoneNumber: phone,
+        }),
+        })
+        .then((res) => res.json())
+        .then((json) => {
+            console.log(json);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
     };
  
     return (
