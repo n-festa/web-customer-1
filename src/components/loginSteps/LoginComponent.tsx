@@ -22,16 +22,18 @@ const LoginComponent = ({ onChange, setPhone }: StepType) => {
         setPhone(phone);
         if (phone) {
             if (phone.length == 12) {
-              toast.success(" Success!", { autoClose: 1500 });
-                      setTimeout(() => {
-                        onChange(2);
-                      }, 3000);
+                
+
+                toast.success(" Success!", { autoClose: 1500 });
+                setTimeout(() => {
+                    onChange(2);
+                }, 3000);
             } else {
-                toast.error(" Fail!", { autoClose: 1500 });
+                toast.error(" Số điện thoại của bạn dường như chưa chính xác.", { autoClose: 1500 });
                 setError("Số điện thoại của bạn dường như chưa chính xác.");
             }
         } else {
-            toast.error(" Fail!", { autoClose: 1500 });
+            toast.error(" Vui lòng nhập số điện thoại của bạn", { autoClose: 1500 });
             setError("Vui lòng nhập số điện thoại của bạn");
         }
     };
