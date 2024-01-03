@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
-import { server } from "../../utils/server";
 import { useState } from "react";
 import "react-phone-number-input/style.css";
 import PhoneInput  from "react-phone-number-input";
 import { toast } from "react-toastify";
+import { server } from "@utils/server";
+
 
 type StepType = {
     onChange: any;
@@ -18,16 +19,35 @@ const LoginComponent = ({ onChange, setPhone }: StepType) => {
 
     const onSubmit = async () => {
         var phone = value;
-        console.log(phone);
+      //  console.log(phone);
         setPhone(phone);
         if (phone) {
             if (phone.length == 12) {
-                
+                phone = phone.substring(1);
+                //http://localhost:3010/web-customer/auth/request-otp
 
+                await fetch(`${server}web-customer/auth/request-otp`, {
+                    method: "post",
+                    mode: "cors",
+                    cache: "no-cache",
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
+                    },
+                    credentials: "include",
+                    body: JSON.stringify({
+                        phoneNumber: phone,
+                    }),
+                })
+                .then((res) => res.json())
+                .then((json) => {
+                    console.log(json);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
                 toast.success(" Success!", { autoClose: 1500 });
-                setTimeout(() => {
-                    onChange(2);
-                }, 3000);
+              
             } else {
                 toast.error(" Số điện thoại của bạn dường như chưa chính xác.", { autoClose: 1500 });
                 setError("Số điện thoại của bạn dường như chưa chính xác.");
