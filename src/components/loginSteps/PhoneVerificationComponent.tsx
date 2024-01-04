@@ -42,9 +42,11 @@ const PhoneVerificationComponent = ({ phone, onChange }: StepType) => {
             console.log(json);
             if (json.statusCode == 200) {
                 toast.success(" Success!", { autoClose: 1000 });
+                /*
                 setTimeout(() => {
                     onChange(3);
                 }, 3000);
+                */
             }
         })
         .catch((error) => {
@@ -125,10 +127,11 @@ const PhoneVerificationComponent = ({ phone, onChange }: StepType) => {
                 <div className="verification-code-input-field-parent content26 text-gray-7001 text-sm-semibold-size">
                     <div className="verification-code-input-field">
                         <div className="input-with-label">
-                            <div className="input7" id={`${currentIndex}`}>
+                            <div className="input7" id={`${currentIndex}`} key={`${currentIndex}`}>
                             {inputRefsArray.map((ref: any, index) => {
-                              return (
+                                return (
                                 <OTPInput
+                                    key={index}
                                     megaIndex={index}
                                     inputRef={ref}
                                     onChange={handleOTPInputChange}
