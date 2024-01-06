@@ -18,12 +18,11 @@ import '@assets/css/bootstrap.min.css';
 import '@assets/css/global.css';
 import '@assets/css/fonts.css';
 import '@assets/css/login.css';
-import '@assets/css/old_style.css';
+//import '@assets/css/old_style.css';
 import '@assets/css/style.css';
 
 type ExtendedAppProps = AppProps & {
-  Component: NextPage;
-//  emotionCache?: EmotionCache;
+    Component: NextPage;
 };
 
 const MyApp = ({ 
@@ -34,21 +33,21 @@ const MyApp = ({
     const [interval, setInterval] = useState(0);
 
     return(
-      <Fragment>
-      <ToastContainer
-        position="top-right"
-        autoClose={8000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        draggable={false}
-        closeOnClick
-        pauseOnHover
-      />
-        <SessionProvider session={session} refetchInterval={interval}>
-          <Component {...pageProps} />
-          <RefreshTokenHandler setInterval={setInterval} />
-        </SessionProvider>
-      </Fragment>
+        <Fragment>
+            <ToastContainer
+                position="top-right"
+                autoClose={8000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                draggable={false}
+                closeOnClick
+                pauseOnHover
+            />
+            <SessionProvider session={session} refetchInterval={interval}>
+                <Component {...pageProps} />
+                <RefreshTokenHandler setInterval={setInterval} />
+            </SessionProvider>
+        </Fragment>
     )
 };
 
