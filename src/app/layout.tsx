@@ -1,51 +1,12 @@
-import Head from "next/head";
-import Header from "@components/header"
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { usePathname } from 'next/navigation'
-import { useState } from 'react';
+import '@/styles/bootstrap.min.scss'
 
-type LayoutType = {
-  	title?: string;
-  	children?: React.ReactNode;
-};
-
-
-export default ({ children, title = "2ALL" }: LayoutType) => {
-	const pathname = usePathname()
-    const [onTop, setOnTop] = useState(false);
-
-	if(pathname === "/landingpage") {
-	}
-
-	return (
-	    <div className="app-main">
-		    <Head>
-		        <title>{title}</title>
-		        <link rel="icon" href="/images/logo.ico" />
-		        <link
-		          rel="stylesheet"
-		          href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
-		        />
-		        <link
-		          href="https://fonts.cdnfonts.com/css/svn-gilroy"
-		          rel="stylesheet"
-		        />
-
-		        <link
-		          rel="stylesheet"
-		          href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap"
-		        />
-		        <link
-		          rel="stylesheet"
-		          href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
-		        />
-		    </Head>
-		    {/* landing-page-option-3 */}
-	      	<main className=" d-flex flex-column">
-	      		<Header />
-	        	{children}
-	      	</main>
-	    </div>
-	);
-};
+export default function RootLayout({children,}: {children: React.ReactNode;}) {
+  	return (
+	    <html lang="en">
+	      	<body>
+	        {/* <ProgressBar /> */}
+	        {children}
+	      	</body>
+	    </html>
+  )
+}

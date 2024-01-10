@@ -1,4 +1,4 @@
-import CartItem from './cart_item'
+import CartItem from './cartItem'
 const Cart =() =>{
 	return (
 	    <div className="cart-info-wrapper d-flex flex-column align-items-center gap-2">
