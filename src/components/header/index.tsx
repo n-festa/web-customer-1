@@ -2,9 +2,9 @@ import Link from "next/link";
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Dropdown from 'react-bootstrap/Dropdown';
-import CartModel from '@components/cart/cartModel';
-import CheckLogin from '@components/header/checkLogin';
-import CartHeader from '@components/header/cartHeader';
+import CartModel from '@/components/cart/cartModel';
+import CheckLogin from '@/components/header/checkLogin';
+import CartHeader from '@/components/header/cartHeader';
 
 type HeaderType = {
     isErrorPage?: Boolean;
