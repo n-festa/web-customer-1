@@ -1,9 +1,9 @@
 import React from "react";
-import MenuItem from "@components/menu-item/index";
-import MenuItemTitle from "@components/menu-item/menu-item-title";
+import MenuItem from "@/components/menu-item/index";
+import MenuItemTitle from "@/components/menu-item/menu-item-title";
 import useSwr from 'swr';
-import {fetcher} from '@utils/fetcher';
-//import { MenuItemList } from '@types/menu-item.type.ts';
+import {fetcher} from '@/utils/fetcher';
+
 
 export type IngredientType = {
   name?: number | string;
