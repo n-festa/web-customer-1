@@ -1,3 +1,6 @@
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
 .payment-process {
     background: white;
     gap: 10px;
@@ -146,4 +149,175 @@
     font-style: normal;
     font-weight: 600;
     line-height: 24px;
+}
+
+
+/* review and rating */
+.back-to-previous {
+    padding: 16px 0;
+    display: flex;
+    gap: 8px;
+    color: #475467;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+}
+.rating-service {
+    gap: 10px;
+    max-width: 1166px;
+    padding-bottom: 16px;
+    margin: 0 auto;
+}
+.rating-service .title {
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 38px;
+}
+.order-number-and-date {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    color: #000;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+.review-tabs {
+    display: flex;
+    height: 34px;
+    align-items: flex-start;
+    gap: 16px;
+    border-bottom: 1px solid #EAECF0;
+}
+.tab-button-base.active {
+    color: #00322A;
+    border-bottom: 2px solid #00322A;
+}
+.tab-button-base {
+    display: flex;
+    padding: 0px 4px 10px 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: #667085;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+.shipper-review, .dishes-review {
+    display: flex;
+    padding: 10px 0px;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+    border-bottom: 1px solid #EAECF0;
+}
+.shipper-review .label, .dishes-review .label {
+    color: #101828;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+}
+.shipper-review img {
+    width: 48px;
+    height: 48px;
+}
+.big-rating-stars {
+    display: flex;
+    height: 48px;
+    align-items: center;
+    gap: 8px;
+}
+.big-rating-stars img {
+    width: 40px;
+    height: 40px;
+}
+.dishes-review {
+    border-bottom: none;
+}
+.dish-rating-tag {
+    display: flex;
+    padding: 8px 14px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 24px;
+    border: 1px solid #D0D5DD;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    color: #344054;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.dish-rating-tag.active {
+    border-radius: 24px;
+    border: 1px solid #00473C;
+    background: #00473C;
+    color: #E6FF55;
+}
+.review-comment {
+    border-radius: 8px;
+    border: 1px solid #D0D5DD;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    padding: 12px 14px;
+}
+.divider {
+    border-bottom: 1px solid #EAECF0;
+    height: 1px;
+    width: 100%;
+}
+.review-with-images {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+    padding: 10px 0;
+}
+.review-with-images img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+}
+.review-action-buttons {
+    display: flex;
+    height: 55px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    align-self: stretch;
+}
+.review-action-button {
+    display: flex;
+    padding: 8px 14px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 24px;
+    border: 1px solid #D0D5DD;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    color: #344054;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    background: #fff;
+}
+.review-action-button.primary {
+    border: 1px solid #00473C;
+    background: #00473C;
+    color: #E6FF55;
 }

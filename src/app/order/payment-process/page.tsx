@@ -1,8 +1,7 @@
 
 
 import Breadcrumb from "@/app/ui/breadcrumb";
-const SearchPage = () =>{
-
+const PaymentProcessPage = () =>{
     return (
         <div className="w-100 h-100 d-flex justify-content-center align-items-center">
             <div className="payment-process d-flex flex-column">
@@ -83,4 +82,4 @@ const SearchPage = () =>{
     )
 }
 
-export default SearchPage;
+export default PaymentProcessPage;
