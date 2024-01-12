@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { server } from "@utils/server";
+import { server } from "@/utils/server";
 
 interface TimerType {
   phone: string;

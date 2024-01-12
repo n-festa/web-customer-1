@@ -3,6 +3,7 @@ import '@/styles/bootstrap.min.css';
 import '@/styles/layout.css'
 import '@/styles/fonts.css'
 import '@/styles/order.css'
+import '@/styles/login.css'
 import '@/styles/style.css'
 
 import Head from "next/head"

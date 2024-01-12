@@ -1,9 +1,9 @@
 //import { useForm } from "react-hook-form";
 import TimerContainer from "../time/TimerContainer";
 import { useState, useEffect, createRef, useMemo } from "react";
-import { server } from "@utils/server";
+import { server } from "@/utils/server";
 import { toast } from "react-toastify";
-import OTPInput from "@components/OTPinput";
+import OTPInput from "@/components/OTPinput";
 
 type StepType = {
   onChange: any;

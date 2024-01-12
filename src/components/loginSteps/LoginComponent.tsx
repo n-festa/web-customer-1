@@ -3,7 +3,7 @@ import { useState } from "react";
 import "react-phone-number-input/style.css";
 import PhoneInput  from "react-phone-number-input";
 import { toast } from "react-toastify";
-import { server } from "@utils/server";
+import { server } from "@/utils/server";
 
 
 type StepType = {

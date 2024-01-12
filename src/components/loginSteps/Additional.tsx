@@ -1,6 +1,6 @@
 import { useForm, SubmitHandler } from "react-hook-form"
-import { postData } from '@utils/services'; 
-import { server } from '@utils/server'; 
+import { postData } from '@/utils/services'; 
+import { server } from '@/utils/server'; 
 import { useState } from "react";
 
 type StepType = {
