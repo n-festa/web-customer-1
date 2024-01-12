@@ -1,5 +1,5 @@
 
-const MyOrderPage = () =>{
+const MyOrderFoodPage = () =>{
     return (
         <section className="body-section container py-3">
             <div className="my-order-wrapper d-flex flex-column">
@@ -25,10 +25,10 @@ const MyOrderPage = () =>{
 
                 <div className="filter-and-sort d-flex gap-3">
                     <div className="filter-dish-and-restaurant d-flex">
-                        <div className="filter-button">
+                        <div className="filter-button active">
                             Món ăn
                         </div>
-                        <div className="filter-button active">
+                        <div className="filter-button ">
                             Nhà hàng
                         </div>
                     </div>
@@ -220,4 +220,4 @@ const MyOrderPage = () =>{
     )
 }
 
-export default MyOrderPage;
+export default MyOrderFoodPage;

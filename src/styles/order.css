@@ -325,8 +325,53 @@
     background: #00473C;
     color: #E6FF55;
 }
+.review-rating-wrapper {
+    gap: 10px;
+}
+.rating-text {
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+.review-rating-wrapper .small-rating-stars img {
+    width: 24px;
+    height: 24px;
+}
+.upload-image-wrapper {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1.5px dashed #D0D5DD;
+}
+.upload-image-wrapper.uploaded {
+    flex-direction: column;
+    gap: 1px;
+    color: #D0D5DD;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+}
+.upload-image-wrapper img {
+    width: 24px;
+    height: 24px;
+}
+.review-rating-row .review-comment {
+    max-width: 700px;
+}
 
-
+.review-comment {
+    border-radius: 8px;
+    border: 1px solid #D0D5DD;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    padding: 12px 14px;
+}
 /* my order */
 .my-order-wrapper {
     max-width: 954px;
@@ -584,4 +629,169 @@
 }
 .delivery-status-text.cancel {
     color: #F04438;
+}
+
+/* order detail */
+.order-steps {
+    background: #fff;
+    margin: 10px 0;
+    max-width: 1280px;
+    width: 100%;
+}
+.order-detail-title {
+    gap: 10px;
+}
+.order-detail-title .title {
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 38px;
+}
+.step-base {
+    width: 240px;
+    height: 76px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: #344054;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+}
+.step-base-icon {
+    width: 24px;
+    height: 24px;
+}
+
+
+.progress-line.active {
+    background: #079455;
+}
+.progress-line {
+    width: 232px;
+    height: 2px;
+    flex-shrink: 0;
+    background: #EAECF0;
+}
+.progress-line:nth-of-type(1) {
+    top: 35px;
+    left: 268px;
+    z-index: 1;
+}
+.progress-line:nth-of-type(2) {
+    top: 35px;
+    left: 524px;
+    z-index: 1;
+}
+.progress-line:nth-of-type(3) {
+    top: 35px;
+    left: 780px;
+    z-index: 1;
+}
+.order-details-wrapper .order-details {
+    min-width: 568px;
+    max-width: 568px;
+}
+
+.order-details {
+    gap: 10px;
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    min-width: 477px;
+    max-width: 477px;
+}
+.order-details .order, .order-details .shipper, .order-details .destination, .order-details .packing, .order-details .payment-method {
+    background: #fff;
+    padding: 0 16px 16px 16px;
+}
+.order-details .label {
+    border-bottom: 1px solid #D0D5DD;
+    padding: 8px 0px;
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+}
+.shipper-avatar {
+    min-width: 64px;
+    min-height: 64px;
+    max-width: 64px;
+    max-height: 64px;
+}
+.shipper-name {
+    color: #101828;
+    font-size: 16px;
+    font-weight: 600;
+}
+.cart-info {
+    padding: 8px;
+    background: #fff;
+}
+.label-section {
+    padding: 8px;
+    background: #F2F4F7;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #0A58FF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+.label-section img {
+    width: 40px;
+    height: 40px;
+}
+.cart-item img {
+    border-radius: 8px;
+    width: 56px;
+    height: 56px;
+}
+.cart-item-name {
+    color: #101828;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+.cart-item-description {
+    color: #475467;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+}
+.cart-item .price {
+    min-width: 70px;
+}
+.cart-item .price .price-after {
+    color: #101828;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+}
+.price-before {
+    color: #101828;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    text-decoration-line: line-through;
+}
+.cart-item .quantity {
+    color: #475467;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 0 8px;
+    min-width: 60px;
 }
