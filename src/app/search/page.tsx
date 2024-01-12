@@ -1,10 +1,14 @@
-
+import Breadcrumb from "@/app/ui/breadcrumb";
 const SearchPage = () =>{
 
     return (
-        <div>
-            SearchPage
-        </div>
+        <section className="chef-detail-and-card-info-section d-flex container">
+    		<div className="chef-detail-wrapper flex-grow-1">
+				<Breadcrumb />
+				
+			</div>
+				
+		</section>
     )
 }
 

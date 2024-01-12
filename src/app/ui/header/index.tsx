@@ -1,11 +1,14 @@
 'use client'
+import { useState } from 'react';
 import CartHeader from "./cartHeader";
 import CheckLogin from "./checkLogin";
+import CartModel from "../cart/cartModel";
 type HeaderType = {
     isErrorPage?: Boolean;
 }
 
 const Header = ({ isErrorPage }: HeaderType) => {
+    const [show, setShow] = useState(false);
     return(
         <section className={`header-section d-flex justify-content-center `}>
             <div className="header-container container w-100 d-flex justify-content-between align-items-center gap-5">
@@ -23,10 +26,9 @@ const Header = ({ isErrorPage }: HeaderType) => {
                         <img className="" alt="" src="/images/vn.svg"/>
                     </div>
                 </div>
-
             </div>
 
-            
+            <CartModel setShow={setShow} show={show}/>
         </section>
     )
 };

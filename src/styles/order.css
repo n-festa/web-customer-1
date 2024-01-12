@@ -1,0 +1,149 @@
+.payment-process {
+    background: white;
+    gap: 10px;
+}
+.payment-process .heading {
+    display: flex;
+    padding: 8px 24px;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+    color: #101828;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    border-bottom: 1px solid #EAECF0;
+}
+.momo-icon {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #EAECF0;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+}
+.momo-icon img {
+    width: 32px;
+    height: 32px;
+}
+.close-button {
+    cursor: pointer;
+}
+.payment-with-qr-code {
+    padding: 24px;
+    align-items: flex-start;
+}
+.qr-code-and-amount {
+    gap: 10px;
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: center;
+}
+.qr-code {
+    display: flex;
+    padding: 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 16px;
+    background: linear-gradient(48deg, #CD1883 9.34%, #E01B8F 84.33%);
+}
+.payment-process .heading {
+    display: flex;
+    padding: 8px 24px;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+    color: #101828;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    border-bottom: 1px solid #EAECF0;
+}
+.tutorial-and-timing .heading {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+}
+.tutorial-row {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+.tutorial-row .step-number {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 45px;
+    background: #EAECF0;
+    font-size: 14px;
+    font-weight: 400;
+}
+.payment-timing {
+    display: flex;
+    padding: 12px 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 8px;
+    background: #FFF0F6;
+}
+.payment-timing .heading {
+    color: #C11574;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    border-bottom: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.timing-card {
+    display: flex;
+    padding: 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: #F3D4E6;
+}
+.timing-card .time {
+    color: #C11574;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+}
+.timing-card .unit {
+    color: #C11574;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+.change-other-method {
+    color: #0A58FF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
