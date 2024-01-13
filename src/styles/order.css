@@ -806,3 +806,44 @@
     padding: 0 8px;
     min-width: 60px;
 }
+
+/* confim order*/
+.address-wrapper{
+    gap: 8px;
+    padding: 0 16px;
+    background-color: #ffffff;
+}
+.confirm-order-section .heading{
+    border-bottom: 1px #d0d5dd;
+    padding: 8px 0px;
+}
+.confirm-order-section .heading .title{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+}
+.address-wrapper .address{
+    gap: 16;
+    padding: 8px 0 16px 0;
+}
+.delivery-timer-section,.packing-section,.payment-section,.voucher-section{
+    padding: 0 16px;
+    background-color: #ffffff;
+}
+.delivery-timer{
+    border-top: 1px solid #d0d5dd;
+    gap: 16px;
+    padding: 16px 0;
+}
+.delivery-timer-day,.delivery-timer-time{
+    
+    background-color: #00473C;
+    border-radius: 6px;
+    padding: 10px 14px 10px 14px;
+    gap: 8px;
+    width: 125px;
+    height: 44px;
+}
+.delivery-timer-day::placeholder,.delivery-timer-time::placeholder{
+    color: #e6ff55;
+}

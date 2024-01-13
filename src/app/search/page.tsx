@@ -2,7 +2,6 @@ import Breadcrumb from "@/app/ui/breadcrumb";
 import InterestingFood from "@/components/homePage/interesting_food";
 
 const SearchPage = () =>{
-
     return (
         <section className="d-flex flex-column container home-section">
 			<Breadcrumb />
