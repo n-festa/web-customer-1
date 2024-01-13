@@ -12,7 +12,7 @@ const HomePage = () =>{
 			        <div className="mb-3 categories-wrapper w-100 d-flex justify-content-between">
 			            <div className="category-card d-flex justify-content-center align-items-end"
 			            	style={{
-			            		backgroundImage: `url(/images/6387ec276a4eb.png)`,
+			            		backgroundImage: `url(/images/6387ec276a4eb-62aa10dfb2adca268416cf2fd03d82f5transformed-4@2x.png)`,
 			            		backgroundSize: `contain`
 			            	}}
 			                >
@@ -20,7 +20,7 @@ const HomePage = () =>{
 			            </div>
 			            <div className="category-card d-flex justify-content-center align-items-end"
 			            	style={{
-			            		backgroundImage: `url(/images/6387ec276a4eb.png)`,
+			            		backgroundImage: `url(/images/6387ec276a4eb-62aa10dfb2adca268416cf2fd03d82f5transformed-4@2x.png)`,
 			            		backgroundSize: `contain`
 			            	}}
 			                >
@@ -28,7 +28,7 @@ const HomePage = () =>{
 			            </div>
 			            <div className="category-card d-flex justify-content-center align-items-end"
 			            	style={{
-			            		backgroundImage: `url(/images/6387ec276a4eb.png)`,
+			            		backgroundImage: `url(/images/6387ec276a4eb-62aa10dfb2adca268416cf2fd03d82f5transformed-4@2x.png)`,
 			            		backgroundSize: `contain`
 			            	}}
 			                >
@@ -36,7 +36,7 @@ const HomePage = () =>{
 			            </div>
 			            <div className="category-card d-flex justify-content-center align-items-end"
 			            	style={{
-			            		backgroundImage: `url(/images/6387ec276a4eb.png)`,
+			            		backgroundImage: `url(/images/6387ec276a4eb-62aa10dfb2adca268416cf2fd03d82f5transformed-4@2x.png)`,
 			            		backgroundSize: `contain`
 			            	}}
 			                >
@@ -61,7 +61,7 @@ const HomePage = () =>{
 			        </div>
 			    </div>
 		
-
+				<InterestingFood />			
 		        <div className="outstanding-location-and-chef-section w-100 py-4">
 			        <div className="title-section d-flex justify-content-between align-items-end w-100">
 			            <div className="title-and-sub-title flex-grow-1 d-flex flex-column">
