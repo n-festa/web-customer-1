@@ -54,7 +54,7 @@ const Header1 = ({ isErrorPage }: HeaderType) => {
                         <div className="language-text">VIE</div>
                         <img className="small-icon"
                              alt=""
-                             src="./public/vn.svg"
+                             src="/images/vn.svg"
                         />
                     </div>
                 </div>

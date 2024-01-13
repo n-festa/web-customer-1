@@ -107,7 +107,7 @@ const InterestingFood = async () => {
                             <div className="discount-up-to-wrapper d-flex align-items-center gap-1">
                                 <img className="small-icon"
                                     alt=""
-                                    src="/imagesc/frame-2729.svg"
+                                    src="/images/frame-2729.svg"
                                 />
 
                                 <div className="discount-up-to">Ưu đãi đến 50k</div>

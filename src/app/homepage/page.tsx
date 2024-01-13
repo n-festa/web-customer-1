@@ -45,7 +45,7 @@ const HomePage = () =>{
 			        </div>
 			        <div className="pagination d-flex justify-content-end align-items-center">
 			            <div className="carousel-arrow">
-			                <img className="search-md-icon" alt=""   src="./public/chevronleft.svg"
+			                <img className="search-md-icon" alt=""   src="/images/chevronleft.svg"
 			                />
 			            </div>
 			            <div className="pagination-dot-group">
@@ -54,7 +54,7 @@ const HomePage = () =>{
 			                <div className="pagination-dot-indicator"></div>
 			            </div>
 			            <div className="carousel-arrow">
-			                <img  className="search-md-icon"  alt=""  src="./public/chevronright.svg" />
+			                <img  className="search-md-icon"  alt=""  src="/images/chevronright.svg" />
 			            </div>
 
 			            <b className="get-all-button">Xem tất cả</b>
@@ -111,19 +111,9 @@ const HomePage = () =>{
 			                            >
 			                        </div>
 			                        <div className="discount-up-to-wrapper d-flex align-items-center gap-1">
-			                            <img className=""
-			                                 alt=""
-			                                 src="/images/frame-2729.svg"
-			                            />
-
 			                            <div className="discount-up-to">Ưu đãi đến 50k</div>
 			                        </div>
 			                        <div className="flavor-time-wrapper d-flex align-items-center gap-1">
-			                            <img className=""
-			                                 alt=""
-			                                 src="/images/frame-2725.svg"
-			                            />
-
 			                            <div className="flavor-time">
 			                                Đặt trước 09:00 giờ sáng để điều chỉnh vị
 			                            </div>

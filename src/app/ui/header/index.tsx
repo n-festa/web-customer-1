@@ -3,12 +3,15 @@ import { useState } from 'react';
 import CartHeader from "./cartHeader";
 import CheckLogin from "./checkLogin";
 import CartModel from "../cart/cartModel";
+import { signIn, signOut, useSession } from 'next-auth/react';
 type HeaderType = {
     isErrorPage?: Boolean;
 }
 
 const Header = ({ isErrorPage }: HeaderType) => {
     const [show, setShow] = useState(false);
+    const { data: session, status } = useSession();
+    console.log("sesstion ", session);
     return(
         <section className={`header-section d-flex justify-content-center `}>
             <div className="header-container container w-100 d-flex justify-content-between align-items-center gap-5">

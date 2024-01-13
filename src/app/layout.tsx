@@ -6,6 +6,8 @@ import '@/styles/order.css'
 import '@/styles/login.css'
 import '@/styles/style.css'
 
+import { SessionProvider } from 'next-auth/react';
+import NextAuthWrapper from '@/lib/next.auth.provider';
 import Head from "next/head"
 
 export default function RootLayout({children,}: {children: React.ReactNode;}) {
@@ -16,9 +18,9 @@ export default function RootLayout({children,}: {children: React.ReactNode;}) {
 			</Head>
 	      	<body>
 	        {/* <ProgressBar /> */}
-			
-	        {children}
-			
+				<NextAuthWrapper>
+					{children}
+				</NextAuthWrapper>
 	      	</body>
 	    </html>
   )
