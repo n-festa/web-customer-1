@@ -15,6 +15,7 @@ const LandingPage = () =>{
             <Today title="food_today" />
             <OrderStep />
             <WhyChoose />
+            {/* <Testimonial/> */}
             <Contact />
             <Download />
             <Footer />

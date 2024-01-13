@@ -1926,7 +1926,28 @@ a:hover{
     width: 16px;
     height: 16px;
 }
-
+.frame-parent {
+    border-radius: var(--br-5xl) var(--br-5xl) 0 0;
+    background-color: var(--primary-500);
+    padding: var(--padding-5xs) var(--padding-base) var(--padding-13xl);
+}
+.discount {
+    position: relative;
+    line-height: 20px;
+    font-size: var(--text-md-regular-size);
+    color: var(--color-gold);
+}
+.image-wrapper {
+    border-radius: var(--br-xs);
+}
+.image-wrapper img {
+    max-height: 230px;
+}
+.card-info-wrapper {
+    max-width: 384px;
+    padding: var(--padding-5xs) var(--padding-5xl);
+    color: var(--gray-600);
+}
   
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

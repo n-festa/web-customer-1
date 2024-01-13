@@ -4,10 +4,10 @@ import InterestingFood from "@/components/homePage/interesting_food";
 const HomePage = () =>{
     return (
         <section className="d-flex flex-column container home-section">
-	            <div className="search-item-wrapper d-flex">
-			        <img className=""  alt=""   src="/images/searchmd.svg"   />
-			        <input type="text" className="border-none search-item flex-grow-1" placeholder="Gõ tên món ăn, nhà hàng mà bạn đang muốn tìm" />
-			    </div>
+	        <div className="search-item-wrapper d-flex">
+			    <img className=""  alt=""   src="/images/searchmd.svg"   />
+			    <input type="text" className="border-none search-item flex-grow-1" placeholder="Gõ tên món ăn, nhà hàng mà bạn đang muốn tìm" />
+			</div>
 			    <div className="categories-container d-flex flex-column py-4 w-100">
 			        <div className="mb-3 categories-wrapper w-100 d-flex justify-content-between">
 			            <div className="category-card d-flex justify-content-center align-items-end"
@@ -142,7 +142,7 @@ const HomePage = () =>{
 			            </div>
 			        </div>
 			    </div>
-	        </section>
+	    </section>
     )
 }
 

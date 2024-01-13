@@ -57,164 +57,161 @@ const MyOrderFoodPage = () =>{
                 </div>
 
                 <div className="order-history-wrapper my-2">
-            <div className="heading d-flex justify-content-between">
-                <div className="order-number d-flex gap-3 align-items-center">
-                    <span>Đơn hàng <span className="font-weight-700"> #1234567</span></span>
+                    <div className="heading d-flex justify-content-between">
+                        <div className="order-number d-flex gap-3 align-items-center">
+                            <span>Đơn hàng <span className="font-weight-700"> #1234567</span></span>
 
-                    <div className="favourite-tag d-flex gap-1 align-items-center">
-                        <img src="/images/tag-01.svg" alt="" />
-                        <span>Yêu thích</span>
+                            <div className="favourite-tag d-flex gap-1 align-items-center">
+                                <img src="/images/tag-01.svg" alt="" />
+                                <span>Yêu thích</span>
+                            </div>
+                        </div>
+
+                        <div className="order-date">
+                            Ngày: 26/07/2023
+                        </div>
+                    </div>
+
+                    <div className="cart-history-info tab-restaurant d-flex">
+                        <img className="" src="/images/food.png" alt="" />
+                        <div className="detail px-3 d-flex flex-column flex-grow-1">
+                            <div className="food-name">Mỳ Cá Cờ Sốt Yakitori x 1</div>
+                            <div className="cooking-method">
+                                <span>Luộc <span className="normal-text">| Hành tây, tiêu xanh, cà chua, bắp, ngò rí, bơ chín và nước cốt chanh.</span></span>
+                            </div>
+                            <div className="description">
+                                Ghi chú 1 Lorem ipsum Ghi chú 1 Lorem ipsum Ghi chú 1 Lorem ipsum Ghi chú 1 Lorem ipsum
+                            </div>
+                            <div className="by-chef">
+                                <span>by <span className="by-chef-name">The Chef Town</span></span>
+                            </div>
+                        </div>
+                        <div className="cart-history-price">
+                            160,000 đ
+                        </div>
+                    </div>
+
+                    <div className="delivery-status p-3 d-flex justify-content-between align-items-center">
+                        <div className="d-flex gap-4 align-items-center">
+                            <div className="delivery-status-text success">Giao hàng thành công</div>
+                            <div className="calo d-flex align-items-center">
+                                <img src="/images/kalo.svg" alt="" />
+                                <div >356 Kcal</div>
+                            </div>
+                        </div>
+                        <div className="d-flex delivery-status-group-actions">
+                            <button className="delivery-action-button rating" type="button">Đánh giá</button>
+                            <button className="delivery-action-button" type="button">Mua lại</button>
+                            <button className="delivery-action-button" type="button">Xem chi tiết</button>
+                        </div>
                     </div>
                 </div>
 
-                <div className="order-date">
-                    Ngày: 26/07/2023
-                </div>
-            </div>
+                <div className="order-history-wrapper my-2">
+                    <div className="heading d-flex justify-content-between">
+                        <div className="order-number d-flex gap-3 align-items-center">
+                            <span>Đơn hàng <span className="font-weight-700"> #5678910</span></span>
 
-            <div className="cart-history-info tab-restaurant d-flex">
-                <img className="" src="/images/food.png" alt="" />
-                <div className="detail px-3 d-flex flex-column flex-grow-1">
-                    <div className="food-name">Mỳ Cá Cờ Sốt Yakitori x 1</div>
-                    <div className="cooking-method">
-                        <span>Luộc <span className="normal-text">| Hành tây, tiêu xanh, cà chua, bắp, ngò rí, bơ chín và nước cốt chanh.</span></span>
+                            <div className="favourite-tag d-flex gap-1 align-items-center">
+                                <img src="/images/tag-01.svg" alt="" />
+                                <span>Yêu thích</span>
+                            </div>
+                        </div>
+
+                        <div className="order-date">
+                            Ngày: 26/07/2023
+                        </div>
                     </div>
-                    <div className="description">
-                        Ghi chú 1 Lorem ipsum Ghi chú 1 Lorem ipsum Ghi chú 1 Lorem ipsum Ghi chú 1 Lorem ipsum
+
+                    <div className="cart-history-info tab-restaurant d-flex">
+                        <img className="" src="/images/food.png" alt="" />
+                        <div className="detail px-3 d-flex flex-column flex-grow-1">
+                            <div className="food-name">Mỳ Ý Pate x 2 </div>
+                            <div className="cooking-method">
+                                <span>Luộc <span className="normal-text">| Hành tây, tiêu xanh, cà chua, bắp, ngò rí, bơ chín và nước cốt chanh.</span></span>
+                            </div>
+                            <div className="description">
+                                Ghi chú 1 Lorem ipsum Ghi chú 1 Lorem ipsum Ghi chú 1 Lorem ipsum Ghi chú 1 Lorem ipsum
+                            </div>
+                            <div className="by-chef">
+                                <span>by <span className="by-chef-name">The Chef Town</span></span>
+                            </div>
+                        </div>
+                        <div className="cart-history-price">
+                            160,000 đ
+                        </div>
                     </div>
-                    <div className="by-chef">
-                        <span>by <span className="by-chef-name">The Chef Town</span></span>
+
+                    <div className="delivery-status p-3 d-flex justify-content-between align-items-center">
+                        <div className="d-flex gap-4 align-items-center">
+                            <div className="delivery-status-text success">Giao hàng thành công</div>
+                            <div className="calo d-flex align-items-center">
+                                <img src="/images/kalo.svg" alt=""/>
+                                <div >356 Kcal</div>
+                            </div>
+                            <div className="rating-stars d-flex gap-1">
+                                <img src="/images/star-icon.svg" alt=""/>
+                                <img src="/images/star-icon.svg" alt=""/>
+                                <img src="/images/star-icon.svg" alt=""/>
+                                <img src="/images/star-icon.svg" alt=""/>
+                                <img src="/images/star-icon.svg" alt=""/>
+                            </div>
+                        </div>
+                        <div className="d-flex delivery-status-group-actions">
+
+                            <button className="delivery-action-button" type="button">Mua lại</button>
+                            <button className="delivery-action-button" type="button">Xem chi tiết</button>
+
+                        </div>
                     </div>
-                </div>
-                <div className="cart-history-price">
-                    160,000 đ
-                </div>
-            </div>
 
-            <div className="delivery-status p-3 d-flex justify-content-between align-items-center">
-                <div className="d-flex gap-4 align-items-center">
-                    <div className="delivery-status-text success">Giao hàng thành công</div>
-                    <div className="calo d-flex align-items-center">
-                        <img src="/images/kalo.svg" alt="" />
-                        <div >356 Kcal</div>
-                    </div>
-                </div>
-                <div className="d-flex delivery-status-group-actions">
-                    <button className="delivery-action-button rating" type="button">Đánh giá</button>
-                    <button className="delivery-action-button" type="button">Mua lại</button>
-                    <button className="delivery-action-button" type="button">Xem chi tiết</button>
+                    <div className="order-history-wrapper my-2">
+                        <div className="heading d-flex justify-content-between">
+                            <div className="order-number d-flex gap-3 align-items-center">
+                                <span>Đơn hàng <span className="font-weight-700"> #3857505</span></span>
 
-                </div>
-            </div>
-        </div>
+                                <div className="favourite-tag d-flex gap-1 align-items-center">
+                                    <img src="/images/tag-01.svg" alt="" />
+                                    <span>Yêu thích</span>
+                                </div>
+                            </div>
 
-        <div className="order-history-wrapper my-2">
-            <div className="heading d-flex justify-content-between">
-                <div className="order-number d-flex gap-3 align-items-center">
-                    <span>Đơn hàng <span className="font-weight-700"> #5678910</span></span>
+                            <div className="order-date">
+                                Ngày: 26/07/2023
+                            </div>
+                        </div>
 
-                    <div className="favourite-tag d-flex gap-1 align-items-center">
-                        <img src="/images/tag-01.svg" alt="" />
-                        <span>Yêu thích</span>
-                    </div>
-                </div>
+                        <div className="cart-history-info tab-restaurant d-flex">
+                            <img className="" src="/images/food.png" alt="" />
+                            <div className="detail px-3 d-flex flex-column flex-grow-1">
+                                <div className="food-name">Mỳ Cá Cờ Sốt Yakitori x 2 </div>
+                                <div className="cooking-method">
+                                    <span>Luộc <span className="normal-text">| Hành tây, tiêu xanh, cà chua, bắp, ngò rí, bơ chín và nước cốt chanh.</span></span>
+                                </div>
+                                <div className="description">
+                                    Ghi chú 1 Lorem ipsum Ghi chú 1 Lorem ipsum Ghi chú 1 Lorem ipsum Ghi chú 1 Lorem ipsum
+                                </div>
+                                <div className="by-chef">
+                                    <span>by <span className="by-chef-name">The Chef Town</span></span>
+                                </div>
+                            </div>
+                            <div className="cart-history-price">
+                                160,000 đ
+                            </div>
+                        </div>
 
-                <div className="order-date">
-                    Ngày: 26/07/2023
-                </div>
-            </div>
-
-            <div className="cart-history-info tab-restaurant d-flex">
-                <img className="" src="/images/food.png" alt="" />
-                <div className="detail px-3 d-flex flex-column flex-grow-1">
-                    <div className="food-name">Mỳ Ý Pate x 2 </div>
-                    <div className="cooking-method">
-                        <span>Luộc <span className="normal-text">| Hành tây, tiêu xanh, cà chua, bắp, ngò rí, bơ chín và nước cốt chanh.</span></span>
-                    </div>
-                    <div className="description">
-                        Ghi chú 1 Lorem ipsum Ghi chú 1 Lorem ipsum Ghi chú 1 Lorem ipsum Ghi chú 1 Lorem ipsum
-                    </div>
-                    <div className="by-chef">
-                        <span>by <span className="by-chef-name">The Chef Town</span></span>
-                    </div>
-                </div>
-                <div className="cart-history-price">
-                    160,000 đ
-                </div>
-            </div>
-
-            <div className="delivery-status p-3 d-flex justify-content-between align-items-center">
-                <div className="d-flex gap-4 align-items-center">
-                    <div className="delivery-status-text success">Giao hàng thành công</div>
-                    <div className="calo d-flex align-items-center">
-                        <img src="/images/kalo.svg" alt=""/>
-                        <div >356 Kcal</div>
-                    </div>
-                    <div className="rating-stars d-flex gap-1">
-                        <img src="/images/star-icon.svg" alt=""/>
-                        <img src="/images/star-icon.svg" alt=""/>
-                        <img src="/images/star-icon.svg" alt=""/>
-                        <img src="/images/star-icon.svg" alt=""/>
-                        <img src="/images/star-icon.svg" alt=""/>
-                    </div>
-                </div>
-                <div className="d-flex delivery-status-group-actions">
-
-                    <button className="delivery-action-button" type="button">Mua lại</button>
-                    <button className="delivery-action-button" type="button">Xem chi tiết</button>
-
-                </div>
-            </div>
-        </div>
-
-        <div className="order-history-wrapper my-2">
-            <div className="heading d-flex justify-content-between">
-                <div className="order-number d-flex gap-3 align-items-center">
-                    <span>Đơn hàng <span className="font-weight-700"> #3857505</span></span>
-
-                    <div className="favourite-tag d-flex gap-1 align-items-center">
-                        <img src="/images/tag-01.svg" alt="" />
-                        <span>Yêu thích</span>
+                        <div className="delivery-status p-3 d-flex justify-content-between align-items-center">
+                            <div className="d-flex gap-4 align-items-center">
+                                <div className="delivery-status-text cancel">Hủy đơn hàng</div>
+                            </div>
+                            <div className="d-flex delivery-status-group-actions">
+                                <button className="delivery-action-button" type="button">Mua lại</button>
+                                <button className="delivery-action-button" type="button">Xem chi tiết</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div className="order-date">
-                    Ngày: 26/07/2023
-                </div>
-            </div>
-
-            <div className="cart-history-info tab-restaurant d-flex">
-                <img className="" src="/images/food.png" alt="" />
-                <div className="detail px-3 d-flex flex-column flex-grow-1">
-                    <div className="food-name">Mỳ Cá Cờ Sốt Yakitori x 2 </div>
-                    <div className="cooking-method">
-                        <span>Luộc <span className="normal-text">| Hành tây, tiêu xanh, cà chua, bắp, ngò rí, bơ chín và nước cốt chanh.</span></span>
-                    </div>
-                    <div className="description">
-                        Ghi chú 1 Lorem ipsum Ghi chú 1 Lorem ipsum Ghi chú 1 Lorem ipsum Ghi chú 1 Lorem ipsum
-                    </div>
-                    <div className="by-chef">
-                        <span>by <span className="by-chef-name">The Chef Town</span></span>
-                    </div>
-                </div>
-                <div className="cart-history-price">
-                    160,000 đ
-                </div>
-            </div>
-
-            <div className="delivery-status p-3 d-flex justify-content-between align-items-center">
-                <div className="d-flex gap-4 align-items-center">
-                    <div className="delivery-status-text cancel">Hủy đơn hàng</div>
-                </div>
-                <div className="d-flex delivery-status-group-actions">
-                    <button className="delivery-action-button" type="button">Mua lại</button>
-                    <button className="delivery-action-button" type="button">Xem chi tiết</button>
-
-                </div>
-            </div>
-        </div>
         
-                
             </div>
         </section>
     )

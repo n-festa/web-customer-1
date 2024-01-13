@@ -26,7 +26,6 @@ export type ProductTypeList = {
 }
 
 const InterestingFood = async () => {
-
     return(
         <div className="attractive-dishes-section d-flex flex-column w-100">
             <div className="title-section d-flex justify-content-between align-items-end w-100">
